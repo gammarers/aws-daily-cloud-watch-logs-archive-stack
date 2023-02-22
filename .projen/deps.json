@@ -21,6 +21,10 @@
       "type": "build"
     },
     {
+      "name": "@yicr/secure-bucket",
+      "type": "build"
+    },
+    {
       "name": "aws-cdk-lib",
       "version": "2.66.0",
       "type": "build"
@@ -109,6 +113,10 @@
       "name": "@types/prettier",
       "version": "2.6.0",
       "type": "override"
+    },
+    {
+      "name": "@yicr/secure-bucket",
+      "type": "peer"
     },
     {
       "name": "aws-cdk-lib",

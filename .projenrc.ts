@@ -8,7 +8,11 @@ const project = new awscdk.AwsCdkConstructLibrary({
   projenrcTs: true,
   repositoryUrl: 'https://github.com/yicr/daily-cloud-watch-log-rotation.git',
   description: undefined,
-  // deps: [],                /* Runtime dependencies of this module. */
-  // devDeps: [],             /* Build dependencies for this module. */
+  devDeps: [
+    '@yicr/secure-bucket',
+  ],
+  peerDeps: [
+    '@yicr/secure-bucket',
+  ],
 });
 project.synth();
