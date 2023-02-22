@@ -1,0 +1,1 @@
+# daily-cloud-watch-log-rotation
