@@ -4,15 +4,37 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorAddress: 'yicr@users.noreply.github.com',
   cdkVersion: '2.66.0',
   defaultReleaseBranch: 'main',
-  name: '@yicr/daily-cloud-watch-log-rotation',
+  name: '@yicr/daily-cloud-watch-log-archiver',
   projenrcTs: true,
-  repositoryUrl: 'https://github.com/yicr/daily-cloud-watch-log-rotation.git',
+  repositoryUrl: 'https://github.com/yicr/daily-cloud-watch-log-archiver.git',
   description: undefined,
+  deps: [
+    '@aws-sdk/client-cloudwatch-logs',
+  ],
   devDeps: [
+    'aws-sdk-client-mock',
+    'aws-sdk-client-mock-jest',
+    '@types/aws-lambda',
     '@yicr/secure-bucket',
+    '@yicr/jest-serializer-cdk-asset',
   ],
   peerDeps: [
     '@yicr/secure-bucket',
   ],
+  jestOptions: {
+    jestConfig: {
+      snapshotSerializers: ['<rootDir>/node_modules/@yicr/jest-serializer-cdk-asset'],
+    },
+    extraCliOptions: ['--silent'],
+  },
+  lambdaOptions: {
+    // target node.js runtime
+    runtime: awscdk.LambdaRuntime.NODEJS_18_X,
+    bundlingOptions: {
+      // list of node modules to exclude from the bundle
+      externals: ['aws-sdk'],
+      sourcemap: true,
+    },
+  },
 });
 project.synth();
