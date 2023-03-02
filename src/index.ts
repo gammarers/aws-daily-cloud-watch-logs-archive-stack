@@ -128,7 +128,7 @@ export class DailyCloudWatchLogArchiver extends Construct {
               ],
               resources: [
                 lambdaFunction.functionArn,
-                `${lambdaFunction.functionName}:*`,
+                `${lambdaFunction.functionArn}:*`,
               ],
             }),
           ],
