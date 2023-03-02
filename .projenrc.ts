@@ -8,12 +8,11 @@ const project = new awscdk.AwsCdkConstructLibrary({
   projenrcTs: true,
   repositoryUrl: 'https://github.com/yicr/daily-cloud-watch-log-archiver.git',
   description: undefined,
-  deps: [
-    '@aws-sdk/client-cloudwatch-logs',
-  ],
+  deps: [],
   devDeps: [
     'aws-sdk-client-mock',
     'aws-sdk-client-mock-jest',
+    '@aws-sdk/client-cloudwatch-logs',
     '@types/aws-lambda',
     '@yicr/secure-bucket',
     '@yicr/jest-serializer-cdk-asset',
@@ -32,7 +31,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     runtime: awscdk.LambdaRuntime.NODEJS_18_X,
     bundlingOptions: {
       // list of node modules to exclude from the bundle
-      externals: ['aws-sdk'],
+      externals: ['@aws-sdk/client-cloudwatch-logs'],
       sourcemap: true,
     },
   },
