@@ -11,7 +11,16 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
     },
   });
 
-  new DailyCloudWatchLogArchiver(stack, 'DailyCloudWatchLogArchiver');
+  new DailyCloudWatchLogArchiver(stack, 'DailyCloudWatchLogArchiver', {
+    schedule: {
+      name: 'example-log-archive-rule',
+      description: 'example log archive rule.',
+      target: {
+        logGroupName: 'example-log-group',
+        destinationPrefix: 'example-log',
+      },
+    },
+  });
 
   const template = Template.fromStack(stack);
 
@@ -179,6 +188,8 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
       }));
     });
   });
+
+  // todo: scheduler property.
 
   it('Should match snapshot', () => {
     expect(template.toJSON()).toMatchSnapshot('archiver');

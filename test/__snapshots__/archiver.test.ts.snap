@@ -221,6 +221,95 @@ Object {
       },
       "Type": "AWS::Lambda::Function",
     },
+    "DailyCloudWatchLogArchiverSchedule35ae68828CA89779": Object {
+      "Properties": Object {
+        "Description": "example log archive rule.",
+        "FlexibleTimeWindow": Object {
+          "Mode": "OFF",
+        },
+        "GroupName": "log-archive-schedule-c08c1234-group",
+        "Name": "example-log-archive-rule",
+        "ScheduleExpression": "cron(* 13 * * ? *)",
+        "ScheduleExpressionTimezone": "UTC",
+        "State": "ENABLED",
+        "Target": Object {
+          "Arn": Object {
+            "Fn::GetAtt": Array [
+              "DailyCloudWatchLogArchiverLogArchiveFunctionF76E92C4",
+              "Arn",
+            ],
+          },
+          "Input": "{"logGroupName":"example-log-group","destinationPrefix":"example-log"}",
+          "RetryPolicy": Object {
+            "MaximumEventAgeInSeconds": 60,
+            "MaximumRetryAttempts": 0,
+          },
+          "RoleArn": Object {
+            "Fn::GetAtt": Array [
+              "DailyCloudWatchLogArchiverSchedulerExecutionRole445D6DC1",
+              "Arn",
+            ],
+          },
+        },
+      },
+      "Type": "AWS::Scheduler::Schedule",
+    },
+    "DailyCloudWatchLogArchiverScheduleGroup065068F3": Object {
+      "Properties": Object {
+        "Name": "log-archive-schedule-c08c1234-group",
+      },
+      "Type": "AWS::Scheduler::ScheduleGroup",
+    },
+    "DailyCloudWatchLogArchiverSchedulerExecutionRole445D6DC1": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "scheduler.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "Policies": Array [
+          Object {
+            "PolicyDocument": Object {
+              "Statement": Array [
+                Object {
+                  "Action": "lambda:InvokeFunction",
+                  "Effect": "Allow",
+                  "Resource": Array [
+                    Object {
+                      "Fn::GetAtt": Array [
+                        "DailyCloudWatchLogArchiverLogArchiveFunctionF76E92C4",
+                        "Arn",
+                      ],
+                    },
+                    Object {
+                      "Fn::Join": Array [
+                        "",
+                        Array [
+                          Object {
+                            "Ref": "DailyCloudWatchLogArchiverLogArchiveFunctionF76E92C4",
+                          },
+                          ":*",
+                        ],
+                      ],
+                    },
+                  ],
+                },
+              ],
+              "Version": "2012-10-17",
+            },
+            "PolicyName": "lambda-invoke-policy",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
   },
   "Rules": Object {
     "CheckBootstrapVersion": Object {
