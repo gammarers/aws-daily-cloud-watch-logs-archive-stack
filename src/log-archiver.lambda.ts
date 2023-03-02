@@ -49,7 +49,7 @@ export const handler = async (event: EventInput, context: Context): Promise<stri
     logGroupName: event.logGroupName,
     from: targetFromTime,
     to: targetToTime,
-    destinationPrefix: `${event.destinationPrefix}/${y}-${m}-${d}`,
+    destinationPrefix: `${event.destinationPrefix}/${y}/${y}-${m}/${m}-${d}`,
   };
   console.log(`CommandParams: ${JSON.stringify(params, null, 2)}`);
 
