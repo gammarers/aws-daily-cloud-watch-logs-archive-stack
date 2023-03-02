@@ -162,10 +162,8 @@ Object {
             Object {
               "Action": "s3:PutObject",
               "Condition": Object {
-                "0": Object {
-                  "StringEquals": Object {
-                    "s3:x-amz-acl": "bucket-owner-full-control",
-                  },
+                "StringEquals": Object {
+                  "s3:x-amz-acl": "bucket-owner-full-control",
                 },
               },
               "Effect": "Allow",

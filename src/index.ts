@@ -49,13 +49,11 @@ export class DailyCloudWatchLogArchiver extends Construct {
       resources: [
         `${logArchiveBucket.bucketArn}/*`,
       ],
-      conditions: [
-        {
-          StringEquals: {
-            's3:x-amz-acl': 'bucket-owner-full-control',
-          },
+      conditions: {
+        StringEquals: {
+          's3:x-amz-acl': 'bucket-owner-full-control',
         },
-      ],
+      },
     }));
 
     // 👇Create Lambda Execution role.

@@ -70,10 +70,8 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
                 ],
               },
               Condition: {
-                0: {
-                  StringEquals: {
-                    's3:x-amz-acl': 'bucket-owner-full-control',
-                  },
+                StringEquals: {
+                  's3:x-amz-acl': 'bucket-owner-full-control',
                 },
               },
             }),
