@@ -9,13 +9,14 @@
 ```typescript
 import { DailyCloudWatchLogArchiver } from '@yicr/daily-cloud-watch-log-archiver'
 
-new DailyCloudWatchLogArchiver(scope: Construct, id: string)
+new DailyCloudWatchLogArchiver(scope: Construct, id: string, props: DailyCloudWatchLogArchiverProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
 | <code><a href="#@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.Initializer.parameter.props">props</a></code> | <code><a href="#@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps">DailyCloudWatchLogArchiverProps</a></code> | *No description.* |
 
 ---
 
@@ -28,6 +29,12 @@ new DailyCloudWatchLogArchiver(scope: Construct, id: string)
 ##### `id`<sup>Required</sup> <a name="id" id="@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.Initializer.parameter.id"></a>
 
 - *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps">DailyCloudWatchLogArchiverProps</a>
 
 ---
 
@@ -108,6 +115,124 @@ The tree node.
 ---
 
 
+## Structs <a name="Structs" id="Structs"></a>
+
+### DailyCloudWatchLogArchiverProps <a name="DailyCloudWatchLogArchiverProps" id="@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps"></a>
+
+#### Initializer <a name="Initializer" id="@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps.Initializer"></a>
+
+```typescript
+import { DailyCloudWatchLogArchiverProps } from '@yicr/daily-cloud-watch-log-archiver'
+
+const dailyCloudWatchLogArchiverProps: DailyCloudWatchLogArchiverProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps.property.schedule">schedule</a></code> | <code><a href="#@yicr/daily-cloud-watch-log-archiver.ScheduleProperty">ScheduleProperty</a></code> | *No description.* |
+
+---
+
+##### `schedule`<sup>Required</sup> <a name="schedule" id="@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps.property.schedule"></a>
+
+```typescript
+public readonly schedule: ScheduleProperty;
+```
+
+- *Type:* <a href="#@yicr/daily-cloud-watch-log-archiver.ScheduleProperty">ScheduleProperty</a>
+
+---
+
+### ScheduleProperty <a name="ScheduleProperty" id="@yicr/daily-cloud-watch-log-archiver.ScheduleProperty"></a>
+
+#### Initializer <a name="Initializer" id="@yicr/daily-cloud-watch-log-archiver.ScheduleProperty.Initializer"></a>
+
+```typescript
+import { ScheduleProperty } from '@yicr/daily-cloud-watch-log-archiver'
+
+const scheduleProperty: ScheduleProperty = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@yicr/daily-cloud-watch-log-archiver.ScheduleProperty.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@yicr/daily-cloud-watch-log-archiver.ScheduleProperty.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@yicr/daily-cloud-watch-log-archiver.ScheduleProperty.property.target">target</a></code> | <code><a href="#@yicr/daily-cloud-watch-log-archiver.ScheduleTargetProperty">ScheduleTargetProperty</a></code> | *No description.* |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="@yicr/daily-cloud-watch-log-archiver.ScheduleProperty.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="@yicr/daily-cloud-watch-log-archiver.ScheduleProperty.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `target`<sup>Required</sup> <a name="target" id="@yicr/daily-cloud-watch-log-archiver.ScheduleProperty.property.target"></a>
+
+```typescript
+public readonly target: ScheduleTargetProperty;
+```
+
+- *Type:* <a href="#@yicr/daily-cloud-watch-log-archiver.ScheduleTargetProperty">ScheduleTargetProperty</a>
+
+---
+
+### ScheduleTargetProperty <a name="ScheduleTargetProperty" id="@yicr/daily-cloud-watch-log-archiver.ScheduleTargetProperty"></a>
+
+#### Initializer <a name="Initializer" id="@yicr/daily-cloud-watch-log-archiver.ScheduleTargetProperty.Initializer"></a>
+
+```typescript
+import { ScheduleTargetProperty } from '@yicr/daily-cloud-watch-log-archiver'
+
+const scheduleTargetProperty: ScheduleTargetProperty = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@yicr/daily-cloud-watch-log-archiver.ScheduleTargetProperty.property.destinationPrefix">destinationPrefix</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@yicr/daily-cloud-watch-log-archiver.ScheduleTargetProperty.property.logGroupName">logGroupName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `destinationPrefix`<sup>Required</sup> <a name="destinationPrefix" id="@yicr/daily-cloud-watch-log-archiver.ScheduleTargetProperty.property.destinationPrefix"></a>
+
+```typescript
+public readonly destinationPrefix: string;
+```
+
+- *Type:* string
+
+---
+
+##### `logGroupName`<sup>Required</sup> <a name="logGroupName" id="@yicr/daily-cloud-watch-log-archiver.ScheduleTargetProperty.property.logGroupName"></a>
+
+```typescript
+public readonly logGroupName: string;
+```
+
+- *Type:* string
+
+---
 
 
 
