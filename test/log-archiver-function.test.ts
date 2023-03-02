@@ -24,11 +24,11 @@ describe('Lambda Function Handler testing', () => {
 
     const payload: EventInput = {
       destinationPrefix: 'example-logs',
+      logGroupName: 'example-log-group',
     };
 
     process.env = {
       BucketName: 'example-log-archive-bucket',
-      LogGroupName: 'log-archiver-exec-log',
     };
     const result = await handler(payload, {} as Context);
 
@@ -41,38 +41,31 @@ describe('Lambda Function Handler testing', () => {
   it('Should EnvironmentVariableError(BucketName)', async () => {
     const payload: EventInput = {
       destinationPrefix: 'example-logs',
+      logGroupName: 'example-log-group',
     };
-    process.env = {
-      LogGroupName: 'log-archiver-exec-log',
-    };
+    process.env = {};
     //const result = handler(payload, {} as Context);
     await expect(handler(payload, {} as Context)).rejects.toThrow(EnvironmentVariableError);
     //expect(result).toThrowError(EnvironmentVariableError);
   });
 
-  it('Should EnvironmentVariableError(LogGroupName)', async () => {
+  it('Should have occurrence error to InputVariableError(event.logGroupName)', async () => {
     const payload: EventInput = {
       destinationPrefix: 'example-logs',
     };
     process.env = {
       BucketName: 'example-log-archive-bucket',
     };
-
-    //const result = handler(payload, {} as Context);
-
-    await expect(handler(payload, {} as Context)).rejects.toThrow(EnvironmentVariableError);
-    //expect(result).toThrow(EnvironmentVariableError);
+    await expect(handler(payload, {} as Context)).rejects.toThrow(InputVariableError);
   });
 
-  it('Should InputVariableError(event.destination.prefix)', async () => {
-    const payload: EventInput = {};
+  it('Should have occurrence error to InputVariableError(event.destinationPrefix)', async () => {
+    const payload: EventInput = {
+      logGroupName: 'example-log-group',
+    };
     process.env = {
       BucketName: 'example-log-archive-bucket',
-      LogGroupName: 'log-archiver-exec-log',
     };
-    //const result = handler(payload, {} as Context);
-
     await expect(handler(payload, {} as Context)).rejects.toThrow(InputVariableError);
-    //expect(result).toThrowError(InputVariableError);
   });
 });

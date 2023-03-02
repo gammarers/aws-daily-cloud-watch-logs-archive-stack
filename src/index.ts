@@ -98,7 +98,9 @@ export class DailyCloudWatchLogArchiver extends Construct {
     new LogArchiverFunction(this, 'LogArchiveFunction', {
       functionName: `daily-cw-log-archiver-${randomNameKey}-func`,
       description: 'A function to archive logs s3 bucket from CloudWatch Logs.',
-      environment: {},
+      environment: {
+        BUCKET_NAME: logArchiveBucket.bucketName,
+      },
       role: lambdaExecutionRole,
     });
 

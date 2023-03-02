@@ -16,6 +16,7 @@ export class InputVariableError extends Error {
 }
 
 export interface EventInput {
+  readonly logGroupName?: string;
   readonly destinationPrefix?: string;
 }
 
@@ -29,11 +30,11 @@ export const handler = async (event: EventInput, context: Context): Promise<stri
   if (!process.env.BucketName) {
     throw new EnvironmentVariableError('BucketName environment variable not set.');
   }
-  if (!process.env.LogGroupName) {
-    throw new EnvironmentVariableError('LogGroupName environment variable not set.');
+  if (!event.logGroupName) {
+    throw new InputVariableError('event input logGroupName environment variable not set.');
   }
   if (!event.destinationPrefix) {
-    throw new InputVariableError('event input destination.prefix variable not set.');
+    throw new InputVariableError('event input destinationPrefix variable not set.');
   }
   const now = new Date();
   const targetFromTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0).getTime() - (1000 * 60 * 60 * 24);

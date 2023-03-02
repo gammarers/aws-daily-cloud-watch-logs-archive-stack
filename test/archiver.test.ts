@@ -165,6 +165,9 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
         Environment: {
           Variables: {
             AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
+            BUCKET_NAME: {
+              Ref: Match.stringLikeRegexp('DailyCloudWatchLogArchiverLogArchiveBucket.*'),
+            },
           },
         },
         Role: {

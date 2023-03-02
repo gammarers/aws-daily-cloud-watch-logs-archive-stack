@@ -204,6 +204,9 @@ Object {
         "Environment": Object {
           "Variables": Object {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+            "BUCKET_NAME": Object {
+              "Ref": "DailyCloudWatchLogArchiverLogArchiveBucketDED235D5",
+            },
           },
         },
         "FunctionName": "daily-cw-log-archiver-c08c1234-func",
