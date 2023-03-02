@@ -28,7 +28,7 @@ describe('Lambda Function Handler testing', () => {
     };
 
     process.env = {
-      BucketName: 'example-log-archive-bucket',
+      BUCKET_NAME: 'example-log-archive-bucket',
     };
     const result = await handler(payload, {} as Context);
 
@@ -38,7 +38,7 @@ describe('Lambda Function Handler testing', () => {
     //expect(cwLogsMock).toHaveReceivedCommandTimes(CreateExportTaskCommand,1);
   });
 
-  it('Should EnvironmentVariableError(BucketName)', async () => {
+  it('Should EnvironmentVariableError(BUCKET_NAME)', async () => {
     const payload: EventInput = {
       destinationPrefix: 'example-logs',
       logGroupName: 'example-log-group',
@@ -54,7 +54,7 @@ describe('Lambda Function Handler testing', () => {
       destinationPrefix: 'example-logs',
     };
     process.env = {
-      BucketName: 'example-log-archive-bucket',
+      BUCKET_NAME: 'example-log-archive-bucket',
     };
     await expect(handler(payload, {} as Context)).rejects.toThrow(InputVariableError);
   });
@@ -64,7 +64,7 @@ describe('Lambda Function Handler testing', () => {
       logGroupName: 'example-log-group',
     };
     process.env = {
-      BucketName: 'example-log-archive-bucket',
+      BUCKET_NAME: 'example-log-archive-bucket',
     };
     await expect(handler(payload, {} as Context)).rejects.toThrow(InputVariableError);
   });

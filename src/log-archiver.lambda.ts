@@ -27,8 +27,8 @@ export const handler = async (event: EventInput, context: Context): Promise<stri
   console.log(`Context: ${JSON.stringify(context, null, 2)}`);
 
   // do validation
-  if (!process.env.BucketName) {
-    throw new EnvironmentVariableError('BucketName environment variable not set.');
+  if (!process.env.BUCKET_NAME) {
+    throw new EnvironmentVariableError('BUCKET_NAME environment variable not set.');
   }
   if (!event.logGroupName) {
     throw new InputVariableError('event input logGroupName environment variable not set.');
@@ -45,8 +45,8 @@ export const handler = async (event: EventInput, context: Context): Promise<stri
   var d = ('00' + (targetDate.getDate())).slice(-2);
 
   const params = {
-    destination: process.env.BucketName,
-    logGroupName: process.env.LogGroupName,
+    destination: process.env.BUCKET_NAME,
+    logGroupName: event.logGroupName,
     from: targetFromTime,
     to: targetToTime,
     destinationPrefix: `${event.destinationPrefix}/${y}-${m}-${d}`,
