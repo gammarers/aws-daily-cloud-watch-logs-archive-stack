@@ -240,4 +240,31 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
   it('Should match snapshot', () => {
     expect(template.toJSON()).toMatchSnapshot('archiver');
   });
+
+  describe('DailyCloudWatchLogArchiver Error Handling Testing', () => {
+    it('Should have error of schedule not set', () => {
+      expect(() => {
+        new DailyCloudWatchLogArchiver(new Stack(new App()), 'DailyCloudWatchLogArchiver', {
+          schedules: [],
+        });
+      }).toThrow(Error);
+    });
+    it('Should have error of schedule count over', () => {
+      expect(() => {
+        new DailyCloudWatchLogArchiver(new Stack(new App()), 'DailyCloudWatchLogArchiver', {
+          schedules: [...Array(61)].map((_, i) => {
+            const id = ('00' + i).slice(-2);
+            return {
+              name: `example-${id}-schedule`,
+              description: `example ${id} schedule`,
+              target: {
+                logGroupName: `example-log-${id}-group`,
+                destinationPrefix: `example-${id}-log`,
+              },
+            };
+          }),
+        });
+      }).toThrow(Error);
+    });
+  });
 });
