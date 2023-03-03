@@ -156,7 +156,7 @@ export class DailyCloudWatchLogArchiver extends Construct {
         mode: 'OFF',
       },
       scheduleExpressionTimezone: 'UTC',
-      scheduleExpression: 'cron(* 13 * * ? *)', // todo: when loop to increment minute
+      scheduleExpression: 'cron(1 13 * * ? *)', // todo: when loop to increment minute
       target: {
         arn: lambdaFunction.functionArn,
         roleArn: schedulerExecutionRole.roleArn,

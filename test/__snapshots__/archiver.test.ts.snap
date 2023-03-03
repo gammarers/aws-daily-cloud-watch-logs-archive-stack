@@ -229,7 +229,7 @@ Object {
         },
         "GroupName": "log-archive-schedule-c08c1234-group",
         "Name": "example-log-archive-rule",
-        "ScheduleExpression": "cron(* 13 * * ? *)",
+        "ScheduleExpression": "cron(1 13 * * ? *)",
         "ScheduleExpressionTimezone": "UTC",
         "State": "ENABLED",
         "Target": Object {
@@ -293,7 +293,10 @@ Object {
                         "",
                         Array [
                           Object {
-                            "Ref": "DailyCloudWatchLogArchiverLogArchiveFunctionF76E92C4",
+                            "Fn::GetAtt": Array [
+                              "DailyCloudWatchLogArchiverLogArchiveFunctionF76E92C4",
+                              "Arn",
+                            ],
                           },
                           ":*",
                         ],
