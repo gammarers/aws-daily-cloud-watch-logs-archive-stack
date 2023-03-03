@@ -29,7 +29,7 @@ export class DailyCloudWatchLogArchiver extends Construct {
     if (props.schedules.length === 0) {
       throw new Error('Schedule not set.');
     }
-    if (props.schedules.length >= 50) {
+    if (props.schedules.length > 60) {
       throw new Error('Maximum number(60) of schedule.');
     }
 
