@@ -46,25 +46,25 @@
       "description": "Prepare assets",
       "steps": [
         {
-          "spawn": "bundle:log-archiver.lambda"
+          "spawn": "bundle:funcs/log-archiver.lambda"
         }
       ]
     },
-    "bundle:log-archiver.lambda": {
-      "name": "bundle:log-archiver.lambda",
-      "description": "Create a JavaScript bundle from src/log-archiver.lambda.ts",
+    "bundle:funcs/log-archiver.lambda": {
+      "name": "bundle:funcs/log-archiver.lambda",
+      "description": "Create a JavaScript bundle from src/funcs/log-archiver.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/log-archiver.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/log-archiver.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/client-cloudwatch-logs --sourcemap"
+          "exec": "esbuild --bundle src/funcs/log-archiver.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/funcs/log-archiver.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/client-cloudwatch-logs --sourcemap"
         }
       ]
     },
-    "bundle:log-archiver.lambda:watch": {
-      "name": "bundle:log-archiver.lambda:watch",
-      "description": "Continuously update the JavaScript bundle from src/log-archiver.lambda.ts",
+    "bundle:funcs/log-archiver.lambda:watch": {
+      "name": "bundle:funcs/log-archiver.lambda:watch",
+      "description": "Continuously update the JavaScript bundle from src/funcs/log-archiver.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/log-archiver.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/log-archiver.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/client-cloudwatch-logs --sourcemap --watch"
+          "exec": "esbuild --bundle src/funcs/log-archiver.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/funcs/log-archiver.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/client-cloudwatch-logs --sourcemap --watch"
         }
       ]
     },

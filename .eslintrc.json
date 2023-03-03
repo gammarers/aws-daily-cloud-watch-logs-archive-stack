@@ -152,7 +152,7 @@
           "**/projenrc/**",
           ".projenrc.ts",
           "projenrc/**/*.ts",
-          "src/log-archiver.lambda.ts"
+          "src/funcs/log-archiver.lambda.ts"
         ],
         "optionalDependencies": false,
         "peerDependencies": true
