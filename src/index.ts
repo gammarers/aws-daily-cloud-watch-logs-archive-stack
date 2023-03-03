@@ -7,7 +7,7 @@ import { Construct } from 'constructs';
 import { LogArchiverFunction } from './log-archiver-function';
 
 export interface DailyCloudWatchLogArchiverProps {
-  readonly schedule: ScheduleProperty;
+  readonly schedules: ScheduleProperty[];
 }
 
 export interface ScheduleProperty {
@@ -24,6 +24,14 @@ export interface ScheduleTargetProperty {
 export class DailyCloudWatchLogArchiver extends Construct {
   constructor(scope: Construct, id: string, props: DailyCloudWatchLogArchiverProps) {
     super(scope, id);
+
+    // props validation
+    if (props.schedules.length === 0) {
+      throw new Error('Schedule not set.');
+    }
+    if (props.schedules.length >= 50) {
+      throw new Error('Maximum number(60) of schedule.');
+    }
 
     // 👇Get current account & region
     // const account = cdk.Stack.of(this).account;
@@ -141,34 +149,36 @@ export class DailyCloudWatchLogArchiver extends Construct {
       name: `log-archive-schedule-${randomNameKey}-group`,
     });
 
-    // 👇Schedule ID prefix
-    const idPrefix = crypto.createHash('shake256', { outputLength: 4 })
-      .update(props.schedule.name)
-      .digest('hex');
+    for (const [index, schedule] of Object.entries(props.schedules)) {
+      // 👇Schedule ID prefix
+      const idPrefix = crypto.createHash('shake256', { outputLength: 4 })
+        .update(schedule.name)
+        .digest('hex');
 
-    // 👇Schedule
-    new scheduler.CfnSchedule(this, `Schedule${idPrefix}`, {
-      name: props.schedule.name,
-      description: props.schedule.description,
-      state: 'ENABLED',
-      groupName: scheduleGroup.name,
-      flexibleTimeWindow: {
-        mode: 'OFF',
-      },
-      scheduleExpressionTimezone: 'UTC',
-      scheduleExpression: 'cron(1 13 * * ? *)', // todo: when loop to increment minute
-      target: {
-        arn: lambdaFunction.functionArn,
-        roleArn: schedulerExecutionRole.roleArn,
-        input: JSON.stringify({
-          logGroupName: props.schedule.target.logGroupName,
-          destinationPrefix: props.schedule.target.destinationPrefix,
-        }),
-        retryPolicy: {
-          maximumEventAgeInSeconds: 60,
-          maximumRetryAttempts: 0,
+      // 👇Schedule
+      new scheduler.CfnSchedule(this, `Schedule${idPrefix}`, {
+        name: schedule.name,
+        description: schedule.description,
+        state: 'ENABLED',
+        groupName: scheduleGroup.name,
+        flexibleTimeWindow: {
+          mode: 'OFF',
         },
-      },
-    });
+        scheduleExpressionTimezone: 'UTC',
+        scheduleExpression: `cron(${index} 13 * * ? *)`, // max 60
+        target: {
+          arn: lambdaFunction.functionArn,
+          roleArn: schedulerExecutionRole.roleArn,
+          input: JSON.stringify({
+            logGroupName: schedule.target.logGroupName,
+            destinationPrefix: schedule.target.destinationPrefix,
+          }),
+          retryPolicy: {
+            maximumEventAgeInSeconds: 60,
+            maximumRetryAttempts: 0,
+          },
+        },
+      });
+    }
   }
 }

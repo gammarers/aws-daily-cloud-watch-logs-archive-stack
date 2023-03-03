@@ -12,14 +12,24 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
   });
 
   new DailyCloudWatchLogArchiver(stack, 'DailyCloudWatchLogArchiver', {
-    schedule: {
-      name: 'example-log-archive-rule',
-      description: 'example log archive rule.',
-      target: {
-        logGroupName: 'example-log-group',
-        destinationPrefix: 'example-log',
+    schedules: [
+      {
+        name: 'example-log-archive-1st-rule',
+        description: 'example log archive 1st rule.',
+        target: {
+          logGroupName: 'example-log-1st-group',
+          destinationPrefix: 'example-1st-log',
+        },
       },
-    },
+      {
+        name: 'example-log-archive-2nd-rule',
+        description: 'example log archive 2nd rule.',
+        target: {
+          logGroupName: 'example-log-2nd-group',
+          destinationPrefix: 'example-2nd-log',
+        },
+      },
+    ],
   });
 
   const template = Template.fromStack(stack);
