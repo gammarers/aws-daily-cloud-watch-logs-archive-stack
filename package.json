@@ -1,12 +1,15 @@
 {
-  "name": "@yicr/daily-cloud-watch-log-rotation",
+  "name": "@yicr/daily-cloud-watch-log-archiver",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yicr/daily-cloud-watch-log-rotation.git"
+    "url": "https://github.com/yicr/daily-cloud-watch-log-archiver.git"
   },
   "scripts": {
     "build": "npx projen build",
     "bump": "npx projen bump",
+    "bundle": "npx projen bundle",
+    "bundle:log-archiver.lambda": "npx projen bundle:log-archiver.lambda",
+    "bundle:log-archiver.lambda:watch": "npx projen bundle:log-archiver.lambda:watch",
     "clobber": "npx projen clobber",
     "compat": "npx projen compat",
     "compile": "npx projen compile",
@@ -16,7 +19,6 @@
     "eslint": "npx projen eslint",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
-    "package:js": "npx projen package:js",
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
@@ -34,12 +36,19 @@
     "organization": false
   },
   "devDependencies": {
+    "@aws-sdk/client-cloudwatch-logs": "^3.282.0",
+    "@types/aws-lambda": "^8.10.111",
     "@types/jest": "^27",
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
+    "@yicr/jest-serializer-cdk-asset": "^0.1.29",
+    "@yicr/secure-bucket": "0.1.24",
     "aws-cdk-lib": "2.66.0",
+    "aws-sdk-client-mock": "^2.0.1",
+    "aws-sdk-client-mock-jest": "^2.0.1",
     "constructs": "10.0.5",
+    "esbuild": "^0.17.10",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.7",
     "eslint-import-resolver-typescript": "^3.5.3",
@@ -58,6 +67,7 @@
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
+    "@yicr/secure-bucket": "^0.1.24",
     "aws-cdk-lib": "^2.66.0",
     "constructs": "^10.0.5"
   },
@@ -68,6 +78,9 @@
   "license": "Apache-2.0",
   "version": "0.0.0",
   "jest": {
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/@yicr/jest-serializer-cdk-asset"
+    ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.ts?(x)",
       "<rootDir>/(test|src)/**/*(*.)@(spec|test).ts?(x)"

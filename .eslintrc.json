@@ -151,7 +151,8 @@
           "**/build-tools/**",
           "**/projenrc/**",
           ".projenrc.ts",
-          "projenrc/**/*.ts"
+          "projenrc/**/*.ts",
+          "src/log-archiver.lambda.ts"
         ],
         "optionalDependencies": false,
         "peerDependencies": true

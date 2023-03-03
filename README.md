@@ -1,1 +1,1 @@
-# daily-cloud-watch-log-rotation
+# daily-cloud-watch-log-archiver

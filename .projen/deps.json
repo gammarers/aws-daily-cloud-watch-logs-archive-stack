@@ -1,6 +1,14 @@
 {
   "dependencies": [
     {
+      "name": "@aws-sdk/client-cloudwatch-logs",
+      "type": "build"
+    },
+    {
+      "name": "@types/aws-lambda",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "version": "^27",
       "type": "build"
@@ -21,13 +29,33 @@
       "type": "build"
     },
     {
+      "name": "@yicr/jest-serializer-cdk-asset",
+      "type": "build"
+    },
+    {
+      "name": "@yicr/secure-bucket",
+      "type": "build"
+    },
+    {
       "name": "aws-cdk-lib",
       "version": "2.66.0",
       "type": "build"
     },
     {
+      "name": "aws-sdk-client-mock",
+      "type": "build"
+    },
+    {
+      "name": "aws-sdk-client-mock-jest",
+      "type": "build"
+    },
+    {
       "name": "constructs",
       "version": "10.0.5",
+      "type": "build"
+    },
+    {
+      "name": "esbuild",
       "type": "build"
     },
     {
@@ -109,6 +137,10 @@
       "name": "@types/prettier",
       "version": "2.6.0",
       "type": "override"
+    },
+    {
+      "name": "@yicr/secure-bucket",
+      "type": "peer"
     },
     {
       "name": "aws-cdk-lib",
