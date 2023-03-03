@@ -221,14 +221,14 @@ Object {
       },
       "Type": "AWS::Lambda::Function",
     },
-    "DailyCloudWatchLogArchiverSchedule35ae68828CA89779": Object {
+    "DailyCloudWatchLogArchiverSchedule0c256a4bA3E1DA21": Object {
       "Properties": Object {
-        "Description": "example log archive rule.",
+        "Description": "example log archive 2nd rule.",
         "FlexibleTimeWindow": Object {
           "Mode": "OFF",
         },
         "GroupName": "log-archive-schedule-c08c1234-group",
-        "Name": "example-log-archive-rule",
+        "Name": "example-log-archive-2nd-rule",
         "ScheduleExpression": "cron(1 13 * * ? *)",
         "ScheduleExpressionTimezone": "UTC",
         "State": "ENABLED",
@@ -239,7 +239,40 @@ Object {
               "Arn",
             ],
           },
-          "Input": "{"logGroupName":"example-log-group","destinationPrefix":"example-log"}",
+          "Input": "{"logGroupName":"example-log-2nd-group","destinationPrefix":"example-2nd-log"}",
+          "RetryPolicy": Object {
+            "MaximumEventAgeInSeconds": 60,
+            "MaximumRetryAttempts": 0,
+          },
+          "RoleArn": Object {
+            "Fn::GetAtt": Array [
+              "DailyCloudWatchLogArchiverSchedulerExecutionRole445D6DC1",
+              "Arn",
+            ],
+          },
+        },
+      },
+      "Type": "AWS::Scheduler::Schedule",
+    },
+    "DailyCloudWatchLogArchiverSchedule78b9c1a992CC0A4B": Object {
+      "Properties": Object {
+        "Description": "example log archive 1st rule.",
+        "FlexibleTimeWindow": Object {
+          "Mode": "OFF",
+        },
+        "GroupName": "log-archive-schedule-c08c1234-group",
+        "Name": "example-log-archive-1st-rule",
+        "ScheduleExpression": "cron(0 13 * * ? *)",
+        "ScheduleExpressionTimezone": "UTC",
+        "State": "ENABLED",
+        "Target": Object {
+          "Arn": Object {
+            "Fn::GetAtt": Array [
+              "DailyCloudWatchLogArchiverLogArchiveFunctionF76E92C4",
+              "Arn",
+            ],
+          },
+          "Input": "{"logGroupName":"example-log-1st-group","destinationPrefix":"example-1st-log"}",
           "RetryPolicy": Object {
             "MaximumEventAgeInSeconds": 60,
             "MaximumRetryAttempts": 0,

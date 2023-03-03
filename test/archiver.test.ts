@@ -200,6 +200,42 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
   });
 
   // todo: scheduler property.
+  it('Should have Schedule', () => {
+    template.hasResourceProperties('AWS::Scheduler::ScheduleGroup', Match.objectEquals({
+      Name: Match.stringLikeRegexp('log-archive-schedule-.*-group'),
+    }));
+    template.hasResourceProperties('AWS::Scheduler::Schedule', Match.objectEquals({
+      Name: Match.anyValue(),
+      Description: Match.anyValue(),
+      GroupName: Match.stringLikeRegexp('log-archive-schedule-.*-group'),
+      State: 'ENABLED',
+      FlexibleTimeWindow: {
+        Mode: 'OFF',
+      },
+      ScheduleExpressionTimezone: 'UTC',
+      ScheduleExpression: Match.stringLikeRegexp('cron(.* 13 * * ? *)'),
+      Target: Match.objectEquals({
+        Arn: {
+          'Fn::GetAtt': [
+            Match.stringLikeRegexp('DailyCloudWatchLogArchiverLogArchiveFunction.*'),
+            'Arn',
+          ],
+        },
+        RoleArn: {
+          'Fn::GetAtt': [
+            Match.stringLikeRegexp('DailyCloudWatchLogArchiverSchedulerExecutionRole.*'),
+            'Arn',
+          ],
+        },
+        Input: Match.stringLikeRegexp('{"logGroupName":"example-log-.*-group","destinationPrefix":"example-.*-log"}'),
+        RetryPolicy: {
+          MaximumEventAgeInSeconds: 60,
+          MaximumRetryAttempts: 0,
+        },
+      }),
+    }));
+    template.resourceCountIs('AWS::Scheduler::Schedule', 2);
+  });
 
   it('Should match snapshot', () => {
     expect(template.toJSON()).toMatchSnapshot('archiver');
