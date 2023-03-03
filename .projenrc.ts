@@ -35,5 +35,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
       sourcemap: true,
     },
   },
+  releaseToNpm: false,
 });
 project.synth();
