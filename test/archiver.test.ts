@@ -12,14 +12,24 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
   });
 
   new DailyCloudWatchLogArchiver(stack, 'DailyCloudWatchLogArchiver', {
-    schedule: {
-      name: 'example-log-archive-rule',
-      description: 'example log archive rule.',
-      target: {
-        logGroupName: 'example-log-group',
-        destinationPrefix: 'example-log',
+    schedules: [
+      {
+        name: 'example-log-archive-1st-rule',
+        description: 'example log archive 1st rule.',
+        target: {
+          logGroupName: 'example-log-1st-group',
+          destinationPrefix: 'example-1st-log',
+        },
       },
-    },
+      {
+        name: 'example-log-archive-2nd-rule',
+        description: 'example log archive 2nd rule.',
+        target: {
+          logGroupName: 'example-log-2nd-group',
+          destinationPrefix: 'example-2nd-log',
+        },
+      },
+    ],
   });
 
   const template = Template.fromStack(stack);
@@ -190,8 +200,71 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
   });
 
   // todo: scheduler property.
+  it('Should have Schedule', () => {
+    template.hasResourceProperties('AWS::Scheduler::ScheduleGroup', Match.objectEquals({
+      Name: Match.stringLikeRegexp('log-archive-schedule-.*-group'),
+    }));
+    template.hasResourceProperties('AWS::Scheduler::Schedule', Match.objectEquals({
+      Name: Match.anyValue(),
+      Description: Match.anyValue(),
+      GroupName: Match.stringLikeRegexp('log-archive-schedule-.*-group'),
+      State: 'ENABLED',
+      FlexibleTimeWindow: {
+        Mode: 'OFF',
+      },
+      ScheduleExpressionTimezone: 'UTC',
+      ScheduleExpression: Match.stringLikeRegexp('cron(.* 13 * * ? *)'),
+      Target: Match.objectEquals({
+        Arn: {
+          'Fn::GetAtt': [
+            Match.stringLikeRegexp('DailyCloudWatchLogArchiverLogArchiveFunction.*'),
+            'Arn',
+          ],
+        },
+        RoleArn: {
+          'Fn::GetAtt': [
+            Match.stringLikeRegexp('DailyCloudWatchLogArchiverSchedulerExecutionRole.*'),
+            'Arn',
+          ],
+        },
+        Input: Match.stringLikeRegexp('{"logGroupName":"example-log-.*-group","destinationPrefix":"example-.*-log"}'),
+        RetryPolicy: {
+          MaximumEventAgeInSeconds: 60,
+          MaximumRetryAttempts: 0,
+        },
+      }),
+    }));
+    template.resourceCountIs('AWS::Scheduler::Schedule', 2);
+  });
 
   it('Should match snapshot', () => {
     expect(template.toJSON()).toMatchSnapshot('archiver');
+  });
+
+  describe('DailyCloudWatchLogArchiver Error Handling Testing', () => {
+    it('Should have error of schedule not set', () => {
+      expect(() => {
+        new DailyCloudWatchLogArchiver(new Stack(new App()), 'DailyCloudWatchLogArchiver', {
+          schedules: [],
+        });
+      }).toThrow(Error);
+    });
+    it('Should have error of schedule count over', () => {
+      expect(() => {
+        new DailyCloudWatchLogArchiver(new Stack(new App()), 'DailyCloudWatchLogArchiver', {
+          schedules: [...Array(61)].map((_, i) => {
+            const id = ('00' + i).slice(-2);
+            return {
+              name: `example-${id}-schedule`,
+              description: `example ${id} schedule`,
+              target: {
+                logGroupName: `example-log-${id}-group`,
+                destinationPrefix: `example-${id}-log`,
+              },
+            };
+          }),
+        });
+      }).toThrow(Error);
+    });
   });
 });

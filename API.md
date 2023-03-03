@@ -131,17 +131,17 @@ const dailyCloudWatchLogArchiverProps: DailyCloudWatchLogArchiverProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps.property.schedule">schedule</a></code> | <code><a href="#@yicr/daily-cloud-watch-log-archiver.ScheduleProperty">ScheduleProperty</a></code> | *No description.* |
+| <code><a href="#@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps.property.schedules">schedules</a></code> | <code><a href="#@yicr/daily-cloud-watch-log-archiver.ScheduleProperty">ScheduleProperty</a>[]</code> | *No description.* |
 
 ---
 
-##### `schedule`<sup>Required</sup> <a name="schedule" id="@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps.property.schedule"></a>
+##### `schedules`<sup>Required</sup> <a name="schedules" id="@yicr/daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps.property.schedules"></a>
 
 ```typescript
-public readonly schedule: ScheduleProperty;
+public readonly schedules: ScheduleProperty[];
 ```
 
-- *Type:* <a href="#@yicr/daily-cloud-watch-log-archiver.ScheduleProperty">ScheduleProperty</a>
+- *Type:* <a href="#@yicr/daily-cloud-watch-log-archiver.ScheduleProperty">ScheduleProperty</a>[]
 
 ---
 

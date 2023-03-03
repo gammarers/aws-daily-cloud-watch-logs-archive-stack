@@ -1,4 +1,4 @@
-import { awscdk } from 'projen';
+import { awscdk, javascript } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'yicr',
   authorAddress: 'yicr@users.noreply.github.com',
@@ -7,7 +7,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   name: '@yicr/daily-cloud-watch-log-archiver',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/yicr/daily-cloud-watch-log-archiver.git',
-  description: undefined,
+  description: 'AWS CloudWatch Logs daily archive to s3 bucket',
+  keywords: ['aws', 'cdk', 'aws-cdk', 'scheduler', 's3', 'bucket', 'archive', 'lambda'],
   deps: [],
   devDeps: [
     'aws-sdk-client-mock',
@@ -35,6 +36,17 @@ const project = new awscdk.AwsCdkConstructLibrary({
       sourcemap: true,
     },
   },
-  releaseToNpm: false,
+  releaseToNpm: true,
+  npmAccess: javascript.NpmAccess.PUBLIC,
+  depsUpgradeOptions: {
+    workflowOptions: {
+      labels: ['auto-approve', 'auto-merge'],
+      schedule: javascript.UpgradeDependenciesSchedule.expressions(['0 18 * * *']),
+    },
+  },
+  autoApproveOptions: {
+    secret: 'GITHUB_TOKEN',
+    allowedUsernames: ['yicr'],
+  },
 });
 project.synth();
