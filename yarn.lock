@@ -1973,18 +1973,18 @@
   resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.8.6.tgz#8a1524eb5bd5e965c1e3735476f0262469f71440"
   integrity sha512-uRjjusqpoqfmRkTaNuLJ2VohVr67Q5YwDATW3VU7PfzTj6IRaihGrYI7zckGZjxQPBIp63nfvJbM+Yu5ICh0Bg==
 
-"@yicr/jest-serializer-cdk-asset@^0.1.32":
-  version "0.1.32"
-  resolved "https://registry.yarnpkg.com/@yicr/jest-serializer-cdk-asset/-/jest-serializer-cdk-asset-0.1.32.tgz#8865be56bc34918c61354ddcfb1f29e515c5fc41"
-  integrity sha512-ArT8mHlWHJuurStK+j9kJ47jJjdzeGuOzYKs1h/jTHdFEWL87bJRVid7gLA3Uxs0k6viFYC0VUUlP+s2n3sNxQ==
+"@yicr/jest-serializer-cdk-asset@^0.1.33":
+  version "0.1.33"
+  resolved "https://registry.yarnpkg.com/@yicr/jest-serializer-cdk-asset/-/jest-serializer-cdk-asset-0.1.33.tgz#77714ee83e65a3aa70214b34fcc5db60af1c6f64"
+  integrity sha512-X2X45DjK8ZkWSQRQEyXv+VPe/dsZe2LNKf8sAk7hnCDYmzC9af9qJIp8D6VsgDaPakIFPhhFEN7dI1H5hNusOA==
   dependencies:
     aws-cdk-lib "^2.67.0"
-    constructs "^10.1.265"
+    constructs "^10.1.266"
 
-"@yicr/secure-bucket@0.1.33":
-  version "0.1.33"
-  resolved "https://registry.yarnpkg.com/@yicr/secure-bucket/-/secure-bucket-0.1.33.tgz#f58cc67c2b44c79e095cd3bbb189196bb5312521"
-  integrity sha512-Ftr+H7k1px9lKh2AFJRjcP1qZbb/UP1KSegGANzmQkF1o9iAWRZzfFA8duYetuWq3il24ArlXqlUoL5imJU1Qw==
+"@yicr/secure-bucket@0.1.34":
+  version "0.1.34"
+  resolved "https://registry.yarnpkg.com/@yicr/secure-bucket/-/secure-bucket-0.1.34.tgz#c4b63a71ba1b43ba1d26dc085f2d3cfa2067f21a"
+  integrity sha512-rhl1ULxTLvocOZt6PXj8JIZ0f7fIgFxNOlRiG4X0HzH+Dobz45krxpGGSOuKPOO39k1ulWm7287IkAJuM1FixQ==
 
 JSONStream@^1.0.4:
   version "1.3.5"
@@ -2363,9 +2363,9 @@ bowser@^2.11.0:
   integrity sha512-AlcaJBi/pqqJBIQ8U9Mcpc9i8Aqxn88Skv5d+xBX006BY5u8N3mGLHa5Lgppa7L/HfwgwLgZ6NYs+Ag6uUmJRA==
 
 boxen@^7.0.0:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/boxen/-/boxen-7.0.1.tgz#cd84db4364a8bae65f1f016ce94a21ec2c832c16"
-  integrity sha512-8k2eH6SRAK00NDl1iX5q17RJ8rfl53TajdYxE3ssMLehbg487dEVgsad4pIsZb/QqBgYWIl6JOauMTLGX2Kpkw==
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/boxen/-/boxen-7.0.2.tgz#465dd03e846c11f2d4c7eb0d1b3a39d66bd7057e"
+  integrity sha512-1Z4UJabXUP1/R9rLpoU3O2lEMnG3pPLAs/ZD2lF3t2q7qD5lM8rqbtnvtvm4N0wEyNlE+9yZVTVAGmd1V5jabg==
   dependencies:
     ansi-align "^3.0.1"
     camelcase "^7.0.0"
@@ -2487,7 +2487,7 @@ cacheable-lookup@^7.0.0:
   resolved "https://registry.yarnpkg.com/cacheable-lookup/-/cacheable-lookup-7.0.0.tgz#3476a8215d046e5a3202a9209dd13fec1f933a27"
   integrity sha512-+qJyx4xiKra8mZrcwhjMRMUhD5NR1R8esPkzIYxX96JiecFoxAXFuz/GpR3+ev4PE1WamHip78wV0vcmPQtp8w==
 
-cacheable-request@^10.2.1:
+cacheable-request@^10.2.8:
   version "10.2.8"
   resolved "https://registry.yarnpkg.com/cacheable-request/-/cacheable-request-10.2.8.tgz#899ae6c0c8c7127f263b2005ecaac07c95124079"
   integrity sha512-IDVO5MJ4LItE6HKFQTqT2ocAQsisOoCTUDu1ddCmnhyiwFQjXNPp4081Xj23N4tO+AFEFNzGuNEf/c8Gwwt15A==
@@ -2538,9 +2538,9 @@ camelcase@^7.0.0:
   integrity sha512-xlx1yCK2Oc1APsPXDL2LdlNP6+uu8OCDdhOBSVT279M/S+y75O30C2VuD8T2ogdePBBl7PfPF4504tnLgX3zfw==
 
 caniuse-lite@^1.0.30001449:
-  version "1.0.30001459"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001459.tgz#a659c80b7be37861a699290a33fa05f628fcbd61"
-  integrity sha512-WmuS7UmOyuMxDquiA3BUKrKPBcpaIHrFnlEzlIYKecjmHMABYsqp6eeZLjcLCW5aFb/dRJNYCiuGNEssQgLfaA==
+  version "1.0.30001460"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001460.tgz#31d2e26f0a2309860ed3eff154e03890d9d851a7"
+  integrity sha512-Bud7abqjvEjipUkpLs4D7gR0l8hBYBHoa+tGtKJHvT2AYzLp1z7EmVkUT4ERpVUfca8S2HGIVs883D8pUH1ZzQ==
 
 case@1.6.3, case@^1.6.3:
   version "1.6.3"
@@ -2758,7 +2758,7 @@ constructs@10.0.5:
   resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.0.5.tgz#48c0402f1b98bbf5664efff74a8015e6e8a9f41e"
   integrity sha512-IwOwekzrASFC3qt4ozCtV09rteAIAesuCGsW0p+uBfqHd2XcvA5CXqJjgf4eUqm6g8e/noXlVCMDWwC8GaLtrg==
 
-constructs@^10.1.265:
+constructs@^10.1.266:
   version "10.1.266"
   resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.1.266.tgz#b7a84a6c2d5b2c53d6fb120b05dcdec98e76de98"
   integrity sha512-6rNXyszNbalWuyJBvMuyaaCFNLNr77mYNzq7dB0MFh2Qa909XkTA+5mPXFAho+IzP5wY1SVYUDrB/QFSnfMtMQ==
@@ -3191,9 +3191,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.284:
-  version "1.4.317"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.317.tgz#9a3d38a1a37f26a417d3d95dafe198ff11ed072b"
-  integrity sha512-JhCRm9v30FMNzQSsjl4kXaygU+qHBD0Yh7mKxyjmF0V8VwYVB6qpBRX28GyAucrM9wDCpSUctT6FpMUQxbyKuA==
+  version "1.4.318"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.318.tgz#7e0755bb80638175327bd9bc14dc4b9a0dbb62b5"
+  integrity sha512-EQHZE/yO9Sg6gIP9VezPltDWFA8pMnv7dNRb4Y0ukels3iyXTH313gbHvK/tZwUF+jeh5F5fDf1rqWb8ZWX8fw==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -4034,14 +4034,14 @@ gopd@^1.0.1:
     get-intrinsic "^1.1.3"
 
 got@^12.1.0:
-  version "12.5.3"
-  resolved "https://registry.yarnpkg.com/got/-/got-12.5.3.tgz#82bdca2dd61258a02e24d668ea6e7abb70ac3598"
-  integrity sha512-8wKnb9MGU8IPGRIo+/ukTy9XLJBwDiCpIf5TVzQ9Cpol50eMTpBq2GAuDsuDIz7hTYmZgMgC1e9ydr6kSDWs3w==
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/got/-/got-12.6.0.tgz#8d382ee5de4432c086e83c133efdd474484f6ac7"
+  integrity sha512-WTcaQ963xV97MN3x0/CbAriXFZcXCfgxVp91I+Ze6pawQOa7SgzwSx2zIJJsX+kTajMnVs0xcFD1TxZKFqhdnQ==
   dependencies:
     "@sindresorhus/is" "^5.2.0"
     "@szmarczak/http-timer" "^5.0.1"
     cacheable-lookup "^7.0.0"
-    cacheable-request "^10.2.1"
+    cacheable-request "^10.2.8"
     decompress-response "^6.0.0"
     form-data-encoder "^2.1.2"
     get-stream "^6.0.1"
