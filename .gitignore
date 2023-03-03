@@ -52,4 +52,4 @@ junit.xml
 tsconfig.json
 !/API.md
 /assets/
-!/src/log-archiver-function.ts
+!/src/funcs/log-archiver-function.ts

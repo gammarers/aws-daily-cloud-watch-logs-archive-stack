@@ -1,7 +1,7 @@
 import { CloudWatchLogsClient, CreateExportTaskCommand } from '@aws-sdk/client-cloudwatch-logs';
 import { Context } from 'aws-lambda';
 import { mockClient } from 'aws-sdk-client-mock';
-import { EnvironmentVariableError, EventInput, handler, InputVariableError } from '../src/log-archiver.lambda';
+import { EnvironmentVariableError, EventInput, handler, InputVariableError } from '../../src/funcs/log-archiver.lambda';
 
 describe('Lambda Function Handler testing', () => {
 

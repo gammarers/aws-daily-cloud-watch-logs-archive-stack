@@ -10,16 +10,16 @@ export interface LogArchiverFunctionProps extends lambda.FunctionOptions {
 }
 
 /**
- * An AWS Lambda function which executes src/log-archiver.
+ * An AWS Lambda function which executes src/funcs/log-archiver.
  */
 export class LogArchiverFunction extends lambda.Function {
   constructor(scope: Construct, id: string, props?: LogArchiverFunctionProps) {
     super(scope, id, {
-      description: 'src/log-archiver.lambda.ts',
+      description: 'src/funcs/log-archiver.lambda.ts',
       ...props,
       runtime: new lambda.Runtime('nodejs18.x', lambda.RuntimeFamily.NODEJS),
       handler: 'index.handler',
-      code: lambda.Code.fromAsset(path.join(__dirname, '../assets/log-archiver.lambda')),
+      code: lambda.Code.fromAsset(path.join(__dirname, '../../assets/funcs/log-archiver.lambda')),
     });
     this.addEnvironment('AWS_NODEJS_CONNECTION_REUSE_ENABLED', '1', { removeInEdge: true });
   }

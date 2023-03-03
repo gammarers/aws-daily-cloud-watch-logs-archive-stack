@@ -4,7 +4,7 @@ import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as scheduler from 'aws-cdk-lib/aws-scheduler';
 import { Construct } from 'constructs';
-import { LogArchiverFunction } from './log-archiver-function';
+import { LogArchiverFunction } from './funcs/log-archiver-function';
 
 export interface DailyCloudWatchLogArchiverProps {
   readonly schedules: ScheduleProperty[];
