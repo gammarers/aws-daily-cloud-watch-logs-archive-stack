@@ -9,17 +9,18 @@ const project = new awscdk.AwsCdkConstructLibrary({
   repositoryUrl: 'https://github.com/yicr/daily-cloud-watch-log-archiver.git',
   description: 'AWS CloudWatch Logs daily archive to s3 bucket',
   keywords: ['aws', 'cdk', 'aws-cdk', 'scheduler', 's3', 'bucket', 'archive', 'lambda'],
-  deps: [],
+  deps: [
+    '@yicr/secure-log-bucket',
+  ],
   devDeps: [
     'aws-sdk-client-mock',
     'aws-sdk-client-mock-jest',
     '@aws-sdk/client-cloudwatch-logs',
     '@types/aws-lambda',
-    '@yicr/secure-bucket',
     '@yicr/jest-serializer-cdk-asset',
   ],
   peerDeps: [
-    '@yicr/secure-bucket',
+    '@yicr/secure-log-bucket',
   ],
   jestOptions: {
     jestConfig: {
@@ -41,7 +42,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   depsUpgradeOptions: {
     workflowOptions: {
       labels: ['auto-approve', 'auto-merge'],
-      schedule: javascript.UpgradeDependenciesSchedule.expressions(['0 18 * * *']),
+      schedule: javascript.UpgradeDependenciesSchedule.expressions(['0 19 * * *']),
     },
   },
   autoApproveOptions: {

@@ -92,6 +92,32 @@ Object {
           ],
         },
         "BucketName": "log-archive-c08c1234",
+        "LifecycleConfiguration": Object {
+          "Rules": Array [
+            Object {
+              "Id": "ArchiveStepLifeCycle",
+              "Status": "Enabled",
+              "Transitions": Array [
+                Object {
+                  "StorageClass": "STANDARD_IA",
+                  "TransitionInDays": 60,
+                },
+                Object {
+                  "StorageClass": "INTELLIGENT_TIERING",
+                  "TransitionInDays": 120,
+                },
+                Object {
+                  "StorageClass": "GLACIER",
+                  "TransitionInDays": 180,
+                },
+                Object {
+                  "StorageClass": "DEEP_ARCHIVE",
+                  "TransitionInDays": 360,
+                },
+              ],
+            },
+          ],
+        },
         "PublicAccessBlockConfiguration": Object {
           "BlockPublicAcls": true,
           "BlockPublicPolicy": true,

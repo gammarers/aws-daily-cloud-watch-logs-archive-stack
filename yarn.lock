@@ -1981,10 +1981,17 @@
     aws-cdk-lib "^2.67.0"
     constructs "^10.1.268"
 
-"@yicr/secure-bucket@0.1.36":
+"@yicr/secure-bucket@^0.1.36":
   version "0.1.36"
   resolved "https://registry.yarnpkg.com/@yicr/secure-bucket/-/secure-bucket-0.1.36.tgz#69840e54e6438c1e2adcea3c3582ee54a4c68c9b"
   integrity sha512-xGrEoqMnZBJ4mIgOO6Fb5MU4dQZBn9E+2y5NB3U+l5MYekeHARp4BH6gnYGRlp03Q2cdSgTBf2u59XT+eYKDTQ==
+
+"@yicr/secure-log-bucket@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@yicr/secure-log-bucket/-/secure-log-bucket-0.2.0.tgz#26c79008c928be87c68ad12889869b1955669bbb"
+  integrity sha512-XPduY9/YUIUC3Dz2CnOuYKmwPiWvWt5Y6fpAhaIeqdgbFwPwFXhwPq4LY1tpm3iIrIBnpQslVy6uV1F7zNCv/A==
+  dependencies:
+    "@yicr/secure-bucket" "^0.1.36"
 
 JSONStream@^1.0.4:
   version "1.3.5"

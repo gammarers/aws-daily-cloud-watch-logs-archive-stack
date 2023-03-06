@@ -1,5 +1,5 @@
 import * as crypto from 'crypto';
-import { SecureBucket, SecureBucketEncryption } from '@yicr/secure-bucket';
+import { SecureLogBucket } from '@yicr/secure-log-bucket';
 import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as scheduler from 'aws-cdk-lib/aws-scheduler';
@@ -42,9 +42,8 @@ export class DailyCloudWatchLogArchiver extends Construct {
       .digest('hex');
 
     // 👇Create Backup S3 Bucket
-    const logArchiveBucket = new SecureBucket(this, 'LogArchiveBucket', {
+    const logArchiveBucket = new SecureLogBucket(this, 'LogArchiveBucket', {
       bucketName: `log-archive-${randomNameKey}`,
-      encryption: SecureBucketEncryption.KMS_MANAGED,
     });
     logArchiveBucket.addToResourcePolicy(new iam.PolicyStatement({
       effect: iam.Effect.ALLOW,
