@@ -45,7 +45,6 @@
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
     "@yicr/jest-serializer-cdk-asset": "^0.1.35",
-    "@yicr/secure-bucket": "0.1.36",
     "aws-cdk-lib": "2.66.0",
     "aws-sdk-client-mock": "^2.0.1",
     "aws-sdk-client-mock-jest": "^2.0.1",
@@ -69,9 +68,12 @@
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "@yicr/secure-bucket": "^0.1.36",
+    "@yicr/secure-log-bucket": "^0.2.0",
     "aws-cdk-lib": "^2.66.0",
     "constructs": "^10.0.5"
+  },
+  "dependencies": {
+    "@yicr/secure-log-bucket": "^0.2.0"
   },
   "keywords": [
     "archive",
