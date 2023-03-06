@@ -6,7 +6,7 @@ AWS CloudWatch Logs daily(13:00Z) archive to s3 bucket.
 
 This construct creating resource list.
 
-- S3 Bucket (log-archive-xxxxxxxx)
+- S3 Bucket (log-archive-xxxxxxxx from @yicr/secure-log-bucket)
 - Lambda function execution role
 - Lambda function
 - EventBridge Scheduler execution role
