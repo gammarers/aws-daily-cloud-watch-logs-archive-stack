@@ -34,11 +34,11 @@ export class DailyCloudWatchLogArchiver extends Construct {
     }
 
     // 👇Get current account & region
-    // const account = cdk.Stack.of(this).account;
+    const account = cdk.Stack.of(this).account;
     const region = cdk.Stack.of(this).region;
 
     const randomNameKey = crypto.createHash('shake256', { outputLength: 4 })
-      .update(cdk.Names.uniqueId(this))
+      .update(`${cdk.Names.uniqueId(scope)}-${account}-${region}`)
       .digest('hex');
 
     // 👇Create Backup S3 Bucket
