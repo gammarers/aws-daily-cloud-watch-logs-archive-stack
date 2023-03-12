@@ -11,9 +11,9 @@
     "@jridgewell/trace-mapping" "^0.3.9"
 
 "@aws-cdk/asset-awscli-v1@^2.2.69", "@aws-cdk/asset-awscli-v1@^2.2.97":
-  version "2.2.101"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/asset-awscli-v1/-/asset-awscli-v1-2.2.101.tgz#098f44663eaf5991521139d660a2ea56a7ae0640"
-  integrity sha512-wIGisp8fH8rCq4jz/LrScIR1hz43Kaw+ckEr96mrxMARQFK7bNQrRrk0j6M5ZuNebTphEvN4WNPfxaDjH6rYhg==
+  version "2.2.102"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/asset-awscli-v1/-/asset-awscli-v1-2.2.102.tgz#5479d14547cc618f3144d8e743b9c285607840aa"
+  integrity sha512-BkgsrU92ooQYfl5MdOrJkjD4MUHb+L6K1zyPfGQ/MWh9K5HS7Mzmz4SH90g+60JWEDwZ5m1KL9md5tyANyIFhw==
 
 "@aws-cdk/asset-kubectl-v20@^2.1.1":
   version "2.1.1"
@@ -21,9 +21,9 @@
   integrity sha512-U1ntiX8XiMRRRH5J1IdC+1t5CE89015cwyt5U63Cpk0GnMlN5+h9WsWMlKlPXZR4rdq/m806JRlBMRpBUB2Dhw==
 
 "@aws-cdk/asset-node-proxy-agent-v5@^2.0.58", "@aws-cdk/asset-node-proxy-agent-v5@^2.0.77":
-  version "2.0.81"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/asset-node-proxy-agent-v5/-/asset-node-proxy-agent-v5-2.0.81.tgz#80a4c18bb350135d7d4d1d7d945a751f7288e53e"
-  integrity sha512-R7qLqqxFIVdQdPAZaOEEIVCbAJvXBv8dinK49x2v7qYpsk5fYVjFqgpqQgH4YS9zH0EvmATSKPAGUWEq31A3Og==
+  version "2.0.82"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/asset-node-proxy-agent-v5/-/asset-node-proxy-agent-v5-2.0.82.tgz#d5fab6aab8e2cc53b2692f2bc9af6cbb0f567f8f"
+  integrity sha512-mcyIVXWHp5CUKb/C9OHykzQ0FBsW5n91zGhrZXdxDz2GK8Hrk6EFW/+DgYOWjoAGJDjaKriw4XYI7zq9UAxEWA==
 
 "@aws-crypto/ie11-detection@^3.0.0":
   version "3.0.0"
@@ -1991,25 +1991,25 @@
   resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.8.6.tgz#8a1524eb5bd5e965c1e3735476f0262469f71440"
   integrity sha512-uRjjusqpoqfmRkTaNuLJ2VohVr67Q5YwDATW3VU7PfzTj6IRaihGrYI7zckGZjxQPBIp63nfvJbM+Yu5ICh0Bg==
 
-"@yicr/jest-serializer-cdk-asset@^0.1.41":
-  version "0.1.41"
-  resolved "https://registry.yarnpkg.com/@yicr/jest-serializer-cdk-asset/-/jest-serializer-cdk-asset-0.1.41.tgz#7abb6b5e1fb6f7093248d7e1b0866d4e2799ad8c"
-  integrity sha512-mLhr1F+wyrnFZVmyiaFfkLh+hPnvaNrHcwAYhz+Z7TCOfKX6r6oa+n1rv+9k4ZIWU239Ytmlw8OCS0MlVtpFaw==
+"@yicr/jest-serializer-cdk-asset@^0.1.42":
+  version "0.1.42"
+  resolved "https://registry.yarnpkg.com/@yicr/jest-serializer-cdk-asset/-/jest-serializer-cdk-asset-0.1.42.tgz#a5cd02f0739e06cd31eb57b0b5178c101585820b"
+  integrity sha512-QDObxVIx7F/NzoOLMT3bq67UG6KdfTaqQNn9+smGn2k/T5em8AQhSFVanPb9Vpc6CmInPGy15deX671VZ2Ql2w==
   dependencies:
     aws-cdk-lib "^2.68.0"
-    constructs "^10.1.274"
+    constructs "^10.1.275"
 
-"@yicr/secure-bucket@^0.1.42":
-  version "0.1.42"
-  resolved "https://registry.yarnpkg.com/@yicr/secure-bucket/-/secure-bucket-0.1.42.tgz#3078d800a33d7e5020e4c5f7ecb6699af6367b8b"
-  integrity sha512-+eAMMcec7s4lwKT7remJAFs2T06jgLQU/dTW0y610fE4sYhaGFyco8AUK7mqbu+i34u38Zg57ffTUt9ZIvii7g==
+"@yicr/secure-bucket@^0.1.43":
+  version "0.1.43"
+  resolved "https://registry.yarnpkg.com/@yicr/secure-bucket/-/secure-bucket-0.1.43.tgz#ef4322f63950bac163d6b13a53aedeeb4674ca46"
+  integrity sha512-z1CE9bH5mAcoA8W9jjIdYzxx/f5ZvD7pW1aXbel9QVBw9qIu+oV520GmrpwpXNOUgfTzyxr+cnkGgx1roi/Bdw==
 
-"@yicr/secure-log-bucket@^0.2.6":
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@yicr/secure-log-bucket/-/secure-log-bucket-0.2.6.tgz#a34a63a3d8d393cc24ff210f64b191909496e913"
-  integrity sha512-Q/QYd0gbc6AlnYmvAbCPtD3NTak8wqOdawYcga7CgHT4TgMDtjmYksM5C90bb9Y8YrIDwW+OXVZNS9CoX5UYHQ==
+"@yicr/secure-log-bucket@^0.2.7":
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/@yicr/secure-log-bucket/-/secure-log-bucket-0.2.7.tgz#e1050a0f8cc6b00ce74a51ef2bc4bc29b09d466a"
+  integrity sha512-JC8KRaRA+/hF9JKtalc44vCH/6skFVa4TZQ6r2sVxXJNg2/pMf5ktM464f2mjCmnnZAwFlEKaT2a3DEMAEjfDQ==
   dependencies:
-    "@yicr/secure-bucket" "^0.1.42"
+    "@yicr/secure-bucket" "^0.1.43"
 
 JSONStream@^1.0.4:
   version "1.3.5"
@@ -2299,7 +2299,7 @@ aws-cdk-lib@^2.68.0:
     semver "^7.3.8"
     yaml "1.10.2"
 
-aws-sdk-client-mock-jest@^2.1.0:
+aws-sdk-client-mock-jest@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/aws-sdk-client-mock-jest/-/aws-sdk-client-mock-jest-2.1.1.tgz#95527a21fbc3bebf62edb7ef6d5448436d9df39f"
   integrity sha512-z1rpv2ACN1WSGU8u73sJVC0pHPuJfHyITAE88Luz6ph6w47YIkgG0G2latoSmvqJwanv1gJYFk+1VPHJdco1Ig==
@@ -2307,10 +2307,10 @@ aws-sdk-client-mock-jest@^2.1.0:
     "@types/jest" "^28.1.3"
     tslib "^2.1.0"
 
-aws-sdk-client-mock@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk-client-mock/-/aws-sdk-client-mock-2.1.0.tgz#58247c0fb651cddedbd093c0c06d6bc0caf82e89"
-  integrity sha512-JkrPrcEvQ4JwylVdQ0njYQMFVwVaZzoVc557rsCorIMjEtmrFvlVYEfIKWoYw8psU4cLjOMyqpxg65NcAn9fvQ==
+aws-sdk-client-mock@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/aws-sdk-client-mock/-/aws-sdk-client-mock-2.1.1.tgz#52e5e580fd5654492f9b477153928e373034798e"
+  integrity sha512-UuxXmICU4nmXTRm2BzLZdXmnyI+5NEBb5McRDkObasXVxXChvLm0Ci/PGENh4sCD+Es64SJiz70mtY48JROk0A==
   dependencies:
     "@types/sinon" "^10.0.10"
     sinon "^14.0.2"
@@ -2783,10 +2783,10 @@ constructs@10.0.5:
   resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.0.5.tgz#48c0402f1b98bbf5664efff74a8015e6e8a9f41e"
   integrity sha512-IwOwekzrASFC3qt4ozCtV09rteAIAesuCGsW0p+uBfqHd2XcvA5CXqJjgf4eUqm6g8e/noXlVCMDWwC8GaLtrg==
 
-constructs@^10.1.274:
-  version "10.1.274"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.1.274.tgz#cd93144dea1e0657b5797a8d60a1a08aa3b0b101"
-  integrity sha512-ptJ8wwhf957pRj8rJ3dRx28arZRhxZEqBSA2Q3MbAcO9y6kEdntgSmtoosoaK16qxWSoXqOXLDMAg6/r3auMww==
+constructs@^10.1.275:
+  version "10.1.275"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.1.275.tgz#71bbf3dbb57b782308b5cf4e8542ddbc6071522f"
+  integrity sha512-t/wi7j+tYCsTWh5NbyctGrM+LMzt+CsPSSqLW4sI2JjgjoMlvN5xZFsfijgXJikeyUhgXbQKWlYJBzZQUFl4DA==
 
 conventional-changelog-angular@^5.0.12:
   version "5.0.13"
@@ -5186,10 +5186,10 @@ jsii-diff@^1.77.0:
     log4js "^6.8.0"
     yargs "^16.2.0"
 
-jsii-docgen@^7.1.22:
-  version "7.1.22"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.1.22.tgz#de775a875d9238fcc685b07b277486d27ffa1d07"
-  integrity sha512-YlcwalUBCbwmOx4bopDnJxuXekT+LTiOwdjsro7707oKe9EpvxLrnQyDIqVIm55aHoR5zMnZ4wUBS3U6l1xUlA==
+jsii-docgen@^7.1.23:
+  version "7.1.23"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.1.23.tgz#b23d4084120ff1169eb2e678efc27f715468cd72"
+  integrity sha512-HntO497QlxkAaR5slEexf/DPr9U4FM3RWBCxg2wS/oO69ww2Ke2gNlkDggAYZJJlA1VkgKO4Tfm2IvAYGKuVFA==
   dependencies:
     "@jsii/spec" "^1.77.0"
     case "^1.6.3"
@@ -5770,9 +5770,9 @@ minipass@^3.0.0, minipass@^3.1.1, minipass@^3.1.6:
     yallist "^4.0.0"
 
 minipass@^4.0.0, minipass@^4.0.2, minipass@^4.2.4:
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/minipass/-/minipass-4.2.4.tgz#7d0d97434b6a19f59c5c3221698b48bbf3b2cd06"
-  integrity sha512-lwycX3cBMTvcejsHITUgYj6Gy6A7Nh4Q6h9NP4sTHY1ccJlC7yKzDmiShEHsJ16Jf1nKGDEaiHxiltsJEvk0nQ==
+  version "4.2.5"
+  resolved "https://registry.yarnpkg.com/minipass/-/minipass-4.2.5.tgz#9e0e5256f1e3513f8c34691dd68549e85b2c8ceb"
+  integrity sha512-+yQl7SX3bIT83Lhb4BVorMAHVuqsskxRdlmO9kTpyukp8vsm2Sn/fUOV9xlnG8/a5JsypJzap21lz/y3FBMJ8Q==
 
 minizlib@^2.1.1, minizlib@^2.1.2:
   version "2.1.2"
@@ -6372,10 +6372,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.67.82:
-  version "0.67.82"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.67.82.tgz#6fa526982d5a5d57f1b87675928b058dde4f66a1"
-  integrity sha512-+MHgf1PZpQ/2Gffgy8QAI5gAXtJ1CYaFi1ord7vISQDUlyiXjQjKh6b7x98oXgrotXchmS5NOHQGqwuIvijAdQ==
+projen@^0.67.83:
+  version "0.67.83"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.67.83.tgz#ec9b29f36425368381a253772e90a273f1721283"
+  integrity sha512-M0AfniPM7f5oEqpHwpsnMPTvcGARr6pDUVeBi11LzwuQyxy/yJOcxKcO7+LqOOWfNJexxfPLsm36vHn9D4/P/A==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
