@@ -74,7 +74,7 @@ Object {
             "PolicyName": "put-bucket-policy",
           },
         ],
-        "RoleName": "daily-cw-log-archiver-lambda-exec-1cf39dc7-role",
+        "RoleName": "daily-cw-log-archiver-lambda-exec-75e7f0d6-role",
       },
       "Type": "AWS::IAM::Role",
     },
@@ -91,7 +91,7 @@ Object {
             },
           ],
         },
-        "BucketName": "log-archive-1cf39dc7",
+        "BucketName": "log-archive-75e7f0d6",
         "LifecycleConfiguration": Object {
           "Rules": Array [
             Object {
@@ -235,7 +235,7 @@ Object {
             },
           },
         },
-        "FunctionName": "daily-cw-log-archiver-1cf39dc7-func",
+        "FunctionName": "daily-cw-log-archiver-75e7f0d6-func",
         "Handler": "index.handler",
         "Role": Object {
           "Fn::GetAtt": Array [
@@ -253,7 +253,7 @@ Object {
         "FlexibleTimeWindow": Object {
           "Mode": "OFF",
         },
-        "GroupName": "log-archive-schedule-1cf39dc7-group",
+        "GroupName": "log-archive-schedule-75e7f0d6-group",
         "Name": "example-log-archive-2nd-rule",
         "ScheduleExpression": "cron(1 13 * * ? *)",
         "ScheduleExpressionTimezone": "UTC",
@@ -286,7 +286,7 @@ Object {
         "FlexibleTimeWindow": Object {
           "Mode": "OFF",
         },
-        "GroupName": "log-archive-schedule-1cf39dc7-group",
+        "GroupName": "log-archive-schedule-75e7f0d6-group",
         "Name": "example-log-archive-1st-rule",
         "ScheduleExpression": "cron(0 13 * * ? *)",
         "ScheduleExpressionTimezone": "UTC",
@@ -315,7 +315,7 @@ Object {
     },
     "DailyCloudWatchLogArchiverScheduleGroup065068F3": Object {
       "Properties": Object {
-        "Name": "log-archive-schedule-1cf39dc7-group",
+        "Name": "log-archive-schedule-75e7f0d6-group",
       },
       "Type": "AWS::Scheduler::ScheduleGroup",
     },
