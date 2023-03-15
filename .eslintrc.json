@@ -35,7 +35,6 @@
   },
   "ignorePatterns": [
     "*.js",
-    "!.projenrc.ts",
     "*.d.ts",
     "node_modules/",
     "*.generated.ts",
@@ -149,10 +148,9 @@
         "devDependencies": [
           "**/test/**",
           "**/build-tools/**",
-          "**/projenrc/**",
+          "src/funcs/log-archiver.lambda.ts",
           ".projenrc.ts",
-          "projenrc/**/*.ts",
-          "src/funcs/log-archiver.lambda.ts"
+          "projenrc/**/*.ts"
         ],
         "optionalDependencies": false,
         "peerDependencies": true
