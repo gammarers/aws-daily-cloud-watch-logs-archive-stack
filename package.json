@@ -38,13 +38,13 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-sdk/client-cloudwatch-logs": "^3.294.0",
+    "@aws-sdk/client-cloudwatch-logs": "^3.295.0",
     "@types/aws-lambda": "^8.10.114",
     "@types/jest": "^27",
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "@yicr/jest-serializer-cdk-asset": "^0.1.49",
+    "@yicr/jest-serializer-cdk-asset": "^0.1.50",
     "aws-cdk-lib": "2.66.0",
     "aws-sdk-client-mock": "^2.1.1",
     "aws-sdk-client-mock-jest": "^2.1.1",
@@ -58,22 +58,22 @@
     "jest-junit": "^13",
     "jsii": "^1.78.1",
     "jsii-diff": "^1.78.1",
-    "jsii-docgen": "^7.1.30",
+    "jsii-docgen": "^7.1.31",
     "jsii-pacmak": "^1.78.1",
     "npm-check-updates": "^16",
-    "projen": "^0.68.13",
+    "projen": "^0.68.14",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "@yicr/secure-log-bucket": "^0.2.14",
+    "@yicr/secure-log-bucket": "^0.2.15",
     "aws-cdk-lib": "^2.66.0",
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@yicr/secure-log-bucket": "^0.2.14"
+    "@yicr/secure-log-bucket": "^0.2.15"
   },
   "keywords": [
     "archive",
