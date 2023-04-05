@@ -1,4 +1,4 @@
-# Daily CloudWatch Log Archiver
+# AWS Daily CloudWatch Log Archiver
 
 AWS CloudWatch Logs daily(13:00Z) archive to s3 bucket.
 
@@ -18,21 +18,21 @@ This construct creating resource list.
 ### TypeScript
 
 ```shell
-npm install @yicr/daily-cloud-watch-log-archiver
+npm install @yicr/aws-daily-cloud-watch-log-archiver
 ```
 or
 ```shell
-yarn add @yicr/daily-cloud-watch-log-archiver
+yarn add @yicr/aws-daily-cloud-watch-log-archiver
 ```
 
 ## Example
 
 ```shell
-npm install @yicr/daily-cloud-watch-log-archiver
+npm install @yicr/aws-daily-cloud-watch-log-archiver
 ```
 
 ```typescript
-import { DailyCloudWatchLogArchiver } from '@yicr/daily-cloud-watch-log-archiver';
+import { DailyCloudWatchLogArchiver } from '@yicr/aws-daily-cloud-watch-log-archiver';
 
 new DailyCloudWatchLogArchiver(stack, 'DailyCloudWatchLogArchiver', {
   schedules: [
