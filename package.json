@@ -44,7 +44,7 @@
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "@yicr/jest-serializer-cdk-asset": "^0.2.20",
+    "@yicr/jest-serializer-cdk-asset": "^0.2.21",
     "aws-cdk-lib": "2.66.0",
     "aws-sdk-client-mock": "^2.1.1",
     "aws-sdk-client-mock-jest": "^2.1.1",
