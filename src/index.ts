@@ -35,6 +35,7 @@ export class DailyCloudWatchLogArchiver extends Construct {
 
     // 👇Get current account & region
     //const account = cdk.Stack.of(this).account;
+    //const stackName: string = cdk.Stack.of(this).stackName;
     const region = cdk.Stack.of(this).region;
 
     const randomNameKey = crypto.createHash('shake256', { outputLength: 4 })

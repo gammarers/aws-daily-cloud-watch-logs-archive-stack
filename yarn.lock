@@ -2002,6 +2002,18 @@
   resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.8.7.tgz#8b1e39c547013941974d83ad5e9cf5042071a9a0"
   integrity sha512-sI1Ly2cODlWStkINzqGrZ8K6n+MTSbAeQnAipGyL+KZCXuHaRlj2gyyy8B/9MvsFFqN7XHryQnB2QwhzvJXovg==
 
+"@yicr/aws-secure-bucket@^0.3.6":
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/@yicr/aws-secure-bucket/-/aws-secure-bucket-0.3.7.tgz#5afce7a0ce9d5f50c15df1f1dc68a39d66ce8d2e"
+  integrity sha512-0l9LbE4YIE11Gyrh8bkiARI/jAMSDwKa1cUXY5FX5bkW5D/PArX9c6dR6Z09DkvBH6CEadD6w6SbDKKxrSztvQ==
+
+"@yicr/aws-secure-log-bucket@^0.5.8":
+  version "0.5.8"
+  resolved "https://registry.yarnpkg.com/@yicr/aws-secure-log-bucket/-/aws-secure-log-bucket-0.5.8.tgz#f3b18e949811359ee7d24d1b15abb051fb5c6b3d"
+  integrity sha512-/K8VfAfhDB+biKK4i4envJil2WcKz3eAwtvHFfm5LBY+KwJfOTHdagodxPGttwmKPNkhGQnj/0EhoWV1WM3k5A==
+  dependencies:
+    "@yicr/aws-secure-bucket" "^0.3.6"
+
 "@yicr/jest-serializer-cdk-asset@^0.2.22":
   version "0.2.22"
   resolved "https://registry.yarnpkg.com/@yicr/jest-serializer-cdk-asset/-/jest-serializer-cdk-asset-0.2.22.tgz#cae4b6c3afcb8427bad6cb51190ed421f29c55ac"
@@ -2009,18 +2021,6 @@
   dependencies:
     aws-cdk-lib "^2.73.0"
     constructs "^10.1.308"
-
-"@yicr/secure-bucket@^0.2.15":
-  version "0.2.15"
-  resolved "https://registry.yarnpkg.com/@yicr/secure-bucket/-/secure-bucket-0.2.15.tgz#b70ef41acce4e97c483dd72fd32a26b8b7a5a0a1"
-  integrity sha512-buN0/egdwiRYqV5WGlhUnw2OA5m1tXYtJU+71vD5YVWx8gnulGmk9G241l3g7k0w2lPB8QVpy+ryZx1CXrw3oQ==
-
-"@yicr/secure-log-bucket@^0.3.15":
-  version "0.3.15"
-  resolved "https://registry.yarnpkg.com/@yicr/secure-log-bucket/-/secure-log-bucket-0.3.15.tgz#2d25b251f7a74665ae993b86c9162c7e40df5e9a"
-  integrity sha512-66f8E7vdx5hDyIDLWq+RpGhSmjdL8Nl28rqD6tzDCRNGgxlznsruxHHXOYrjam0IinAycGWG96tStRRXu5Oitw==
-  dependencies:
-    "@yicr/secure-bucket" "^0.2.15"
 
 JSONStream@^1.0.4:
   version "1.3.5"
