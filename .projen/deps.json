@@ -136,7 +136,7 @@
       "type": "override"
     },
     {
-      "name": "@yicr/secure-log-bucket",
+      "name": "@yicr/aws-secure-log-bucket",
       "type": "peer"
     },
     {
@@ -150,7 +150,7 @@
       "type": "peer"
     },
     {
-      "name": "@yicr/secure-log-bucket",
+      "name": "@yicr/aws-secure-log-bucket",
       "type": "runtime"
     }
   ],

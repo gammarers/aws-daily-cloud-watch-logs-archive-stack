@@ -1,5 +1,5 @@
 import * as crypto from 'crypto';
-import { SecureLogBucket } from '@yicr/secure-log-bucket';
+import { SecureLogBucket } from '@yicr/aws-secure-log-bucket';
 import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as scheduler from 'aws-cdk-lib/aws-scheduler';
@@ -35,6 +35,7 @@ export class DailyCloudWatchLogArchiver extends Construct {
 
     // 👇Get current account & region
     //const account = cdk.Stack.of(this).account;
+    //const stackName: string = cdk.Stack.of(this).stackName;
     const region = cdk.Stack.of(this).region;
 
     const randomNameKey = crypto.createHash('shake256', { outputLength: 4 })
