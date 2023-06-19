@@ -44,7 +44,7 @@
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "@yicr/jest-serializer-cdk-asset": "^0.2.88",
+    "@yicr/jest-serializer-cdk-asset": "^0.2.89",
     "aws-cdk-lib": "2.66.0",
     "aws-sdk-client-mock": "^2.1.1",
     "aws-sdk-client-mock-jest": "^2.1.1",
@@ -61,19 +61,19 @@
     "jsii-docgen": "^7.2.9",
     "jsii-pacmak": "^1.84.0",
     "npm-check-updates": "^16",
-    "projen": "^0.71.100",
+    "projen": "^0.71.101",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "@yicr/aws-secure-log-bucket": "^0.6.48",
+    "@yicr/aws-secure-log-bucket": "^0.6.49",
     "aws-cdk-lib": "^2.66.0",
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@yicr/aws-secure-log-bucket": "^0.6.48"
+    "@yicr/aws-secure-log-bucket": "^0.6.49"
   },
   "resolutions": {
     "@types/babel__traverse": "7.18.2",
