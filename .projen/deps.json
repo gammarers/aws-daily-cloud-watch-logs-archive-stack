@@ -2,6 +2,7 @@
   "dependencies": [
     {
       "name": "@aws-sdk/client-cloudwatch-logs",
+      "version": "3.362.x",
       "type": "build"
     },
     {
@@ -94,6 +95,11 @@
       "type": "build"
     },
     {
+      "name": "jsii-rosetta",
+      "version": "1.x",
+      "type": "build"
+    },
+    {
       "name": "jsii",
       "version": "1.x",
       "type": "build"
@@ -123,6 +129,7 @@
     },
     {
       "name": "typescript",
+      "version": "4.x",
       "type": "build"
     },
     {
