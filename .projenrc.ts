@@ -14,9 +14,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '@yicr/aws-secure-log-bucket',
   ],
   devDeps: [
-    'aws-sdk-client-mock',
-    'aws-sdk-client-mock-jest',
-    '@aws-sdk/client-cloudwatch-logs@3.362.x',
+    'aws-sdk-client-mock@2.x',
+    '@aws-sdk/client-cloudwatch-logs',
     '@types/aws-lambda',
     '@yicr/jest-serializer-cdk-asset',
   ],

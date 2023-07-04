@@ -38,7 +38,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-sdk/client-cloudwatch-logs": "3.362.x",
+    "@aws-sdk/client-cloudwatch-logs": "3.360.x",
     "@types/aws-lambda": "^8.10.119",
     "@types/jest": "^27",
     "@types/node": "^16",
@@ -46,8 +46,7 @@
     "@typescript-eslint/parser": "^5",
     "@yicr/jest-serializer-cdk-asset": "^0.2.103",
     "aws-cdk-lib": "2.66.0",
-    "aws-sdk-client-mock": "^3.0.0",
-    "aws-sdk-client-mock-jest": "^3.0.0",
+    "aws-sdk-client-mock": "2.x",
     "constructs": "10.0.5",
     "esbuild": "^0.18.11",
     "eslint": "^8",

@@ -2,7 +2,6 @@
   "dependencies": [
     {
       "name": "@aws-sdk/client-cloudwatch-logs",
-      "version": "3.362.x",
       "type": "build"
     },
     {
@@ -40,10 +39,7 @@
     },
     {
       "name": "aws-sdk-client-mock",
-      "type": "build"
-    },
-    {
-      "name": "aws-sdk-client-mock-jest",
+      "version": "2.x",
       "type": "build"
     },
     {
