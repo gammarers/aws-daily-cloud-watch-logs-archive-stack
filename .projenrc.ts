@@ -3,6 +3,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   author: 'yicr',
   authorAddress: 'yicr@users.noreply.github.com',
   cdkVersion: '2.66.0',
+  typescriptVersion: '4.x',
   defaultReleaseBranch: 'main',
   name: '@yicr/aws-daily-cloud-watch-log-archiver',
   projenrcTs: true,
@@ -15,7 +16,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   devDeps: [
     'aws-sdk-client-mock',
     'aws-sdk-client-mock-jest',
-    '@aws-sdk/client-cloudwatch-logs',
+    '@aws-sdk/client-cloudwatch-logs@3.362.x',
     '@types/aws-lambda',
     '@yicr/jest-serializer-cdk-asset',
   ],
