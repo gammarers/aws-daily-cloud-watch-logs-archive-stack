@@ -39,10 +39,7 @@
     },
     {
       "name": "aws-sdk-client-mock",
-      "type": "build"
-    },
-    {
-      "name": "aws-sdk-client-mock-jest",
+      "version": "2.x",
       "type": "build"
     },
     {
@@ -94,6 +91,11 @@
       "type": "build"
     },
     {
+      "name": "jsii-rosetta",
+      "version": "1.x",
+      "type": "build"
+    },
+    {
       "name": "jsii",
       "version": "1.x",
       "type": "build"
@@ -123,6 +125,7 @@
     },
     {
       "name": "typescript",
+      "version": "4.x",
       "type": "build"
     },
     {

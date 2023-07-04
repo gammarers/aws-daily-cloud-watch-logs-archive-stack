@@ -3,6 +3,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   author: 'yicr',
   authorAddress: 'yicr@users.noreply.github.com',
   cdkVersion: '2.66.0',
+  typescriptVersion: '4.x',
   defaultReleaseBranch: 'main',
   name: '@yicr/aws-daily-cloud-watch-log-archiver',
   projenrcTs: true,
@@ -13,8 +14,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '@yicr/aws-secure-log-bucket',
   ],
   devDeps: [
-    'aws-sdk-client-mock',
-    'aws-sdk-client-mock-jest',
+    'aws-sdk-client-mock@2.x',
     '@aws-sdk/client-cloudwatch-logs',
     '@types/aws-lambda',
     '@yicr/jest-serializer-cdk-asset',
@@ -40,7 +40,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   releaseToNpm: true,
   npmAccess: javascript.NpmAccess.PUBLIC,
   minNodeVersion: '16.0.0',
-  workflowNodeVersion: '16.19.1',
+  workflowNodeVersion: '16.20.1',
   depsUpgradeOptions: {
     workflowOptions: {
       labels: ['auto-approve', 'auto-merge'],

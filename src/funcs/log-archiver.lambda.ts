@@ -20,8 +20,6 @@ export interface EventInput {
   readonly destinationPrefix?: string;
 }
 
-const cwLogsClient = new CloudWatchLogsClient({});
-
 export const handler = async (event: EventInput, context: Context): Promise<string | undefined> => {
   console.log(`Event: ${JSON.stringify(event, null, 2)}`);
   console.log(`Context: ${JSON.stringify(context, null, 2)}`);
@@ -40,9 +38,12 @@ export const handler = async (event: EventInput, context: Context): Promise<stri
   const targetFromTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0).getTime() - (1000 * 60 * 60 * 24);
   const targetToTime = targetFromTime + (1000 * 60 * 60 * 24);
   const targetDate = new Date(targetFromTime);
-  var y = targetDate.getFullYear();
-  var m = ('00' + (targetDate.getMonth()+1)).slice(-2);
-  var d = ('00' + (targetDate.getDate())).slice(-2);
+  const y = targetDate.getFullYear();
+  const m = ('00' + (targetDate.getMonth() + 1)).slice(-2);
+  const d = ('00' + (targetDate.getDate())).slice(-2);
+
+
+  const cwLogsClient = new CloudWatchLogsClient({});
 
   const params = {
     destination: process.env.BUCKET_NAME,
