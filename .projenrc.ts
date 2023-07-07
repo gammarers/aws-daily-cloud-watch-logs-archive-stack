@@ -15,19 +15,28 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '@yicr/aws-secure-log-bucket',
   ],
   devDeps: [
-    'aws-sdk-client-mock@2.x',
+    'aws-sdk-client-mock@^3',
+    'aws-sdk-client-mock-jest@^3',
     '@aws-sdk/client-cloudwatch-logs',
     '@types/aws-lambda',
     '@yicr/jest-serializer-cdk-asset',
+    'esbuild',
+    'jsii-rosetta@5.0.x',
   ],
   peerDeps: [
     '@yicr/aws-secure-log-bucket',
   ],
+  compat: true,
   jestOptions: {
     jestConfig: {
       snapshotSerializers: ['<rootDir>/node_modules/@yicr/jest-serializer-cdk-asset'],
     },
     extraCliOptions: ['--silent'],
+  },
+  tsconfigDev: {
+    compilerOptions: {
+      strict: true,
+    },
   },
   lambdaOptions: {
     // target node.js runtime
