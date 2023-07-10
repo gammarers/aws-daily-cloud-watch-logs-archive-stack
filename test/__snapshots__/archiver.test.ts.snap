@@ -95,7 +95,7 @@ Object {
         "LifecycleConfiguration": Object {
           "Rules": Array [
             Object {
-              "Id": "ArchiveStepLifeCycle",
+              "Id": "archive-step-lifecycle-rule",
               "Status": "Enabled",
               "Transitions": Array [
                 Object {
