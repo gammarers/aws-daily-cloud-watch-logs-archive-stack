@@ -23,6 +23,12 @@ npm install @gammarer/aws-daily-cloud-watch-logs-archiver
 yarn add @gammarer/aws-daily-cloud-watch-logs-archiver
 ```
 
+### Python
+
+```shell
+pip install gammarer.aws-daily-cloud-watch-logs-archiver
+```
+
 ## Example
 
 ```shell
