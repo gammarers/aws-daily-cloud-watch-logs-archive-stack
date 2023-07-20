@@ -62,5 +62,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
     secret: 'GITHUB_TOKEN',
     allowedUsernames: ['yicr'],
   },
+  publishToPypi: {
+    distName: 'gammarer.aws-daily-cloud-watch-logs-archiver',
+    module: 'gammarer.aws_daily_cloud_watch_logs_archiver',
+  },
 });
 project.synth();
