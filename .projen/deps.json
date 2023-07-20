@@ -5,6 +5,14 @@
       "type": "build"
     },
     {
+      "name": "@gammarer/aws-secure-bucket",
+      "type": "build"
+    },
+    {
+      "name": "@gammarer/jest-serializer-aws-cdk-asset-filename-replacer",
+      "type": "build"
+    },
+    {
       "name": "@types/aws-lambda",
       "type": "build"
     },
@@ -25,10 +33,6 @@
     {
       "name": "@typescript-eslint/parser",
       "version": "^5",
-      "type": "build"
-    },
-    {
-      "name": "@yicr/jest-serializer-cdk-asset",
       "type": "build"
     },
     {
@@ -131,7 +135,11 @@
       "type": "build"
     },
     {
-      "name": "@yicr/aws-secure-log-bucket",
+      "name": "@gammarer/aws-secure-bucket",
+      "type": "peer"
+    },
+    {
+      "name": "@gammarer/aws-secure-log-bucket",
       "type": "peer"
     },
     {
@@ -145,7 +153,7 @@
       "type": "peer"
     },
     {
-      "name": "@yicr/aws-secure-log-bucket",
+      "name": "@gammarer/aws-secure-log-bucket",
       "type": "runtime"
     }
   ],

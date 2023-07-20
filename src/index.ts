@@ -1,12 +1,12 @@
 import * as crypto from 'crypto';
-import { SecureLogBucket } from '@yicr/aws-secure-log-bucket';
+import { SecureLogBucket } from '@gammarer/aws-secure-log-bucket';
 import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as scheduler from 'aws-cdk-lib/aws-scheduler';
 import { Construct } from 'constructs';
 import { LogArchiverFunction } from './funcs/log-archiver-function';
 
-export interface DailyCloudWatchLogArchiverProps {
+export interface DailyCloudWatchLogsArchiverProps {
   readonly schedules: ScheduleProperty[];
 }
 
@@ -21,8 +21,8 @@ export interface ScheduleTargetProperty {
   readonly destinationPrefix: string;
 }
 
-export class DailyCloudWatchLogArchiver extends Construct {
-  constructor(scope: Construct, id: string, props: DailyCloudWatchLogArchiverProps) {
+export class DailyCloudWatchLogsArchiver extends Construct {
+  constructor(scope: Construct, id: string, props: DailyCloudWatchLogsArchiverProps) {
     super(scope, id);
 
     // props validation

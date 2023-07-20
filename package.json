@@ -1,9 +1,9 @@
 {
-  "name": "@yicr/aws-daily-cloud-watch-log-archiver",
+  "name": "@gammarer/aws-daily-cloud-watch-logs-archiver",
   "description": "AWS CloudWatch Logs daily archive to s3 bucket",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yicr/aws-daily-cloud-watch-log-archiver.git"
+    "url": "https://github.com/yicr/aws-daily-cloud-watch-logs-archiver.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -21,6 +21,7 @@
     "package": "npx projen package",
     "package-all": "npx projen package-all",
     "package:js": "npx projen package:js",
+    "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
@@ -39,12 +40,13 @@
   },
   "devDependencies": {
     "@aws-sdk/client-cloudwatch-logs": "3.370.x",
+    "@gammarer/aws-secure-bucket": "0.9.2",
+    "@gammarer/jest-serializer-aws-cdk-asset-filename-replacer": "^0.3.1",
     "@types/aws-lambda": "^8.10.119",
     "@types/jest": "^27",
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "@yicr/jest-serializer-cdk-asset": "^0.2.118",
     "aws-cdk-lib": "2.66.0",
     "aws-sdk-client-mock": "^3",
     "aws-sdk-client-mock-jest": "^3",
@@ -69,12 +71,13 @@
     "typescript": "4.x"
   },
   "peerDependencies": {
-    "@yicr/aws-secure-log-bucket": "^0.7.4",
+    "@gammarer/aws-secure-bucket": "^0.9.2",
+    "@gammarer/aws-secure-log-bucket": "^0.9.2",
     "aws-cdk-lib": "^2.66.0",
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@yicr/aws-secure-log-bucket": "^0.7.4"
+    "@gammarer/aws-secure-log-bucket": "^0.9.2"
   },
   "keywords": [
     "archive",
@@ -97,7 +100,7 @@
   "version": "0.0.0",
   "jest": {
     "snapshotSerializers": [
-      "<rootDir>/node_modules/@yicr/jest-serializer-cdk-asset"
+      "<rootDir>/node_modules/@gammarer/jest-serializer-aws-cdk-asset-filename-replacer"
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.ts?(x)",
@@ -142,7 +145,12 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "python": {
+        "distName": "gammarer.aws-daily-cloud-watch-logs-archiver",
+        "module": "gammarer.aws_daily_cloud_watch_logs_archiver"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DailyCloudWatchLogArchiver Testing Should match snapshot: archiver 1`] = `
+exports[`DailyCloudWatchLogsArchiver Testing Should match snapshot: archiver 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -10,7 +10,7 @@ Object {
     },
   },
   "Resources": Object {
-    "DailyCloudWatchLogArchiverLambdaExecutionRoleFCCBB526": Object {
+    "DailyCloudWatchLogsArchiverLambdaExecutionRoleB287F490": Object {
       "Properties": Object {
         "AssumeRolePolicyDocument": Object {
           "Statement": Array [
@@ -63,7 +63,7 @@ Object {
                   "Effect": "Allow",
                   "Resource": Object {
                     "Fn::GetAtt": Array [
-                      "DailyCloudWatchLogArchiverLogArchiveBucketDED235D5",
+                      "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
                       "Arn",
                     ],
                   },
@@ -74,11 +74,11 @@ Object {
             "PolicyName": "put-bucket-policy",
           },
         ],
-        "RoleName": "daily-cw-log-archiver-lambda-exec-75e7f0d6-role",
+        "RoleName": "daily-cw-log-archiver-lambda-exec-a5ac343a-role",
       },
       "Type": "AWS::IAM::Role",
     },
-    "DailyCloudWatchLogArchiverLogArchiveBucketDED235D5": Object {
+    "DailyCloudWatchLogsArchiverLogArchiveBucket88461686": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
         "AccessControl": "Private",
@@ -91,7 +91,7 @@ Object {
             },
           ],
         },
-        "BucketName": "log-archive-75e7f0d6",
+        "BucketName": "log-archive-a5ac343a",
         "LifecycleConfiguration": Object {
           "Rules": Array [
             Object {
@@ -131,10 +131,10 @@ Object {
       "Type": "AWS::S3::Bucket",
       "UpdateReplacePolicy": "Retain",
     },
-    "DailyCloudWatchLogArchiverLogArchiveBucketPolicy6184475E": Object {
+    "DailyCloudWatchLogsArchiverLogArchiveBucketPolicy098686E8": Object {
       "Properties": Object {
         "Bucket": Object {
-          "Ref": "DailyCloudWatchLogArchiverLogArchiveBucketDED235D5",
+          "Ref": "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
         },
         "PolicyDocument": Object {
           "Statement": Array [
@@ -152,7 +152,7 @@ Object {
               "Resource": Array [
                 Object {
                   "Fn::GetAtt": Array [
-                    "DailyCloudWatchLogArchiverLogArchiveBucketDED235D5",
+                    "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
                     "Arn",
                   ],
                 },
@@ -162,7 +162,7 @@ Object {
                     Array [
                       Object {
                         "Fn::GetAtt": Array [
-                          "DailyCloudWatchLogArchiverLogArchiveBucketDED235D5",
+                          "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
                           "Arn",
                         ],
                       },
@@ -180,7 +180,7 @@ Object {
               },
               "Resource": Object {
                 "Fn::GetAtt": Array [
-                  "DailyCloudWatchLogArchiverLogArchiveBucketDED235D5",
+                  "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
                   "Arn",
                 ],
               },
@@ -202,7 +202,7 @@ Object {
                   Array [
                     Object {
                       "Fn::GetAtt": Array [
-                        "DailyCloudWatchLogArchiverLogArchiveBucketDED235D5",
+                        "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
                         "Arn",
                       ],
                     },
@@ -217,9 +217,9 @@ Object {
       },
       "Type": "AWS::S3::BucketPolicy",
     },
-    "DailyCloudWatchLogArchiverLogArchiveFunctionF76E92C4": Object {
+    "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4": Object {
       "DependsOn": Array [
-        "DailyCloudWatchLogArchiverLambdaExecutionRoleFCCBB526",
+        "DailyCloudWatchLogsArchiverLambdaExecutionRoleB287F490",
       ],
       "Properties": Object {
         "Code": Object {
@@ -231,15 +231,15 @@ Object {
           "Variables": Object {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
             "BUCKET_NAME": Object {
-              "Ref": "DailyCloudWatchLogArchiverLogArchiveBucketDED235D5",
+              "Ref": "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
             },
           },
         },
-        "FunctionName": "daily-cw-log-archiver-75e7f0d6-func",
+        "FunctionName": "daily-cw-log-archiver-a5ac343a-func",
         "Handler": "index.handler",
         "Role": Object {
           "Fn::GetAtt": Array [
-            "DailyCloudWatchLogArchiverLambdaExecutionRoleFCCBB526",
+            "DailyCloudWatchLogsArchiverLambdaExecutionRoleB287F490",
             "Arn",
           ],
         },
@@ -247,13 +247,13 @@ Object {
       },
       "Type": "AWS::Lambda::Function",
     },
-    "DailyCloudWatchLogArchiverSchedule0c256a4bA3E1DA21": Object {
+    "DailyCloudWatchLogsArchiverSchedule0c256a4b0CD0D96F": Object {
       "Properties": Object {
         "Description": "example log archive 2nd rule.",
         "FlexibleTimeWindow": Object {
           "Mode": "OFF",
         },
-        "GroupName": "log-archive-schedule-75e7f0d6-group",
+        "GroupName": "log-archive-schedule-a5ac343a-group",
         "Name": "example-log-archive-2nd-rule",
         "ScheduleExpression": "cron(1 13 * * ? *)",
         "ScheduleExpressionTimezone": "UTC",
@@ -261,7 +261,7 @@ Object {
         "Target": Object {
           "Arn": Object {
             "Fn::GetAtt": Array [
-              "DailyCloudWatchLogArchiverLogArchiveFunctionF76E92C4",
+              "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
               "Arn",
             ],
           },
@@ -272,7 +272,7 @@ Object {
           },
           "RoleArn": Object {
             "Fn::GetAtt": Array [
-              "DailyCloudWatchLogArchiverSchedulerExecutionRole445D6DC1",
+              "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543",
               "Arn",
             ],
           },
@@ -280,13 +280,13 @@ Object {
       },
       "Type": "AWS::Scheduler::Schedule",
     },
-    "DailyCloudWatchLogArchiverSchedule78b9c1a992CC0A4B": Object {
+    "DailyCloudWatchLogsArchiverSchedule78b9c1a9F3486471": Object {
       "Properties": Object {
         "Description": "example log archive 1st rule.",
         "FlexibleTimeWindow": Object {
           "Mode": "OFF",
         },
-        "GroupName": "log-archive-schedule-75e7f0d6-group",
+        "GroupName": "log-archive-schedule-a5ac343a-group",
         "Name": "example-log-archive-1st-rule",
         "ScheduleExpression": "cron(0 13 * * ? *)",
         "ScheduleExpressionTimezone": "UTC",
@@ -294,7 +294,7 @@ Object {
         "Target": Object {
           "Arn": Object {
             "Fn::GetAtt": Array [
-              "DailyCloudWatchLogArchiverLogArchiveFunctionF76E92C4",
+              "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
               "Arn",
             ],
           },
@@ -305,7 +305,7 @@ Object {
           },
           "RoleArn": Object {
             "Fn::GetAtt": Array [
-              "DailyCloudWatchLogArchiverSchedulerExecutionRole445D6DC1",
+              "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543",
               "Arn",
             ],
           },
@@ -313,13 +313,13 @@ Object {
       },
       "Type": "AWS::Scheduler::Schedule",
     },
-    "DailyCloudWatchLogArchiverScheduleGroup065068F3": Object {
+    "DailyCloudWatchLogsArchiverScheduleGroupF93344C1": Object {
       "Properties": Object {
-        "Name": "log-archive-schedule-75e7f0d6-group",
+        "Name": "log-archive-schedule-a5ac343a-group",
       },
       "Type": "AWS::Scheduler::ScheduleGroup",
     },
-    "DailyCloudWatchLogArchiverSchedulerExecutionRole445D6DC1": Object {
+    "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543": Object {
       "Properties": Object {
         "AssumeRolePolicyDocument": Object {
           "Statement": Array [
@@ -343,7 +343,7 @@ Object {
                   "Resource": Array [
                     Object {
                       "Fn::GetAtt": Array [
-                        "DailyCloudWatchLogArchiverLogArchiveFunctionF76E92C4",
+                        "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
                         "Arn",
                       ],
                     },
@@ -353,7 +353,7 @@ Object {
                         Array [
                           Object {
                             "Fn::GetAtt": Array [
-                              "DailyCloudWatchLogArchiverLogArchiveFunctionF76E92C4",
+                              "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
                               "Arn",
                             ],
                           },

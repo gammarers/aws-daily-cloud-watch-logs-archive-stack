@@ -6,30 +6,31 @@ const project = new awscdk.AwsCdkConstructLibrary({
   typescriptVersion: '4.x',
   jsiiVersion: '~5.0.0',
   defaultReleaseBranch: 'main',
-  name: '@yicr/aws-daily-cloud-watch-log-archiver',
+  name: '@gammarer/aws-daily-cloud-watch-logs-archiver',
   projenrcTs: true,
-  repositoryUrl: 'https://github.com/yicr/aws-daily-cloud-watch-log-archiver.git',
+  repositoryUrl: 'https://github.com/yicr/aws-daily-cloud-watch-logs-archiver.git',
   description: 'AWS CloudWatch Logs daily archive to s3 bucket',
   keywords: ['aws', 'cdk', 'aws-cdk', 'scheduler', 's3', 'bucket', 'archive', 'lambda'],
   deps: [
-    '@yicr/aws-secure-log-bucket',
+    '@gammarer/aws-secure-log-bucket',
   ],
   devDeps: [
     'aws-sdk-client-mock@^3',
     'aws-sdk-client-mock-jest@^3',
     '@aws-sdk/client-cloudwatch-logs',
     '@types/aws-lambda',
-    '@yicr/jest-serializer-cdk-asset',
+    '@gammarer/jest-serializer-aws-cdk-asset-filename-replacer',
     'esbuild',
     'jsii-rosetta@5.0.x',
   ],
   peerDeps: [
-    '@yicr/aws-secure-log-bucket',
+    '@gammarer/aws-secure-log-bucket',
+    '@gammarer/aws-secure-bucket',
   ],
   compat: true,
   jestOptions: {
     jestConfig: {
-      snapshotSerializers: ['<rootDir>/node_modules/@yicr/jest-serializer-cdk-asset'],
+      snapshotSerializers: ['<rootDir>/node_modules/@gammarer/jest-serializer-aws-cdk-asset-filename-replacer'],
     },
     extraCliOptions: ['--silent'],
   },
@@ -60,6 +61,10 @@ const project = new awscdk.AwsCdkConstructLibrary({
   autoApproveOptions: {
     secret: 'GITHUB_TOKEN',
     allowedUsernames: ['yicr'],
+  },
+  publishToPypi: {
+    distName: 'gammarer.aws-daily-cloud-watch-logs-archiver',
+    module: 'gammarer.aws_daily_cloud_watch_logs_archiver',
   },
 });
 project.synth();

@@ -1,4 +1,4 @@
-# AWS Daily CloudWatch Log Archiver
+# AWS Daily CloudWatch Logs Archiver
 
 AWS CloudWatch Logs daily(13:00Z) archive to s3 bucket.
 
@@ -18,23 +18,27 @@ This construct creating resource list.
 ### TypeScript
 
 ```shell
-npm install @yicr/aws-daily-cloud-watch-log-archiver
+npm install @gammarer/aws-daily-cloud-watch-logs-archiver
+# or
+yarn add @gammarer/aws-daily-cloud-watch-logs-archiver
 ```
-or
+
+### Python
+
 ```shell
-yarn add @yicr/aws-daily-cloud-watch-log-archiver
+pip install gammarer.aws-daily-cloud-watch-logs-archiver
 ```
 
 ## Example
 
 ```shell
-npm install @yicr/aws-daily-cloud-watch-log-archiver
+npm install @gammarer/aws-daily-cloud-watch-logs-archiver
 ```
 
 ```typescript
-import { DailyCloudWatchLogArchiver } from '@yicr/aws-daily-cloud-watch-log-archiver';
+import { DailyCloudWatchLogsArchiver } from '@gammarer/aws-daily-cloud-watch-logs-archiver';
 
-new DailyCloudWatchLogArchiver(stack, 'DailyCloudWatchLogArchiver', {
+new DailyCloudWatchLogsArchiver(stack, 'DailyCloudWatchLogsArchiver', {
   schedules: [
     {
       name: 'example-log-archive-1st-rule',
