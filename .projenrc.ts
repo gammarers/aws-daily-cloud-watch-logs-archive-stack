@@ -6,9 +6,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   typescriptVersion: '4.x',
   jsiiVersion: '~5.0.0',
   defaultReleaseBranch: 'main',
-  name: '@yicr/aws-daily-cloud-watch-log-archiver',
+  name: '@gammarer/aws-daily-cloud-watch-logs-archiver',
   projenrcTs: true,
-  repositoryUrl: 'https://github.com/yicr/aws-daily-cloud-watch-log-archiver.git',
+  repositoryUrl: 'https://github.com/yicr/aws-daily-cloud-watch-logs-archiver.git',
   description: 'AWS CloudWatch Logs daily archive to s3 bucket',
   keywords: ['aws', 'cdk', 'aws-cdk', 'scheduler', 's3', 'bucket', 'archive', 'lambda'],
   deps: [
