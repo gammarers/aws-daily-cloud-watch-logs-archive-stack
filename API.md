@@ -1,4 +1,4 @@
-# AWS Daily CloudWatch Log Archiver
+# AWS Daily CloudWatch Logs Archiver
 
 AWS CloudWatch Logs daily(13:00Z) archive to s3 bucket.
 
@@ -18,23 +18,27 @@ This construct creating resource list.
 ### TypeScript
 
 ```shell
-npm install @yicr/aws-daily-cloud-watch-log-archiver
+npm install @gammarer/aws-daily-cloud-watch-logs-archiver
+# or
+yarn add @gammarer/aws-daily-cloud-watch-logs-archiver
 ```
-or
+
+### Python
+
 ```shell
-yarn add @yicr/aws-daily-cloud-watch-log-archiver
+pip install gammarer.aws-daily-cloud-watch-logs-archiver
 ```
 
 ## Example
 
 ```shell
-npm install @yicr/aws-daily-cloud-watch-log-archiver
+npm install @gammarer/aws-daily-cloud-watch-logs-archiver
 ```
 
 ```typescript
-import { DailyCloudWatchLogArchiver } from '@yicr/aws-daily-cloud-watch-log-archiver';
+import { DailyCloudWatchLogsArchiver } from '@gammarer/aws-daily-cloud-watch-logs-archiver';
 
-new DailyCloudWatchLogArchiver(stack, 'DailyCloudWatchLogArchiver', {
+new DailyCloudWatchLogsArchiver(stack, 'DailyCloudWatchLogsArchiver', {
   schedules: [
     {
       name: 'example-log-archive-1st-rule',
@@ -65,39 +69,39 @@ This project is licensed under the Apache-2.0 License.
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### DailyCloudWatchLogArchiver <a name="DailyCloudWatchLogArchiver" id="@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver"></a>
+### DailyCloudWatchLogsArchiver <a name="DailyCloudWatchLogsArchiver" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver"></a>
 
-#### Initializers <a name="Initializers" id="@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.Initializer"></a>
+#### Initializers <a name="Initializers" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.Initializer"></a>
 
 ```typescript
-import { DailyCloudWatchLogArchiver } from '@yicr/aws-daily-cloud-watch-log-archiver'
+import { DailyCloudWatchLogsArchiver } from '@gammarer/aws-daily-cloud-watch-logs-archiver'
 
-new DailyCloudWatchLogArchiver(scope: Construct, id: string, props: DailyCloudWatchLogArchiverProps)
+new DailyCloudWatchLogsArchiver(scope: Construct, id: string, props: DailyCloudWatchLogsArchiverProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.Initializer.parameter.props">props</a></code> | <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps">DailyCloudWatchLogArchiverProps</a></code> | *No description.* |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.Initializer.parameter.props">props</a></code> | <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiverProps">DailyCloudWatchLogsArchiverProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps">DailyCloudWatchLogArchiverProps</a>
+- *Type:* <a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiverProps">DailyCloudWatchLogsArchiverProps</a>
 
 ---
 
@@ -105,11 +109,11 @@ new DailyCloudWatchLogArchiver(scope: Construct, id: string, props: DailyCloudWa
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.toString"></a>
+##### `toString` <a name="toString" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.toString"></a>
 
 ```typescript
 public toString(): string
@@ -121,16 +125,16 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### `isConstruct` <a name="isConstruct" id="@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.isConstruct"></a>
 
 ```typescript
-import { DailyCloudWatchLogArchiver } from '@yicr/aws-daily-cloud-watch-log-archiver'
+import { DailyCloudWatchLogsArchiver } from '@gammarer/aws-daily-cloud-watch-logs-archiver'
 
-DailyCloudWatchLogArchiver.isConstruct(x: any)
+DailyCloudWatchLogsArchiver.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
@@ -149,7 +153,7 @@ library can be accidentally installed, and `instanceof` will behave
 unpredictably. It is safest to avoid using `instanceof`, and using
 this type-testing method instead.
 
-###### `x`<sup>Required</sup> <a name="x" id="@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -161,11 +165,11 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiver.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiver.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -180,40 +184,40 @@ The tree node.
 
 ## Structs <a name="Structs" id="Structs"></a>
 
-### DailyCloudWatchLogArchiverProps <a name="DailyCloudWatchLogArchiverProps" id="@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps"></a>
+### DailyCloudWatchLogsArchiverProps <a name="DailyCloudWatchLogsArchiverProps" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiverProps"></a>
 
-#### Initializer <a name="Initializer" id="@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiverProps.Initializer"></a>
 
 ```typescript
-import { DailyCloudWatchLogArchiverProps } from '@yicr/aws-daily-cloud-watch-log-archiver'
+import { DailyCloudWatchLogsArchiverProps } from '@gammarer/aws-daily-cloud-watch-logs-archiver'
 
-const dailyCloudWatchLogArchiverProps: DailyCloudWatchLogArchiverProps = { ... }
+const dailyCloudWatchLogsArchiverProps: DailyCloudWatchLogsArchiverProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps.property.schedules">schedules</a></code> | <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.ScheduleProperty">ScheduleProperty</a>[]</code> | *No description.* |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiverProps.property.schedules">schedules</a></code> | <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty">ScheduleProperty</a>[]</code> | *No description.* |
 
 ---
 
-##### `schedules`<sup>Required</sup> <a name="schedules" id="@yicr/aws-daily-cloud-watch-log-archiver.DailyCloudWatchLogArchiverProps.property.schedules"></a>
+##### `schedules`<sup>Required</sup> <a name="schedules" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiverProps.property.schedules"></a>
 
 ```typescript
 public readonly schedules: ScheduleProperty[];
 ```
 
-- *Type:* <a href="#@yicr/aws-daily-cloud-watch-log-archiver.ScheduleProperty">ScheduleProperty</a>[]
+- *Type:* <a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty">ScheduleProperty</a>[]
 
 ---
 
-### ScheduleProperty <a name="ScheduleProperty" id="@yicr/aws-daily-cloud-watch-log-archiver.ScheduleProperty"></a>
+### ScheduleProperty <a name="ScheduleProperty" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty"></a>
 
-#### Initializer <a name="Initializer" id="@yicr/aws-daily-cloud-watch-log-archiver.ScheduleProperty.Initializer"></a>
+#### Initializer <a name="Initializer" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.Initializer"></a>
 
 ```typescript
-import { ScheduleProperty } from '@yicr/aws-daily-cloud-watch-log-archiver'
+import { ScheduleProperty } from '@gammarer/aws-daily-cloud-watch-logs-archiver'
 
 const scheduleProperty: ScheduleProperty = { ... }
 ```
@@ -222,13 +226,13 @@ const scheduleProperty: ScheduleProperty = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.ScheduleProperty.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.ScheduleProperty.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.ScheduleProperty.property.target">target</a></code> | <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.ScheduleTargetProperty">ScheduleTargetProperty</a></code> | *No description.* |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.property.target">target</a></code> | <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty">ScheduleTargetProperty</a></code> | *No description.* |
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="@yicr/aws-daily-cloud-watch-log-archiver.ScheduleProperty.property.description"></a>
+##### `description`<sup>Required</sup> <a name="description" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -238,7 +242,7 @@ public readonly description: string;
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="@yicr/aws-daily-cloud-watch-log-archiver.ScheduleProperty.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -248,22 +252,22 @@ public readonly name: string;
 
 ---
 
-##### `target`<sup>Required</sup> <a name="target" id="@yicr/aws-daily-cloud-watch-log-archiver.ScheduleProperty.property.target"></a>
+##### `target`<sup>Required</sup> <a name="target" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.property.target"></a>
 
 ```typescript
 public readonly target: ScheduleTargetProperty;
 ```
 
-- *Type:* <a href="#@yicr/aws-daily-cloud-watch-log-archiver.ScheduleTargetProperty">ScheduleTargetProperty</a>
+- *Type:* <a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty">ScheduleTargetProperty</a>
 
 ---
 
-### ScheduleTargetProperty <a name="ScheduleTargetProperty" id="@yicr/aws-daily-cloud-watch-log-archiver.ScheduleTargetProperty"></a>
+### ScheduleTargetProperty <a name="ScheduleTargetProperty" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty"></a>
 
-#### Initializer <a name="Initializer" id="@yicr/aws-daily-cloud-watch-log-archiver.ScheduleTargetProperty.Initializer"></a>
+#### Initializer <a name="Initializer" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty.Initializer"></a>
 
 ```typescript
-import { ScheduleTargetProperty } from '@yicr/aws-daily-cloud-watch-log-archiver'
+import { ScheduleTargetProperty } from '@gammarer/aws-daily-cloud-watch-logs-archiver'
 
 const scheduleTargetProperty: ScheduleTargetProperty = { ... }
 ```
@@ -272,12 +276,12 @@ const scheduleTargetProperty: ScheduleTargetProperty = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.ScheduleTargetProperty.property.destinationPrefix">destinationPrefix</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@yicr/aws-daily-cloud-watch-log-archiver.ScheduleTargetProperty.property.logGroupName">logGroupName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty.property.destinationPrefix">destinationPrefix</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty.property.logGroupName">logGroupName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `destinationPrefix`<sup>Required</sup> <a name="destinationPrefix" id="@yicr/aws-daily-cloud-watch-log-archiver.ScheduleTargetProperty.property.destinationPrefix"></a>
+##### `destinationPrefix`<sup>Required</sup> <a name="destinationPrefix" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty.property.destinationPrefix"></a>
 
 ```typescript
 public readonly destinationPrefix: string;
@@ -287,7 +291,7 @@ public readonly destinationPrefix: string;
 
 ---
 
-##### `logGroupName`<sup>Required</sup> <a name="logGroupName" id="@yicr/aws-daily-cloud-watch-log-archiver.ScheduleTargetProperty.property.logGroupName"></a>
+##### `logGroupName`<sup>Required</sup> <a name="logGroupName" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty.property.logGroupName"></a>
 
 ```typescript
 public readonly logGroupName: string;
