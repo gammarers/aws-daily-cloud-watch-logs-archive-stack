@@ -1,5 +1,5 @@
 import * as crypto from 'crypto';
-import { SecureLogBucket } from '@yicr/aws-secure-log-bucket';
+import { SecureLogBucket } from '@gammarer/aws-secure-log-bucket';
 import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as scheduler from 'aws-cdk-lib/aws-scheduler';
