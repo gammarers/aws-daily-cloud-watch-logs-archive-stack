@@ -1,8 +1,8 @@
 import { App, Stack } from 'aws-cdk-lib';
 import { Match, Template } from 'aws-cdk-lib/assertions';
-import { DailyCloudWatchLogArchiver } from '../src';
+import { DailyCloudWatchLogsArchiver } from '../src';
 
-describe('DailyCloudWatchLogArchiver Testing', () => {
+describe('DailyCloudWatchLogsArchiver Testing', () => {
   const app = new App();
   const stack = new Stack(app, 'TestingStack', {
     env: {
@@ -11,7 +11,7 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
     },
   });
 
-  new DailyCloudWatchLogArchiver(stack, 'DailyCloudWatchLogArchiver', {
+  new DailyCloudWatchLogsArchiver(stack, 'DailyCloudWatchLogsArchiver', {
     schedules: [
       {
         name: 'example-log-archive-1st-rule',
@@ -63,7 +63,7 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
               },
               Resource: {
                 'Fn::GetAtt': [
-                  Match.stringLikeRegexp('DailyCloudWatchLogArchiverLogArchiveBucket'),
+                  Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveBucket'),
                   'Arn',
                 ],
               },
@@ -80,7 +80,7 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
                   [
                     {
                       'Fn::GetAtt': [
-                        Match.stringLikeRegexp('DailyCloudWatchLogArchiverLogArchiveBucket'),
+                        Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveBucket'),
                         'Arn',
                       ],
                     },
@@ -159,7 +159,7 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
                   ]),
                   Resource: {
                     'Fn::GetAtt': Match.arrayEquals([
-                      Match.stringLikeRegexp('DailyCloudWatchLogArchiverLogArchiveBucket.*'),
+                      Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveBucket.*'),
                       'Arn',
                     ]),
                   },
@@ -185,13 +185,13 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
           Variables: {
             AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
             BUCKET_NAME: {
-              Ref: Match.stringLikeRegexp('DailyCloudWatchLogArchiverLogArchiveBucket.*'),
+              Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveBucket.*'),
             },
           },
         },
         Role: {
           'Fn::GetAtt': [
-            Match.stringLikeRegexp('DailyCloudWatchLogArchiverLambdaExecutionRole.*'),
+            Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLambdaExecutionRole.*'),
             'Arn',
           ],
         },
@@ -217,13 +217,13 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
       Target: Match.objectEquals({
         Arn: {
           'Fn::GetAtt': [
-            Match.stringLikeRegexp('DailyCloudWatchLogArchiverLogArchiveFunction.*'),
+            Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveFunction.*'),
             'Arn',
           ],
         },
         RoleArn: {
           'Fn::GetAtt': [
-            Match.stringLikeRegexp('DailyCloudWatchLogArchiverSchedulerExecutionRole.*'),
+            Match.stringLikeRegexp('DailyCloudWatchLogsArchiverSchedulerExecutionRole.*'),
             'Arn',
           ],
         },
@@ -244,14 +244,14 @@ describe('DailyCloudWatchLogArchiver Testing', () => {
   describe('DailyCloudWatchLogArchiver Error Handling Testing', () => {
     it('Should have error of schedule not set', () => {
       expect(() => {
-        new DailyCloudWatchLogArchiver(new Stack(new App()), 'DailyCloudWatchLogArchiver', {
+        new DailyCloudWatchLogsArchiver(new Stack(new App()), 'DailyCloudWatchLogsArchiver', {
           schedules: [],
         });
       }).toThrow(Error);
     });
     it('Should have error of schedule count over', () => {
       expect(() => {
-        new DailyCloudWatchLogArchiver(new Stack(new App()), 'DailyCloudWatchLogArchiver', {
+        new DailyCloudWatchLogsArchiver(new Stack(new App()), 'DailyCloudWatchLogsArchiver', {
           schedules: [...Array(61)].map((_, i) => {
             const id = ('00' + i).slice(-2);
             return {
