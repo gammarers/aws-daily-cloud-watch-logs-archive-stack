@@ -888,22 +888,22 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.44.0.tgz#961a5903c74139390478bdc808bcde3fc45ab7af"
   integrity sha512-Ag+9YM4ocKQx9AarydN0KY2j0ErMHNIocPDrVo8zAE44xLTjEtz81OdR68/cydGtk6m6jDb5Za3r2useMzYmSw==
 
-"@gammarer/aws-secure-bucket@0.9.3", "@gammarer/aws-secure-bucket@^0.9.3":
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/@gammarer/aws-secure-bucket/-/aws-secure-bucket-0.9.3.tgz#fadd491c87297a144e3496ab14e75390a705cf2a"
-  integrity sha512-7gtvogWDUlAhMq/Nda4jZ1oHCsGJ+ThaNQoJm3GUNKcSTcJqVeXqNzJtcJY/UnuMAhNog+GJC1sLtOp8+cOTwg==
+"@gammarer/aws-secure-bucket@0.9.4", "@gammarer/aws-secure-bucket@^0.9.4":
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/@gammarer/aws-secure-bucket/-/aws-secure-bucket-0.9.4.tgz#2cbe3a817510fbbfd60352371d662e3964c02b74"
+  integrity sha512-41wDJiHePkoISTKy4jM4HP6uvAauBKwvoiglyHIo6dKAvzxvD0fQLt4iTv/nBHBZv1QYSQrZ+y5MDnIv4GsN5A==
 
-"@gammarer/aws-secure-log-bucket@^0.9.3":
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/@gammarer/aws-secure-log-bucket/-/aws-secure-log-bucket-0.9.3.tgz#cb7031c47acc60b205b56d583f8aaa5f55b5755e"
-  integrity sha512-7HNjjNKPRp44jg1gO22bLMDMYNqsGrJPY4hIF7xLJh1j24jhGV6qm0+bJ9SEj/Q5HMLoELHj2dIMPYUEKMBW4g==
+"@gammarer/aws-secure-log-bucket@^0.9.4":
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/@gammarer/aws-secure-log-bucket/-/aws-secure-log-bucket-0.9.4.tgz#578ff8956b87712cc6efa32307a99db9dc8b93ba"
+  integrity sha512-t5Bs9xJQZZz9URjXJyJhQwzuANBmc9keBvSW0yvXvsvYppPe4d/M4oIcfRSTYCUFIPAiRMSpFZ238HXEsVRIPw==
   dependencies:
-    "@gammarer/aws-secure-bucket" "^0.9.3"
+    "@gammarer/aws-secure-bucket" "^0.9.4"
 
-"@gammarer/jest-serializer-aws-cdk-asset-filename-replacer@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@gammarer/jest-serializer-aws-cdk-asset-filename-replacer/-/jest-serializer-aws-cdk-asset-filename-replacer-0.3.2.tgz#de140f8d2dae3d3492717ceebb22956625b9d76e"
-  integrity sha512-qPq/AJUfCaxaUqY2fXSe3+ZTIpS0dBHsE+6wp48k6CHlwCfM/t2Z7uYDNg0RjAAnhb3tom5ZfvrFKuERMq1aRw==
+"@gammarer/jest-serializer-aws-cdk-asset-filename-replacer@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@gammarer/jest-serializer-aws-cdk-asset-filename-replacer/-/jest-serializer-aws-cdk-asset-filename-replacer-0.3.3.tgz#fba240f75ecbdbb0afe886a4d7201a9a83dbb11c"
+  integrity sha512-tz95F2M3JZWDvTwhqnfctiFRmZxudj4NcIwEpfk92KEVAxoI+O+72693oQDAo5ORCaaJlmWk5EpyVKtaeVydMw==
   dependencies:
     aws-cdk-lib "^2.88.0"
     constructs "^10.2.69"
@@ -3370,9 +3370,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.431:
-  version "1.4.466"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.466.tgz#17193d70f203da3d52a89c653b8d89f47a51d79d"
-  integrity sha512-TSkRvbXRXD8BwhcGlZXDsbI2lRoP8dvqR7LQnqQNk9KxXBc4tG8O+rTuXgTyIpEdiqSGKEBSqrxdqEntnjNncA==
+  version "1.4.467"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.467.tgz#b0660bf644baff7eedea33b8c742fb53ec60e3c2"
+  integrity sha512-2qI70O+rR4poYeF2grcuS/bCps5KJh6y1jtZMDDEteyKJQrzLOEhFyXCLcHW6DTBjKjWkk26JhWoAi+Ux9A0fg==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -6582,10 +6582,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.71.145:
-  version "0.71.145"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.145.tgz#0feacce3058d7415fd0a8ab592b89c0fe99cdcc6"
-  integrity sha512-OCqt+oXKBNW2ywT1m21H2EVGk/HAbkCwj+eG+11KwZBCnFdSKN85ylKO7BFgfImN9Wrq+6bKmAIna/iQZs+1DA==
+projen@^0.71.146:
+  version "0.71.146"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.146.tgz#f59d948f07edbbf3aa2b05163896911c059b9266"
+  integrity sha512-+6TYMiF/S5e4Zbrkan1a0n5oxLzcv3xEmEJJUcNuPIDzyPpZB/KIFNghSJe36na6XhMCQR6nABB8B3U7x8wI3Q==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
@@ -7756,9 +7756,9 @@ typescript@4.x:
   integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
 
 typescript@next:
-  version "5.2.0-dev.20230720"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.0-dev.20230720.tgz#9eb5d0d5a9b935d8d6b496701cfff09d1e6f1bde"
-  integrity sha512-uZPSzgA2ZfMYqCafPbJ67YLwiVXeo93rT2iackGNerTEFs7wRBr2ENVRBIP33g5xCV0fFqN+e0l4oLvQjCZUKw==
+  version "5.2.0-dev.20230721"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.0-dev.20230721.tgz#06d457cc4fc5adb99d9db13f3a1052dfe6c1d2c2"
+  integrity sha512-xBP6NmF/Sk+4H5OM4eYRqyv2pTFjOyIFjaPaVlxXdgqKrysoyB5HkbtHu7GOP9/v5qGG6bd57CVOB/xFpmjxkA==
 
 typescript@~3.9.10:
   version "3.9.10"
