@@ -888,22 +888,22 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.46.0.tgz#3f7802972e8b6fe3f88ed1aabc74ec596c456db6"
   integrity sha512-a8TLtmPi8xzPkCbp/OGFUo5yhRkHM2Ko9kOWP4znJr0WAhWyThaw3PnwX4vOTWOAMsV2uRt32PPDcEz63esSaA==
 
-"@gammarer/aws-secure-bucket@0.10.3", "@gammarer/aws-secure-bucket@^0.10.3":
+"@gammarer/aws-secure-bucket@0.10.4", "@gammarer/aws-secure-bucket@^0.10.4":
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/@gammarer/aws-secure-bucket/-/aws-secure-bucket-0.10.4.tgz#a3a9008217e7daf6182c2baf95782e57c984b1e8"
+  integrity sha512-5CehacZSn1mz/f+1eZsrP9i+BLB0VSh9CmtTsLjbGuM5uKjee9HlF9oW1N71XhbJ82dRMuPOdH1++TN/227qnA==
+
+"@gammarer/aws-secure-log-bucket@^0.10.3":
   version "0.10.3"
-  resolved "https://registry.yarnpkg.com/@gammarer/aws-secure-bucket/-/aws-secure-bucket-0.10.3.tgz#7aec93991a9f2d7152e8defcb90503d82d1cdb87"
-  integrity sha512-5zTry3HYNeqMuum7iYMtzKgLYtAIJuhKOZBcklE1CqRNpjTbTn+NicFZOBGEFMTZ4z7XwgPOmu4/Gt0lpbkTnQ==
-
-"@gammarer/aws-secure-log-bucket@^0.10.2":
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/@gammarer/aws-secure-log-bucket/-/aws-secure-log-bucket-0.10.2.tgz#4bba74a3564d08eb4fc5e3b5febe89a659dc3202"
-  integrity sha512-s5RVNwhTVArBdzimIv6VUM8dQnRl/JPv1TGGIKwSlOL3JzNdFLBT2oufPwQqrF1SZW5A7eOqVlWYyA17pmUsbg==
+  resolved "https://registry.yarnpkg.com/@gammarer/aws-secure-log-bucket/-/aws-secure-log-bucket-0.10.3.tgz#96773ef3ddda2c0ab16b1a3ae10fd0e37d8df0b9"
+  integrity sha512-9+Ryj60r2bDGqUs0xE+It+S6rym8gk0LzBr7cORnKBdz0/yhgeUb6g7lykkbfWhuFFQws1xG/Tq2ZzUo7z+Vng==
   dependencies:
-    "@gammarer/aws-secure-bucket" "^0.10.3"
+    "@gammarer/aws-secure-bucket" "^0.10.4"
 
-"@gammarer/jest-serializer-aws-cdk-asset-filename-replacer@^0.3.11":
-  version "0.3.11"
-  resolved "https://registry.yarnpkg.com/@gammarer/jest-serializer-aws-cdk-asset-filename-replacer/-/jest-serializer-aws-cdk-asset-filename-replacer-0.3.11.tgz#85fd6d773ead29612d3059bd5d428fdda85145a6"
-  integrity sha512-Z19RSFPxgB+z2mt66+OjR0v0zH1ruOCGOntNpbH7fYJfa7tY0KujewuZ9eXzKmJL8YKMAV1zbUWKZv95xFCL5w==
+"@gammarer/jest-serializer-aws-cdk-asset-filename-replacer@^0.3.12":
+  version "0.3.12"
+  resolved "https://registry.yarnpkg.com/@gammarer/jest-serializer-aws-cdk-asset-filename-replacer/-/jest-serializer-aws-cdk-asset-filename-replacer-0.3.12.tgz#5bb6c3a8a256c033c43ad335b73aa34a0aadaac8"
+  integrity sha512-xf7zd7UM3Kn+gHn0bvWnjGWfOaMfk684K6ReoRAXv46l/MKYZkbYpjw59wfyC+46Agq5DkKTPiBDdrj1jMJVCg==
   dependencies:
     aws-cdk-lib "^2.89.0"
     constructs "^10.2.69"
@@ -6607,10 +6607,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.71.155:
-  version "0.71.155"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.155.tgz#0571824fd46828cf1162a71a073cb998a1f8e8f3"
-  integrity sha512-yOXfNZ7CWY4BKFtWthvInrTKb0/OHOL/gwZz/6oV/WSfZkVmbseNNBNm+ffdONsJ8OT6PYkd/ITJ30ihGSE2pA==
+projen@^0.71.156:
+  version "0.71.156"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.156.tgz#ccabe219df4be76176dd8228d3b741883007e207"
+  integrity sha512-tMZrT65pfX4YSUWBWM+N4To+TxfJ2Pd62m2Q/HqSY7lAJnXNoGD9xnPUEwLc/oZRU2DN6C2F1JFgKzDRhs5MqA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
@@ -7790,9 +7790,9 @@ typescript@4.x:
   integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
 
 typescript@next:
-  version "5.2.0-dev.20230729"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.0-dev.20230729.tgz#af8744ddb074709b62c53ffb1f1b5015c0e69f1b"
-  integrity sha512-PUbdfeYxptkWvHyvE7umkPHIyiE8GR/ZqZkjVZmPOu4GVHA8Yxdv74dEHl0AP8WvgVtes66Rxc2TdMnHp9LeEw==
+  version "5.2.0-dev.20230730"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.0-dev.20230730.tgz#cff28cdba02037eb45f5426a3a959af99b2dea1e"
+  integrity sha512-Un+AAI0hEctoChFvndwcw3Ygv9FxR/DkfohcAQu9bipcFWkCS2QqOHtFNO2r6mu+BAQ23QwArto2GSLp6I6Y7w==
 
 typescript@~3.9.10:
   version "3.9.10"
