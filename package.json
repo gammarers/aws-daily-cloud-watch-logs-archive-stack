@@ -39,9 +39,9 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-sdk/client-cloudwatch-logs": "3.379.x",
-    "@gammarer/aws-secure-bucket": "0.10.6",
-    "@gammarer/jest-serializer-aws-cdk-asset-filename-replacer": "^0.3.14",
+    "@aws-sdk/client-cloudwatch-logs": "3.382.x",
+    "@gammarer/aws-secure-bucket": "0.10.7",
+    "@gammarer/jest-serializer-aws-cdk-asset-filename-replacer": "^0.3.15",
     "@types/aws-lambda": "^8.10.119",
     "@types/jest": "^27",
     "@types/node": "^16",
@@ -59,25 +59,25 @@
     "jest": "^27",
     "jest-junit": "^15",
     "jsii": "~5.0.0",
-    "jsii-diff": "^1.85.0",
+    "jsii-diff": "^1.86.1",
     "jsii-docgen": "^7.2.9",
-    "jsii-pacmak": "^1.85.0",
+    "jsii-pacmak": "^1.86.1",
     "jsii-rosetta": "~5.0.0",
     "npm-check-updates": "^16",
-    "projen": "^0.71.159",
+    "projen": "^0.71.161",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.1",
     "typescript": "4.x"
   },
   "peerDependencies": {
-    "@gammarer/aws-secure-bucket": "^0.10.6",
-    "@gammarer/aws-secure-log-bucket": "^0.10.5",
+    "@gammarer/aws-secure-bucket": "^0.10.7",
+    "@gammarer/aws-secure-log-bucket": "^0.10.6",
     "aws-cdk-lib": "^2.66.0",
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@gammarer/aws-secure-log-bucket": "^0.10.5"
+    "@gammarer/aws-secure-log-bucket": "^0.10.6"
   },
   "keywords": [
     "archive",
