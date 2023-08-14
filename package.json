@@ -44,7 +44,7 @@
     "@gammarer/jest-serializer-aws-cdk-asset-filename-replacer": "^0.3.16",
     "@types/aws-lambda": "^8.10.119",
     "@types/jest": "^27",
-    "@types/node": "^16",
+    "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
     "aws-cdk-lib": "2.66.0",
@@ -90,7 +90,7 @@
     "scheduler"
   ],
   "engines": {
-    "node": ">= 16.0.0"
+    "node": ">= 18.0.0"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
