@@ -37,7 +37,7 @@
     },
     {
       "name": "aws-cdk-lib",
-      "version": "2.66.0",
+      "version": "2.80.0",
       "type": "build"
     },
     {
@@ -99,12 +99,12 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": "5.1.x",
+      "version": "~5.0.0",
       "type": "build"
     },
     {
       "name": "jsii",
-      "version": "5.1.x",
+      "version": "~5.0.0",
       "type": "build"
     },
     {
@@ -131,7 +131,7 @@
     },
     {
       "name": "typescript",
-      "version": "5.1.x",
+      "version": "4.9.x",
       "type": "build"
     },
     {
@@ -144,7 +144,7 @@
     },
     {
       "name": "aws-cdk-lib",
-      "version": "^2.66.0",
+      "version": "^2.80.0",
       "type": "peer"
     },
     {
@@ -154,7 +154,7 @@
     },
     {
       "name": "@gammarer/aws-secure-log-bucket",
-      "version": "^0.10.8",
+      "version": "0.12.*",
       "type": "runtime"
     }
   ],

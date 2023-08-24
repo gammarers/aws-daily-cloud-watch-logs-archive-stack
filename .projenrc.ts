@@ -2,9 +2,9 @@ import { awscdk, javascript } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'yicr',
   authorAddress: 'yicr@users.noreply.github.com',
-  cdkVersion: '2.66.0',
-  typescriptVersion: '5.1.x',
-  jsiiVersion: '5.1.x',
+  cdkVersion: '2.80.0',
+  typescriptVersion: '4.9.x',
+  jsiiVersion: '~5.0.0',
   defaultReleaseBranch: 'main',
   name: '@gammarer/aws-daily-cloud-watch-logs-archiver',
   projenrcTs: true,
@@ -12,7 +12,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   description: 'AWS CloudWatch Logs daily archive to s3 bucket',
   keywords: ['aws', 'cdk', 'aws-cdk', 'scheduler', 's3', 'bucket', 'archive', 'lambda'],
   deps: [
-    '@gammarer/aws-secure-log-bucket@^0.10.8',
+    '@gammarer/aws-secure-log-bucket@0.12.*',
   ],
   devDeps: [
     'aws-sdk-client-mock@^3',
