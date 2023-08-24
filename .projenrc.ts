@@ -3,7 +3,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   author: 'yicr',
   authorAddress: 'yicr@users.noreply.github.com',
   cdkVersion: '2.80.0',
-  typescriptVersion: '5.1.x',
+  typescriptVersion: '4.9.x',
   jsiiVersion: '5.1.x',
   defaultReleaseBranch: 'main',
   name: '@gammarer/aws-daily-cloud-watch-logs-archiver',
