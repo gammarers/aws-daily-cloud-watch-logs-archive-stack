@@ -884,22 +884,22 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.48.0.tgz#642633964e217905436033a2bd08bf322849b7fb"
   integrity sha512-ZSjtmelB7IJfWD2Fvb7+Z+ChTIKWq6kjda95fLcQKNS5aheVHn4IkfgRQE3sIIzTcSLwLcLZUD9UBt+V7+h+Pw==
 
-"@gammarer/aws-secure-bucket@0.12.5", "@gammarer/aws-secure-bucket@~0.12":
-  version "0.12.5"
-  resolved "https://registry.yarnpkg.com/@gammarer/aws-secure-bucket/-/aws-secure-bucket-0.12.5.tgz#ae98801c2828399506c0dd4303a0e0afe05f3a03"
-  integrity sha512-Du9+mDu8VqfoYisZBuek/ZUhgUBNa/0/GK80OEFLd9Z4pkWppqV2kMQK+raVsEfVeVjUios2OMvzS7Rbc8mFVQ==
+"@gammarer/aws-secure-bucket@0.12.6", "@gammarer/aws-secure-bucket@~0.12":
+  version "0.12.6"
+  resolved "https://registry.yarnpkg.com/@gammarer/aws-secure-bucket/-/aws-secure-bucket-0.12.6.tgz#662a88f3e5247c846ed1628c7beebf9b6d20f669"
+  integrity sha512-vqo4uI49IORmpPB9xWEaO9aX3ZK1I3CZkOx2OZkMsK+hfdFAj89ogls/OiAJJT2rcsCJ5nzJI8/I8tAeydztWQ==
 
 "@gammarer/aws-secure-log-bucket@0.12.*":
-  version "0.12.7"
-  resolved "https://registry.yarnpkg.com/@gammarer/aws-secure-log-bucket/-/aws-secure-log-bucket-0.12.7.tgz#d911bf0b6680bc3a0a4a56206a36a04fc5419b42"
-  integrity sha512-lAj9sFCccYDOuPfiVnrQ2HlCUClW3LquhllA78A4Hq1xZto2CNacIssm8I5HfS2+TQVdbTGXK4/yLzrsMY4NZw==
+  version "0.12.8"
+  resolved "https://registry.yarnpkg.com/@gammarer/aws-secure-log-bucket/-/aws-secure-log-bucket-0.12.8.tgz#cbcfdbde43f66ed4bf5b107b6080d1762c5edee9"
+  integrity sha512-nQtTlBAG62hSGwYfFLxlEi9Qi2zrEaiv4uRWRqGZ5BGe1R9n/vRIDl860vXwYnD4qg54Vb7VDM/MTpTeRhas6g==
   dependencies:
     "@gammarer/aws-secure-bucket" "~0.12"
 
-"@gammarer/jest-serializer-aws-cdk-asset-filename-replacer@^0.3.39":
-  version "0.3.39"
-  resolved "https://registry.yarnpkg.com/@gammarer/jest-serializer-aws-cdk-asset-filename-replacer/-/jest-serializer-aws-cdk-asset-filename-replacer-0.3.39.tgz#d828f163a8364dc6e4e791ca929cee53460ef138"
-  integrity sha512-hBaDX4189ceiVjlhqtZeLBbChwp9ijebQD44PrFYE3JdjOFZHTSVgYPH4SJjNXmSiPWq6qJs8gayqqNSr7/W7Q==
+"@gammarer/jest-serializer-aws-cdk-asset-filename-replacer@^0.3.40":
+  version "0.3.40"
+  resolved "https://registry.yarnpkg.com/@gammarer/jest-serializer-aws-cdk-asset-filename-replacer/-/jest-serializer-aws-cdk-asset-filename-replacer-0.3.40.tgz#33efa8ea1ca8a753ac960e228bb2da6494f99b67"
+  integrity sha512-kqFecz298RGE2Ig2mnBX2qZg4AlES9XHeQH4hL6w8hqJYAh9JFBD/Dp8PTj7M7WQD6CHWBZ4fTqNhGGKqI946A==
   dependencies:
     aws-cdk-lib "^2.93.0"
     constructs "^10.2.69"
@@ -2653,9 +2653,9 @@ camelcase@^7.0.1:
   integrity sha512-xlx1yCK2Oc1APsPXDL2LdlNP6+uu8OCDdhOBSVT279M/S+y75O30C2VuD8T2ogdePBBl7PfPF4504tnLgX3zfw==
 
 caniuse-lite@^1.0.30001517:
-  version "1.0.30001523"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001523.tgz#b838f70b1a98c556776b998fafb47d2b64146d4f"
-  integrity sha512-I5q5cisATTPZ1mc588Z//pj/Ox80ERYDfR71YnvY7raS/NOk8xXlZcB0sF7JdqaV//kOaa6aus7lRfpdnt1eBA==
+  version "1.0.30001524"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001524.tgz#1e14bce4f43c41a7deaeb5ebfe86664fe8dadb80"
+  integrity sha512-Jj917pJtYg9HSJBF95HVX3Cdr89JUyLT4IZ8SvM5aDRni95swKgYi3TgYLH5hnGfPE/U1dg6IfZ50UsIlLkwSA==
 
 case@1.6.3, case@^1.6.3:
   version "1.6.3"
@@ -6441,10 +6441,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.72.25:
-  version "0.72.25"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.72.25.tgz#b6af8378b5421fc675860996e77224797eebacde"
-  integrity sha512-mu9FQIz8drJYrymPihzNFljRnBZm5+uZRTOwwJ3VCRINE45Av/FCB6O21qd0sUpos7ijDXTyN8s4VCS+tSFqFA==
+projen@^0.72.26:
+  version "0.72.26"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.72.26.tgz#ed0f5e780a0293f5a410a3b64d2141d077847044"
+  integrity sha512-W2ZBXgHumkO6WZFEVcQmGSaG7Ck7D1w1dAgeg6bx5c7gQcJCYJnNDo9ZR7GvTnRxJl5tDjhv4G/rwj7kovrDFA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
