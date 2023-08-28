@@ -154,7 +154,7 @@
     },
     {
       "name": "@gammarer/aws-secure-log-bucket",
-      "version": "0.12.*",
+      "version": "~0.12",
       "type": "runtime"
     }
   ],

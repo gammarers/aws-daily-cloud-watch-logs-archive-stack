@@ -12,7 +12,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   description: 'AWS CloudWatch Logs daily archive to s3 bucket',
   keywords: ['aws', 'cdk', 'aws-cdk', 'scheduler', 's3', 'bucket', 'archive', 'lambda'],
   deps: [
-    '@gammarer/aws-secure-log-bucket@0.12.*',
+    '@gammarer/aws-secure-log-bucket@~0.12',
   ],
   devDeps: [
     'aws-sdk-client-mock@^3',
