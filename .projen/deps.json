@@ -32,11 +32,6 @@
       "type": "build"
     },
     {
-      "name": "aws-cdk-lib",
-      "version": "2.80.0",
-      "type": "build"
-    },
-    {
       "name": "aws-sdk-client-mock-jest",
       "version": "^3",
       "type": "build"
@@ -44,11 +39,6 @@
     {
       "name": "aws-sdk-client-mock",
       "version": "^3",
-      "type": "build"
-    },
-    {
-      "name": "constructs",
-      "version": "10.0.5",
       "type": "build"
     },
     {
