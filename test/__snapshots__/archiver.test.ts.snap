@@ -1,36 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DailyCloudWatchLogsArchiver Testing Should match snapshot: archiver 1`] = `
-Object {
-  "Parameters": Object {
-    "BootstrapVersion": Object {
+{
+  "Parameters": {
+    "BootstrapVersion": {
       "Default": "/cdk-bootstrap/hnb659fds/version",
       "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
       "Type": "AWS::SSM::Parameter::Value<String>",
     },
   },
-  "Resources": Object {
-    "DailyCloudWatchLogsArchiverLambdaExecutionRoleB287F490": Object {
-      "Properties": Object {
-        "AssumeRolePolicyDocument": Object {
-          "Statement": Array [
-            Object {
+  "Resources": {
+    "DailyCloudWatchLogsArchiverLambdaExecutionRoleB287F490": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": Object {
+              "Principal": {
                 "Service": "lambda.amazonaws.com",
               },
             },
           ],
           "Version": "2012-10-17",
         },
-        "ManagedPolicyArns": Array [
-          Object {
-            "Fn::Join": Array [
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
               "",
-              Array [
+              [
                 "arn:",
-                Object {
+                {
                   "Ref": "AWS::Partition",
                 },
                 ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
@@ -38,11 +38,11 @@ Object {
             ],
           },
         ],
-        "Policies": Array [
-          Object {
-            "PolicyDocument": Object {
-              "Statement": Array [
-                Object {
+        "Policies": [
+          {
+            "PolicyDocument": {
+              "Statement": [
+                {
                   "Action": "logs:CreateExportTask",
                   "Effect": "Allow",
                   "Resource": "*",
@@ -52,17 +52,17 @@ Object {
             },
             "PolicyName": "log-export-policy",
           },
-          Object {
-            "PolicyDocument": Object {
-              "Statement": Array [
-                Object {
-                  "Action": Array [
+          {
+            "PolicyDocument": {
+              "Statement": [
+                {
+                  "Action": [
                     "s3:GetBucketAcl",
                     "s3:PutObject",
                   ],
                   "Effect": "Allow",
-                  "Resource": Object {
-                    "Fn::GetAtt": Array [
+                  "Resource": {
+                    "Fn::GetAtt": [
                       "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
                       "Arn",
                     ],
@@ -78,39 +78,39 @@ Object {
       },
       "Type": "AWS::IAM::Role",
     },
-    "DailyCloudWatchLogsArchiverLogArchiveBucket88461686": Object {
+    "DailyCloudWatchLogsArchiverLogArchiveBucket88461686": {
       "DeletionPolicy": "Retain",
-      "Properties": Object {
+      "Properties": {
         "AccessControl": "Private",
-        "BucketEncryption": Object {
-          "ServerSideEncryptionConfiguration": Array [
-            Object {
-              "ServerSideEncryptionByDefault": Object {
+        "BucketEncryption": {
+          "ServerSideEncryptionConfiguration": [
+            {
+              "ServerSideEncryptionByDefault": {
                 "SSEAlgorithm": "aws:kms",
               },
             },
           ],
         },
         "BucketName": "log-archive-a5ac343a",
-        "LifecycleConfiguration": Object {
-          "Rules": Array [
-            Object {
+        "LifecycleConfiguration": {
+          "Rules": [
+            {
               "Id": "archive-step-lifecycle-rule",
               "Status": "Enabled",
-              "Transitions": Array [
-                Object {
+              "Transitions": [
+                {
                   "StorageClass": "STANDARD_IA",
                   "TransitionInDays": 60,
                 },
-                Object {
+                {
                   "StorageClass": "INTELLIGENT_TIERING",
                   "TransitionInDays": 120,
                 },
-                Object {
+                {
                   "StorageClass": "GLACIER",
                   "TransitionInDays": 180,
                 },
-                Object {
+                {
                   "StorageClass": "DEEP_ARCHIVE",
                   "TransitionInDays": 360,
                 },
@@ -118,57 +118,57 @@ Object {
             },
           ],
         },
-        "OwnershipControls": Object {
-          "Rules": Array [
-            Object {
+        "OwnershipControls": {
+          "Rules": [
+            {
               "ObjectOwnership": "BucketOwnerEnforced",
             },
           ],
         },
-        "PublicAccessBlockConfiguration": Object {
+        "PublicAccessBlockConfiguration": {
           "BlockPublicAcls": true,
           "BlockPublicPolicy": true,
           "IgnorePublicAcls": true,
           "RestrictPublicBuckets": true,
         },
-        "VersioningConfiguration": Object {
+        "VersioningConfiguration": {
           "Status": "Enabled",
         },
       },
       "Type": "AWS::S3::Bucket",
       "UpdateReplacePolicy": "Retain",
     },
-    "DailyCloudWatchLogsArchiverLogArchiveBucketPolicy098686E8": Object {
-      "Properties": Object {
-        "Bucket": Object {
+    "DailyCloudWatchLogsArchiverLogArchiveBucketPolicy098686E8": {
+      "Properties": {
+        "Bucket": {
           "Ref": "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
         },
-        "PolicyDocument": Object {
-          "Statement": Array [
-            Object {
+        "PolicyDocument": {
+          "Statement": [
+            {
               "Action": "s3:*",
-              "Condition": Object {
-                "Bool": Object {
+              "Condition": {
+                "Bool": {
                   "aws:SecureTransport": "false",
                 },
               },
               "Effect": "Deny",
-              "Principal": Object {
+              "Principal": {
                 "AWS": "*",
               },
-              "Resource": Array [
-                Object {
-                  "Fn::GetAtt": Array [
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
                     "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
                     "Arn",
                   ],
                 },
-                Object {
-                  "Fn::Join": Array [
+                {
+                  "Fn::Join": [
                     "",
-                    Array [
-                      Object {
-                        "Fn::GetAtt": Array [
+                    [
+                      {
+                        "Fn::GetAtt": [
                           "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
                           "Arn",
                         ],
@@ -179,36 +179,36 @@ Object {
                 },
               ],
             },
-            Object {
+            {
               "Action": "s3:GetBucketAcl",
               "Effect": "Allow",
-              "Principal": Object {
+              "Principal": {
                 "Service": "logs.us-east-1.amazonaws.com",
               },
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
                   "Arn",
                 ],
               },
             },
-            Object {
+            {
               "Action": "s3:PutObject",
-              "Condition": Object {
-                "StringEquals": Object {
+              "Condition": {
+                "StringEquals": {
                   "s3:x-amz-acl": "bucket-owner-full-control",
                 },
               },
               "Effect": "Allow",
-              "Principal": Object {
+              "Principal": {
                 "Service": "logs.us-east-1.amazonaws.com",
               },
-              "Resource": Object {
-                "Fn::Join": Array [
+              "Resource": {
+                "Fn::Join": [
                   "",
-                  Array [
-                    Object {
-                      "Fn::GetAtt": Array [
+                  [
+                    {
+                      "Fn::GetAtt": [
                         "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
                         "Arn",
                       ],
@@ -224,28 +224,28 @@ Object {
       },
       "Type": "AWS::S3::BucketPolicy",
     },
-    "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4": Object {
-      "DependsOn": Array [
+    "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4": {
+      "DependsOn": [
         "DailyCloudWatchLogsArchiverLambdaExecutionRoleB287F490",
       ],
-      "Properties": Object {
-        "Code": Object {
+      "Properties": {
+        "Code": {
           "S3Bucket": "cdk-hnb659fds-assets-123456789012-us-east-1",
           "S3Key": "HASH.zip",
         },
         "Description": "A function to archive logs s3 bucket from CloudWatch Logs.",
-        "Environment": Object {
-          "Variables": Object {
+        "Environment": {
+          "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "BUCKET_NAME": Object {
+            "BUCKET_NAME": {
               "Ref": "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
             },
           },
         },
         "FunctionName": "daily-cw-log-archiver-a5ac343a-func",
         "Handler": "index.handler",
-        "Role": Object {
-          "Fn::GetAtt": Array [
+        "Role": {
+          "Fn::GetAtt": [
             "DailyCloudWatchLogsArchiverLambdaExecutionRoleB287F490",
             "Arn",
           ],
@@ -254,10 +254,10 @@ Object {
       },
       "Type": "AWS::Lambda::Function",
     },
-    "DailyCloudWatchLogsArchiverSchedule0c256a4b0CD0D96F": Object {
-      "Properties": Object {
+    "DailyCloudWatchLogsArchiverSchedule0c256a4b0CD0D96F": {
+      "Properties": {
         "Description": "example log archive 2nd rule.",
-        "FlexibleTimeWindow": Object {
+        "FlexibleTimeWindow": {
           "Mode": "OFF",
         },
         "GroupName": "log-archive-schedule-a5ac343a-group",
@@ -265,20 +265,20 @@ Object {
         "ScheduleExpression": "cron(1 13 * * ? *)",
         "ScheduleExpressionTimezone": "UTC",
         "State": "ENABLED",
-        "Target": Object {
-          "Arn": Object {
-            "Fn::GetAtt": Array [
+        "Target": {
+          "Arn": {
+            "Fn::GetAtt": [
               "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
               "Arn",
             ],
           },
           "Input": "{"logGroupName":"example-log-2nd-group","destinationPrefix":"example-2nd-log"}",
-          "RetryPolicy": Object {
+          "RetryPolicy": {
             "MaximumEventAgeInSeconds": 60,
             "MaximumRetryAttempts": 0,
           },
-          "RoleArn": Object {
-            "Fn::GetAtt": Array [
+          "RoleArn": {
+            "Fn::GetAtt": [
               "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543",
               "Arn",
             ],
@@ -287,10 +287,10 @@ Object {
       },
       "Type": "AWS::Scheduler::Schedule",
     },
-    "DailyCloudWatchLogsArchiverSchedule78b9c1a9F3486471": Object {
-      "Properties": Object {
+    "DailyCloudWatchLogsArchiverSchedule78b9c1a9F3486471": {
+      "Properties": {
         "Description": "example log archive 1st rule.",
-        "FlexibleTimeWindow": Object {
+        "FlexibleTimeWindow": {
           "Mode": "OFF",
         },
         "GroupName": "log-archive-schedule-a5ac343a-group",
@@ -298,20 +298,20 @@ Object {
         "ScheduleExpression": "cron(0 13 * * ? *)",
         "ScheduleExpressionTimezone": "UTC",
         "State": "ENABLED",
-        "Target": Object {
-          "Arn": Object {
-            "Fn::GetAtt": Array [
+        "Target": {
+          "Arn": {
+            "Fn::GetAtt": [
               "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
               "Arn",
             ],
           },
           "Input": "{"logGroupName":"example-log-1st-group","destinationPrefix":"example-1st-log"}",
-          "RetryPolicy": Object {
+          "RetryPolicy": {
             "MaximumEventAgeInSeconds": 60,
             "MaximumRetryAttempts": 0,
           },
-          "RoleArn": Object {
-            "Fn::GetAtt": Array [
+          "RoleArn": {
+            "Fn::GetAtt": [
               "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543",
               "Arn",
             ],
@@ -320,46 +320,46 @@ Object {
       },
       "Type": "AWS::Scheduler::Schedule",
     },
-    "DailyCloudWatchLogsArchiverScheduleGroupF93344C1": Object {
-      "Properties": Object {
+    "DailyCloudWatchLogsArchiverScheduleGroupF93344C1": {
+      "Properties": {
         "Name": "log-archive-schedule-a5ac343a-group",
       },
       "Type": "AWS::Scheduler::ScheduleGroup",
     },
-    "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543": Object {
-      "Properties": Object {
-        "AssumeRolePolicyDocument": Object {
-          "Statement": Array [
-            Object {
+    "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": Object {
+              "Principal": {
                 "Service": "scheduler.amazonaws.com",
               },
             },
           ],
           "Version": "2012-10-17",
         },
-        "Policies": Array [
-          Object {
-            "PolicyDocument": Object {
-              "Statement": Array [
-                Object {
+        "Policies": [
+          {
+            "PolicyDocument": {
+              "Statement": [
+                {
                   "Action": "lambda:InvokeFunction",
                   "Effect": "Allow",
-                  "Resource": Array [
-                    Object {
-                      "Fn::GetAtt": Array [
+                  "Resource": [
+                    {
+                      "Fn::GetAtt": [
                         "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
                         "Arn",
                       ],
                     },
-                    Object {
-                      "Fn::Join": Array [
+                    {
+                      "Fn::Join": [
                         "",
-                        Array [
-                          Object {
-                            "Fn::GetAtt": Array [
+                        [
+                          {
+                            "Fn::GetAtt": [
                               "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
                               "Arn",
                             ],
@@ -380,22 +380,22 @@ Object {
       "Type": "AWS::IAM::Role",
     },
   },
-  "Rules": Object {
-    "CheckBootstrapVersion": Object {
-      "Assertions": Array [
-        Object {
-          "Assert": Object {
-            "Fn::Not": Array [
-              Object {
-                "Fn::Contains": Array [
-                  Array [
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
                     "1",
                     "2",
                     "3",
                     "4",
                     "5",
                   ],
-                  Object {
+                  {
                     "Ref": "BootstrapVersion",
                   },
                 ],
