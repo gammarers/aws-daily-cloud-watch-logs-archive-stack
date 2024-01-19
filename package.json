@@ -40,6 +40,8 @@
   },
   "devDependencies": {
     "@aws-sdk/client-cloudwatch-logs": "3.495.x",
+    "@gammarer/aws-secure-bucket": "1.1.0",
+    "@gammarer/aws-secure-log-bucket": "1.2.1",
     "@gammarer/jest-serializer-aws-cdk-asset-filename-replacer": "^0.4.22",
     "@types/aws-lambda": "^8.10.131",
     "@types/jest": "^29.5.11",
@@ -68,14 +70,10 @@
     "typescript": "5.1.x"
   },
   "peerDependencies": {
-    "@gammarer/aws-secure-bucket": "~0.12.4",
-    "@gammarer/aws-secure-log-bucket": "~0.12.6",
+    "@gammarer/aws-secure-bucket": "~1.1.0",
+    "@gammarer/aws-secure-log-bucket": "~1.2.1",
     "aws-cdk-lib": "^2.80.0",
     "constructs": "^10.0.5"
-  },
-  "dependencies": {
-    "@gammarer/aws-secure-bucket": "~0.12.4",
-    "@gammarer/aws-secure-log-bucket": "~0.12.6"
   },
   "keywords": [
     "archive",

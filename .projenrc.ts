@@ -12,20 +12,18 @@ const project = new awscdk.AwsCdkConstructLibrary({
   repositoryUrl: 'https://github.com/yicr/aws-daily-cloud-watch-logs-archiver.git',
   description: 'AWS CloudWatch Logs daily archive to s3 bucket',
   keywords: ['aws', 'cdk', 'aws-cdk', 'scheduler', 's3', 'bucket', 'archive', 'lambda'],
-  deps: [
-    '@gammarer/aws-secure-log-bucket@~0.12.6',
-    '@gammarer/aws-secure-bucket@~0.12.4',
-  ],
   devDeps: [
     'aws-sdk-client-mock@^3',
     'aws-sdk-client-mock-jest@^3',
     '@aws-sdk/client-cloudwatch-logs',
     '@types/aws-lambda',
+    '@gammarer/aws-secure-log-bucket@~1.2.1',
+    '@gammarer/aws-secure-bucket@~1.1.0',
     '@gammarer/jest-serializer-aws-cdk-asset-filename-replacer',
   ],
   peerDeps: [
-    '@gammarer/aws-secure-log-bucket@~0.12.6',
-    '@gammarer/aws-secure-bucket@~0.12.4',
+    '@gammarer/aws-secure-log-bucket@~1.2.1',
+    '@gammarer/aws-secure-bucket@~1.1.0',
   ],
   compat: true,
   jestOptions: {
