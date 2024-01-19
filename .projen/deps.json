@@ -108,7 +108,7 @@
     },
     {
       "name": "typescript",
-      "version": "4.9.x",
+      "version": "5.1.x",
       "type": "build"
     },
     {
