@@ -12,24 +12,10 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
   });
 
   new DailyCloudWatchLogsArchiver(stack, 'DailyCloudWatchLogsArchiver', {
-    schedules: [
-      {
-        name: 'example-log-archive-1st-rule',
-        description: 'example log archive 1st rule.',
-        target: {
-          logGroupName: 'example-log-1st-group',
-          destinationPrefix: 'example-1st-log',
-        },
-      },
-      {
-        name: 'example-log-archive-2nd-rule',
-        description: 'example log archive 2nd rule.',
-        target: {
-          logGroupName: 'example-log-2nd-group',
-          destinationPrefix: 'example-2nd-log',
-        },
-      },
-    ],
+    resource: {
+      key: 'DailyLogExport',
+      values: ['Yes'],
+    },
   });
 
   const template = Template.fromStack(stack);
@@ -101,11 +87,96 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
 
   });
 
+  describe('StepFunctions Testing', () => {
+    it('Should have Stepfunctions(StateMachine) execution role', () => {
+      template.hasResourceProperties('AWS::IAM::Role', Match.objectEquals({
+        RoleName: Match.stringLikeRegexp('daily-cw-logs-archive-machine-.*-role'),
+        Description: 'daily CloudWatch Logs archive machine role.',
+        AssumeRolePolicyDocument: Match.objectEquals({
+          Version: '2012-10-17',
+          Statement: Match.arrayEquals([
+            Match.objectEquals({
+              Effect: 'Allow',
+              Principal: {
+                Service: 'states.us-east-1.amazonaws.com',
+              },
+              Action: 'sts:AssumeRole',
+            }),
+          ]),
+        }),
+      }));
+    });
+    it('Should have StepFunctions(StateMachine) default policy', () => {
+      template.hasResourceProperties('AWS::IAM::Policy', Match.objectEquals({
+        PolicyName: Match.stringLikeRegexp('daily-cw-logs-archive-machine-.*-default-policy'),
+        Roles: Match.arrayEquals([
+          {
+            Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverMyStateMachineRole.*'),
+          },
+        ]),
+        PolicyDocument: Match.objectEquals({
+          Statement: Match.arrayEquals([
+            {
+              Action: 'tag:GetResources',
+              Effect: 'Allow',
+              Resource: '*',
+            },
+            {
+              Action: 'lambda:InvokeFunction',
+              Effect: 'Allow',
+              Resource: Match.arrayEquals([
+                {
+                  'Fn::GetAtt': Match.arrayEquals([
+                    Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveFunction.*'),
+                    'Arn',
+                  ]),
+                },
+                {
+                  'Fn::Join': Match.arrayEquals([
+                    '',
+                    [
+                      {
+                        'Fn::GetAtt': Match.arrayEquals([
+                          Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveFunction.*'),
+                          'Arn',
+                        ]),
+                      },
+                      ':*',
+                    ],
+                  ]),
+                },
+              ]),
+            },
+            {
+              Action: 'logs:DescribeExportTasks',
+              Effect: 'Allow',
+              Resource: '*',
+            },
+          ]),
+          Version: '2012-10-17',
+        }),
+      }));
+    });
+    it('Shoud have StateMachine', () => {
+      template.hasResourceProperties('AWS::StepFunctions::StateMachine', Match.objectEquals({
+        StateMachineName: Match.stringLikeRegexp('daily-cw-logs-archive-.*-machine'),
+        DefinitionString: Match.anyValue(),
+        RoleArn: Match.objectEquals({
+          'Fn::GetAtt': Match.arrayEquals([
+            Match.stringLikeRegexp('DailyCloudWatchLogsArchiverMyStateMachineRole.*'),
+            'Arn',
+          ]),
+        }),
+      }));
+    });
+  });
+
   describe('Lambda Testing', () => {
 
     it('Should have lambda execution role', () => {
       template.hasResourceProperties('AWS::IAM::Role', Match.objectEquals({
-        RoleName: Match.stringLikeRegexp('daily-cw-log-archiver-lambda-exec-.*-role'),
+        RoleName: Match.stringLikeRegexp('daily-cw-logs-archiver-lambda-exec-.*-role'),
+        Description: Match.anyValue(),
         AssumeRolePolicyDocument: Match.objectEquals({
           Version: '2012-10-17',
           Statement: Match.arrayWith([
@@ -173,7 +244,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
 
     it('Should have lambda function', () => {
       template.hasResourceProperties('AWS::Lambda::Function', Match.objectEquals({
-        FunctionName: Match.stringLikeRegexp('daily-cw-log-archiver-.*-func'),
+        FunctionName: Match.stringLikeRegexp('daily-cw-logs-archiver-.*-func'),
         Handler: 'index.handler',
         Runtime: 'nodejs18.x',
         Code: {
@@ -199,72 +270,77 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
     });
   });
 
-  // todo: scheduler property.
-  it('Should have Schedule', () => {
-    template.hasResourceProperties('AWS::Scheduler::ScheduleGroup', Match.objectEquals({
-      Name: Match.stringLikeRegexp('log-archive-schedule-.*-group'),
-    }));
-    template.hasResourceProperties('AWS::Scheduler::Schedule', Match.objectEquals({
-      Name: Match.anyValue(),
-      Description: Match.anyValue(),
-      GroupName: Match.stringLikeRegexp('log-archive-schedule-.*-group'),
-      State: 'ENABLED',
-      FlexibleTimeWindow: {
-        Mode: 'OFF',
-      },
-      ScheduleExpressionTimezone: 'UTC',
-      ScheduleExpression: Match.stringLikeRegexp('cron(.* 13 * * ? *)'),
-      Target: Match.objectEquals({
-        Arn: {
-          'Fn::GetAtt': [
-            Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveFunction.*'),
-            'Arn',
-          ],
-        },
-        RoleArn: {
-          'Fn::GetAtt': [
-            Match.stringLikeRegexp('DailyCloudWatchLogsArchiverSchedulerExecutionRole.*'),
-            'Arn',
-          ],
-        },
-        Input: Match.stringLikeRegexp('{"logGroupName":"example-log-.*-group","destinationPrefix":"example-.*-log"}'),
-        RetryPolicy: {
-          MaximumEventAgeInSeconds: 60,
-          MaximumRetryAttempts: 0,
-        },
-      }),
-    }));
-    template.resourceCountIs('AWS::Scheduler::Schedule', 2);
-  });
-
-  it('Should match snapshot', () => {
-    expect(template.toJSON()).toMatchSnapshot('archiver');
-  });
-
-  describe('DailyCloudWatchLogArchiver Error Handling Testing', () => {
-    it('Should have error of schedule not set', () => {
-      expect(() => {
-        new DailyCloudWatchLogsArchiver(new Stack(new App()), 'DailyCloudWatchLogsArchiver', {
-          schedules: [],
-        });
-      }).toThrow(Error);
-    });
-    it('Should have error of schedule count over', () => {
-      expect(() => {
-        new DailyCloudWatchLogsArchiver(new Stack(new App()), 'DailyCloudWatchLogsArchiver', {
-          schedules: [...Array(61)].map((_, i) => {
-            const id = ('00' + i).slice(-2);
-            return {
-              name: `example-${id}-schedule`,
-              description: `example ${id} schedule`,
-              target: {
-                logGroupName: `example-log-${id}-group`,
-                destinationPrefix: `example-${id}-log`,
+  describe('Schedule Testing', () => {
+    it('Should have Schedule policy', () => {
+      template.hasResourceProperties('AWS::IAM::Role', Match.objectEquals({
+        RoleName: Match.stringLikeRegexp('daily-cw-logs-archive-.*-schedule-role'),
+        Description: Match.anyValue(),
+        AssumeRolePolicyDocument: Match.objectEquals({
+          Version: '2012-10-17',
+          Statement: Match.arrayEquals([
+            {
+              Action: 'sts:AssumeRole',
+              Effect: 'Allow',
+              Principal: {
+                Service: 'scheduler.amazonaws.com',
               },
-            };
-          }),
-        });
-      }).toThrow(Error);
+            },
+          ]),
+        }),
+        Policies: Match.arrayEquals([
+          {
+            PolicyName: Match.stringLikeRegexp('state-machine-exec-policy'),
+            PolicyDocument: Match.objectEquals({
+              Version: '2012-10-17',
+              Statement: Match.arrayEquals([
+                {
+                  Action: 'states:StartExecution',
+                  Effect: 'Allow',
+                  Resource: {
+                    Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverMyStateMachine.*'),
+                  },
+                },
+              ]),
+            }),
+          },
+        ]),
+      }));
+    });
+
+    it('Should have Schedule', () => {
+      template.hasResourceProperties('AWS::Scheduler::Schedule', Match.objectEquals({
+        Name: Match.stringLikeRegexp('daily-cw-logs-archive-.*-schedule'),
+        Description: Match.anyValue(),
+        State: 'ENABLED',
+        FlexibleTimeWindow: {
+          Mode: 'OFF',
+        },
+        ScheduleExpressionTimezone: 'UTC',
+        ScheduleExpression: Match.stringLikeRegexp('cron(.* 13 * * ? *)'),
+        Target: Match.objectEquals({
+          Arn: {
+            Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverMyStateMachine.*'),
+          },
+          RoleArn: {
+            'Fn::GetAtt': [
+              Match.stringLikeRegexp('DailyCloudWatchLogsArchiverSchedulerExecutionRole.*'),
+              'Arn',
+            ],
+          },
+          Input: Match.anyValue(),
+          RetryPolicy: {
+            MaximumEventAgeInSeconds: 60,
+            MaximumRetryAttempts: 0,
+          },
+        }),
+      }));
+      template.resourceCountIs('AWS::Scheduler::Schedule', 1);
+    });
+  });
+
+  describe('Snapshot Testing', () => {
+    it('Should match snapshot', () => {
+      expect(template.toJSON()).toMatchSnapshot('archiver');
     });
   });
 });
