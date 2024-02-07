@@ -67,7 +67,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   publishToMaven: {
     mavenGroupId: 'com.gammarer',
-    javaPackage: 'com.gammarer.cdk.aws.daily-cloud-watch-logs-archiver',
+    javaPackage: 'com.gammarer.cdk.aws.daily_cloud_watch_logs_archiver',
     mavenArtifactId: 'aws-daily-cloud-watch-logs-archiver',
     mavenEndpoint: 'https://s01.oss.sonatype.org',
   },

@@ -147,7 +147,7 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "com.gammarer.cdk.aws.daily-cloud-watch-logs-archiver",
+        "package": "com.gammarer.cdk.aws.daily_cloud_watch_logs_archiver",
         "maven": {
           "groupId": "com.gammarer",
           "artifactId": "aws-daily-cloud-watch-logs-archiver"
