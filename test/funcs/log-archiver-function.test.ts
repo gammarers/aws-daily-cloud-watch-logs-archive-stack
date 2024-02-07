@@ -23,8 +23,7 @@ describe('Lambda Function Handler testing', () => {
       });
 
     const payload: EventInput = {
-      destinationPrefix: 'example-logs',
-      logGroupName: 'example-log-group',
+      TargetLogGroupName: 'example/log-group',
     };
 
     process.env = {
@@ -32,16 +31,14 @@ describe('Lambda Function Handler testing', () => {
     };
     const result = await handler(payload, {} as Context);
 
-    expect(result).toHaveLength(36);
-    expect(result).toBe('cda45419-90ea-4db5-9833-aade86253e66');
+    expect(result).toStrictEqual({ TaskId: 'cda45419-90ea-4db5-9833-aade86253e66' });
 
     //expect(cwLogsMock).toHaveReceivedCommandTimes(CreateExportTaskCommand,1);
   });
 
   it('Should EnvironmentVariableError(BUCKET_NAME)', async () => {
     const payload: EventInput = {
-      destinationPrefix: 'example-logs',
-      logGroupName: 'example-log-group',
+      TargetLogGroupName: 'example/log-group',
     };
     process.env = {};
     //const result = handler(payload, {} as Context);
@@ -49,20 +46,8 @@ describe('Lambda Function Handler testing', () => {
     //expect(result).toThrowError(EnvironmentVariableError);
   });
 
-  it('Should have occurrence error to InputVariableError(event.logGroupName)', async () => {
-    const payload: EventInput = {
-      destinationPrefix: 'example-logs',
-    };
-    process.env = {
-      BUCKET_NAME: 'example-log-archive-bucket',
-    };
-    await expect(handler(payload, {} as Context)).rejects.toThrow(InputVariableError);
-  });
-
-  it('Should have occurrence error to InputVariableError(event.destinationPrefix)', async () => {
-    const payload: EventInput = {
-      logGroupName: 'example-log-group',
-    };
+  it('Should have occurrence error to InputVariableError(event.TargetLogGroupName)', async () => {
+    const payload: EventInput = {};
     process.env = {
       BUCKET_NAME: 'example-log-archive-bucket',
     };

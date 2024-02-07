@@ -16,11 +16,10 @@ export class InputVariableError extends Error {
 }
 
 export interface EventInput {
-  readonly logGroupName?: string;
-  readonly destinationPrefix?: string;
+  readonly TargetLogGroupName?: string;
 }
 
-export const handler = async (event: EventInput, context: Context): Promise<string | undefined> => {
+export const handler = async (event: EventInput, context: Context): Promise<{TaskId: string | undefined}> => {
   console.log(`Event: ${JSON.stringify(event, null, 2)}`);
   console.log(`Context: ${JSON.stringify(context, null, 2)}`);
 
@@ -28,15 +27,16 @@ export const handler = async (event: EventInput, context: Context): Promise<stri
   if (!process.env.BUCKET_NAME) {
     throw new EnvironmentVariableError('BUCKET_NAME environment variable not set.');
   }
-  if (!event.logGroupName) {
+  if (!event.TargetLogGroupName) {
     throw new InputVariableError('event input logGroupName environment variable not set.');
   }
-  if (!event.destinationPrefix) {
-    throw new InputVariableError('event input destinationPrefix variable not set.');
-  }
+
+  // create destination prefix
+  const destinationPrefix = event.TargetLogGroupName.replace(/\//g, '-').replace(/^-/, '').replace(/\./g, '--');
+
   const now = new Date();
   const targetFromTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0).getTime() - (1000 * 60 * 60 * 24);
-  const targetToTime = targetFromTime + (1000 * 60 * 60 * 24);
+  const targetToTime = targetFromTime + (1000 * 60 * 60 * 24) + 999;
   const targetDate = new Date(targetFromTime);
   const y = targetDate.getFullYear();
   const m = ('00' + (targetDate.getMonth() + 1)).slice(-2);
@@ -47,16 +47,16 @@ export const handler = async (event: EventInput, context: Context): Promise<stri
 
   const params = {
     destination: process.env.BUCKET_NAME,
-    logGroupName: event.logGroupName,
+    logGroupName: event.TargetLogGroupName,
     from: targetFromTime,
     to: targetToTime,
-    destinationPrefix: `${event.destinationPrefix}/${y}/${y}-${m}/${m}-${d}`,
+    destinationPrefix: `${destinationPrefix}/${y}/${y}-${m}/${m}-${d}`,
   };
-  console.log(`CommandParams: ${JSON.stringify(params, null, 2)}`);
+  console.log(`CommandParams: ${JSON.stringify(params)}`);
 
   const result = await cwLogsClient.send(new CreateExportTaskCommand(params));
-  console.log(`CommandResult: ${JSON.stringify(result, null, 2)}`);
+  console.log(`CommandResult: ${JSON.stringify(result)}`);
 
-  return result.taskId;
+  return { TaskId: result.taskId };
 };
 
