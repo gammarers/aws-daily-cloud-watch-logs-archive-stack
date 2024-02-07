@@ -117,106 +117,56 @@ const dailyCloudWatchLogsArchiverProps: DailyCloudWatchLogsArchiverProps = { ...
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiverProps.property.schedules">schedules</a></code> | <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty">ScheduleProperty</a>[]</code> | *No description.* |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiverProps.property.resource">resource</a></code> | <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ResourceTagProperty">ResourceTagProperty</a></code> | *No description.* |
 
 ---
 
-##### `schedules`<sup>Required</sup> <a name="schedules" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiverProps.property.schedules"></a>
+##### `resource`<sup>Required</sup> <a name="resource" id="@gammarer/aws-daily-cloud-watch-logs-archiver.DailyCloudWatchLogsArchiverProps.property.resource"></a>
 
 ```typescript
-public readonly schedules: ScheduleProperty[];
+public readonly resource: ResourceTagProperty;
 ```
 
-- *Type:* <a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty">ScheduleProperty</a>[]
+- *Type:* <a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ResourceTagProperty">ResourceTagProperty</a>
 
 ---
 
-### ScheduleProperty <a name="ScheduleProperty" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty"></a>
+### ResourceTagProperty <a name="ResourceTagProperty" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ResourceTagProperty"></a>
 
-#### Initializer <a name="Initializer" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.Initializer"></a>
-
-```typescript
-import { ScheduleProperty } from '@gammarer/aws-daily-cloud-watch-logs-archiver'
-
-const scheduleProperty: ScheduleProperty = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.property.target">target</a></code> | <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty">ScheduleTargetProperty</a></code> | *No description.* |
-
----
-
-##### `description`<sup>Required</sup> <a name="description" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.property.description"></a>
+#### Initializer <a name="Initializer" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ResourceTagProperty.Initializer"></a>
 
 ```typescript
-public readonly description: string;
-```
+import { ResourceTagProperty } from '@gammarer/aws-daily-cloud-watch-logs-archiver'
 
-- *Type:* string
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
----
-
-##### `target`<sup>Required</sup> <a name="target" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleProperty.property.target"></a>
-
-```typescript
-public readonly target: ScheduleTargetProperty;
-```
-
-- *Type:* <a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty">ScheduleTargetProperty</a>
-
----
-
-### ScheduleTargetProperty <a name="ScheduleTargetProperty" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty"></a>
-
-#### Initializer <a name="Initializer" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty.Initializer"></a>
-
-```typescript
-import { ScheduleTargetProperty } from '@gammarer/aws-daily-cloud-watch-logs-archiver'
-
-const scheduleTargetProperty: ScheduleTargetProperty = { ... }
+const resourceTagProperty: ResourceTagProperty = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty.property.destinationPrefix">destinationPrefix</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty.property.logGroupName">logGroupName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ResourceTagProperty.property.key">key</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archiver.ResourceTagProperty.property.values">values</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
-##### `destinationPrefix`<sup>Required</sup> <a name="destinationPrefix" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty.property.destinationPrefix"></a>
+##### `key`<sup>Required</sup> <a name="key" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ResourceTagProperty.property.key"></a>
 
 ```typescript
-public readonly destinationPrefix: string;
+public readonly key: string;
 ```
 
 - *Type:* string
 
 ---
 
-##### `logGroupName`<sup>Required</sup> <a name="logGroupName" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ScheduleTargetProperty.property.logGroupName"></a>
+##### `values`<sup>Required</sup> <a name="values" id="@gammarer/aws-daily-cloud-watch-logs-archiver.ResourceTagProperty.property.values"></a>
 
 ```typescript
-public readonly logGroupName: string;
+public readonly values: string[];
 ```
 
-- *Type:* string
+- *Type:* string[]
 
 ---
 

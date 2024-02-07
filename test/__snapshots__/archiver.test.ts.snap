@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DailyCloudWatchLogsArchiver Testing Should match snapshot: archiver 1`] = `
+exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snapshot: archiver 1`] = `
 {
   "Parameters": {
     "BootstrapVersion": {
@@ -24,6 +24,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Should match snapshot: archiver 1`]
           ],
           "Version": "2012-10-17",
         },
+        "Description": "daily CloudWatch Logs archiver machine exec role.",
         "ManagedPolicyArns": [
           {
             "Fn::Join": [
@@ -74,9 +75,28 @@ exports[`DailyCloudWatchLogsArchiver Testing Should match snapshot: archiver 1`]
             "PolicyName": "put-bucket-policy",
           },
         ],
-        "RoleName": "daily-cw-log-archiver-lambda-exec-a5ac343a-role",
+        "RoleName": "daily-cw-logs-archiver-lambda-exec-a5ac343a-role",
       },
       "Type": "AWS::IAM::Role",
+    },
+    "DailyCloudWatchLogsArchiverLambdaFunctionLogGroupF3ACBF01": {
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "LogGroupName": {
+          "Fn::Join": [
+            "",
+            [
+              "/aws/lambda/",
+              {
+                "Ref": "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
+              },
+            ],
+          ],
+        },
+        "RetentionInDays": 30,
+      },
+      "Type": "AWS::Logs::LogGroup",
+      "UpdateReplacePolicy": "Delete",
     },
     "DailyCloudWatchLogsArchiverLogArchiveBucket88461686": {
       "DeletionPolicy": "Retain",
@@ -242,7 +262,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Should match snapshot: archiver 1`]
             },
           },
         },
-        "FunctionName": "daily-cw-log-archiver-a5ac343a-func",
+        "FunctionName": "daily-cw-logs-archiver-a5ac343a-func",
         "Handler": "index.handler",
         "Role": {
           "Fn::GetAtt": [
@@ -254,25 +274,137 @@ exports[`DailyCloudWatchLogsArchiver Testing Should match snapshot: archiver 1`]
       },
       "Type": "AWS::Lambda::Function",
     },
-    "DailyCloudWatchLogsArchiverSchedule0c256a4b0CD0D96F": {
+    "DailyCloudWatchLogsArchiverMyStateMachine5CE74E36": {
+      "DeletionPolicy": "Delete",
+      "DependsOn": [
+        "DailyCloudWatchLogsArchiverMyStateMachineRoleDefaultPolicy6CB5F646",
+        "DailyCloudWatchLogsArchiverMyStateMachineRoleAEF880EB",
+      ],
       "Properties": {
-        "Description": "example log archive 2nd rule.",
+        "DefinitionString": {
+          "Fn::Join": [
+            "",
+            [
+              "{"StartAt":"GetResources","States":{"GetResources":{"Next":"LogGroupExportMap","Type":"Task","ResultPath":"$.Result","ResultSelector":{"TargetResources.$":"$..ResourceTagMappingList[*].ResourceARN"},"Resource":"arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":states:::aws-sdk:resourcegroupstaggingapi:getResources","Parameters":{"ResourceTypeFilters":["logs:log-group"],"TagFilters":[{"Key.$":"$.tagKey","Values.$":"$.tagValues"}]}},"LogGroupExportMap":{"Type":"Map","End":true,"Iterator":{"StartAt":"GetLogGroupName","States":{"GetLogGroupName":{"Type":"Pass","Parameters":{"TargetLogGroupName.$":"States.ArrayGetItem(States.StringSplit($, ':'), 6)"},"Next":"InvokeLambdaFunction"},"InvokeLambdaFunction":{"Next":"DescribeExportTasks","Retry":[{"ErrorEquals":["Lambda.ServiceException","Lambda.AWSLambdaException","Lambda.SdkClientException"],"IntervalSeconds":2,"MaxAttempts":6,"BackoffRate":2}],"Type":"Task","OutputPath":"$.Payload","Resource":"arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":states:::lambda:invoke","Parameters":{"FunctionName":"",
+              {
+                "Fn::GetAtt": [
+                  "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
+                  "Arn",
+                ],
+              },
+              "","Payload.$":"$"}},"DescribeExportTasks":{"Next":"ExportTaskStatusCheck","Type":"Task","ResultPath":"$.Result","ResultSelector":{"DescribeExportTasksStatus.$":"$.ExportTasks[0].Status.Code"},"Resource":"arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":states:::aws-sdk:cloudwatchlogs:describeExportTasks","Parameters":{"TaskId.$":"$.TaskId"}},"ExportTaskStatusCheck":{"Type":"Choice","Choices":[{"Variable":"$.Result.DescribeExportTasksStatus","StringEquals":"FAILED","Next":"GetLogGroupName"},{"Variable":"$.Result.DescribeExportTasksStatus","StringEquals":"RUNNING","Next":"ExportRunningWait"}],"Default":"Succeed"},"Succeed":{"Type":"Succeed"},"ExportRunningWait":{"Type":"Wait","Seconds":30,"Next":"DescribeExportTasks"}}},"ItemsPath":"$.Result.TargetResources","MaxConcurrency":1}}}",
+            ],
+          ],
+        },
+        "RoleArn": {
+          "Fn::GetAtt": [
+            "DailyCloudWatchLogsArchiverMyStateMachineRoleAEF880EB",
+            "Arn",
+          ],
+        },
+        "StateMachineName": "daily-cw-logs-archive-a5ac343a-machine",
+      },
+      "Type": "AWS::StepFunctions::StateMachine",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "DailyCloudWatchLogsArchiverMyStateMachineRoleAEF880EB": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "states.us-east-1.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "Description": "daily CloudWatch Logs archive machine role.",
+        "RoleName": "daily-cw-logs-archive-machine-a5ac343a-role",
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "DailyCloudWatchLogsArchiverMyStateMachineRoleDefaultPolicy6CB5F646": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "tag:GetResources",
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
+                    "Arn",
+                  ],
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
+                          "Arn",
+                        ],
+                      },
+                      ":*",
+                    ],
+                  ],
+                },
+              ],
+            },
+            {
+              "Action": "logs:DescribeExportTasks",
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "daily-cw-logs-archive-machine-a5ac343a-default-policy",
+        "Roles": [
+          {
+            "Ref": "DailyCloudWatchLogsArchiverMyStateMachineRoleAEF880EB",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "DailyCloudWatchLogsArchiverSchedule14E0595F": {
+      "Properties": {
+        "Description": "daily CloudWatch Logs archive schedule",
         "FlexibleTimeWindow": {
           "Mode": "OFF",
         },
-        "GroupName": "log-archive-schedule-a5ac343a-group",
-        "Name": "example-log-archive-2nd-rule",
+        "Name": "daily-cw-logs-archive-a5ac343a-schedule",
         "ScheduleExpression": "cron(1 13 * * ? *)",
         "ScheduleExpressionTimezone": "UTC",
         "State": "ENABLED",
         "Target": {
           "Arn": {
-            "Fn::GetAtt": [
-              "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
-              "Arn",
-            ],
+            "Ref": "DailyCloudWatchLogsArchiverMyStateMachine5CE74E36",
           },
-          "Input": "{"logGroupName":"example-log-2nd-group","destinationPrefix":"example-2nd-log"}",
+          "Input": "{"tagKey":"DailyLogExport","tagValues":["Yes"]}",
           "RetryPolicy": {
             "MaximumEventAgeInSeconds": 60,
             "MaximumRetryAttempts": 0,
@@ -286,45 +418,6 @@ exports[`DailyCloudWatchLogsArchiver Testing Should match snapshot: archiver 1`]
         },
       },
       "Type": "AWS::Scheduler::Schedule",
-    },
-    "DailyCloudWatchLogsArchiverSchedule78b9c1a9F3486471": {
-      "Properties": {
-        "Description": "example log archive 1st rule.",
-        "FlexibleTimeWindow": {
-          "Mode": "OFF",
-        },
-        "GroupName": "log-archive-schedule-a5ac343a-group",
-        "Name": "example-log-archive-1st-rule",
-        "ScheduleExpression": "cron(0 13 * * ? *)",
-        "ScheduleExpressionTimezone": "UTC",
-        "State": "ENABLED",
-        "Target": {
-          "Arn": {
-            "Fn::GetAtt": [
-              "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
-              "Arn",
-            ],
-          },
-          "Input": "{"logGroupName":"example-log-1st-group","destinationPrefix":"example-1st-log"}",
-          "RetryPolicy": {
-            "MaximumEventAgeInSeconds": 60,
-            "MaximumRetryAttempts": 0,
-          },
-          "RoleArn": {
-            "Fn::GetAtt": [
-              "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543",
-              "Arn",
-            ],
-          },
-        },
-      },
-      "Type": "AWS::Scheduler::Schedule",
-    },
-    "DailyCloudWatchLogsArchiverScheduleGroupF93344C1": {
-      "Properties": {
-        "Name": "log-archive-schedule-a5ac343a-group",
-      },
-      "Type": "AWS::Scheduler::ScheduleGroup",
     },
     "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543": {
       "Properties": {
@@ -340,42 +433,25 @@ exports[`DailyCloudWatchLogsArchiver Testing Should match snapshot: archiver 1`]
           ],
           "Version": "2012-10-17",
         },
+        "Description": "daily CloudWatch Log archive schedule",
         "Policies": [
           {
             "PolicyDocument": {
               "Statement": [
                 {
-                  "Action": "lambda:InvokeFunction",
+                  "Action": "states:StartExecution",
                   "Effect": "Allow",
-                  "Resource": [
-                    {
-                      "Fn::GetAtt": [
-                        "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
-                        "Arn",
-                      ],
-                    },
-                    {
-                      "Fn::Join": [
-                        "",
-                        [
-                          {
-                            "Fn::GetAtt": [
-                              "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
-                              "Arn",
-                            ],
-                          },
-                          ":*",
-                        ],
-                      ],
-                    },
-                  ],
+                  "Resource": {
+                    "Ref": "DailyCloudWatchLogsArchiverMyStateMachine5CE74E36",
+                  },
                 },
               ],
               "Version": "2012-10-17",
             },
-            "PolicyName": "lambda-invoke-policy",
+            "PolicyName": "state-machine-exec-policy",
           },
         ],
+        "RoleName": "daily-cw-logs-archive-a5ac343a-schedule-role",
       },
       "Type": "AWS::IAM::Role",
     },
