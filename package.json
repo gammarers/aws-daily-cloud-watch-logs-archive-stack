@@ -3,7 +3,7 @@
   "description": "AWS CloudWatch Logs daily archive to s3 bucket",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yicr/aws-daily-cloud-watch-logs-archiver.git"
+    "url": "https://github.com/gammarer/aws-daily-cloud-watch-logs-archiver.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -20,6 +20,8 @@
     "eslint": "npx projen eslint",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
+    "package:dotnet": "npx projen package:dotnet",
+    "package:java": "npx projen package:java",
     "package:js": "npx projen package:js",
     "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
@@ -144,9 +146,20 @@
   "jsii": {
     "outdir": "dist",
     "targets": {
+      "java": {
+        "package": "com.gammarer.cdk.aws.daily_cloud_watch_logs_archiver",
+        "maven": {
+          "groupId": "com.gammarer",
+          "artifactId": "aws-daily-cloud-watch-logs-archiver"
+        }
+      },
       "python": {
         "distName": "gammarer.aws-daily-cloud-watch-logs-archiver",
         "module": "gammarer.aws_daily_cloud_watch_logs_archiver"
+      },
+      "dotnet": {
+        "namespace": "Gammarer.CDK.AWS",
+        "packageId": "Gammarer.CDK.AWS.DailyCloudWatchLogsArchiver"
       }
     },
     "tsc": {
