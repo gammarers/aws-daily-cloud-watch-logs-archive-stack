@@ -304,7 +304,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
               {
                 "Ref": "AWS::Partition",
               },
-              ":states:::aws-sdk:cloudwatchlogs:describeExportTasks","Parameters":{"TaskId.$":"$.TaskId"}},"ExportTaskStatusCheck":{"Type":"Choice","Choices":[{"Variable":"$.Result.DescribeExportTasksStatus","StringEquals":"FAILED","Next":"GetLogGroupName"},{"Variable":"$.Result.DescribeExportTasksStatus","StringEquals":"RUNNING","Next":"ExportRunningWait"}],"Default":"Succeed"},"Succeed":{"Type":"Succeed"},"ExportRunningWait":{"Type":"Wait","Seconds":30,"Next":"DescribeExportTasks"}}},"ItemsPath":"$.Result.TargetResources","MaxConcurrency":1}}}",
+              ":states:::aws-sdk:cloudwatchlogs:describeExportTasks","Parameters":{"TaskId.$":"$.TaskId"}},"ExportTaskStatusCheck":{"Type":"Choice","Choices":[{"Variable":"$.Result.DescribeExportTasksStatus","StringEquals":"FAILED","Next":"GetLogGroupName"},{"Variable":"$.Result.DescribeExportTasksStatus","StringEquals":"RUNNING","Next":"ExportRunningWait"},{"Variable":"$.Result.DescribeExportTasksStatus","StringEquals":"PENDING","Next":"ExportPendingWait"}],"Default":"Succeed"},"Succeed":{"Type":"Succeed"},"ExportRunningWait":{"Type":"Wait","Seconds":10,"Next":"DescribeExportTasks"},"ExportPendingWait":{"Type":"Wait","Seconds":3,"Next":"DescribeExportTasks"}}},"ItemsPath":"$.Result.TargetResources","MaxConcurrency":1}}}",
             ],
           ],
         },
