@@ -189,7 +189,11 @@ export class DailyCloudWatchLogsArchiver extends Construct {
     invokeLmabdaFunction.next(describeExportTasks);
 
     const exportRunningWait = new sfn.Wait(this, 'ExportRunningWait', {
-      time: sfn.WaitTime.duration(Duration.seconds(30)),
+      time: sfn.WaitTime.duration(Duration.seconds(10)),
+    });
+
+    const exportPendingWait = new sfn.Wait(this, 'ExportPendingWait', {
+      time: sfn.WaitTime.duration(Duration.seconds(3)),
     });
 
     // 👇 Export Status Check
@@ -201,6 +205,11 @@ export class DailyCloudWatchLogsArchiver extends Construct {
       .when(
         sfn.Condition.stringEquals('$.Result.DescribeExportTasksStatus', 'RUNNING'),
         exportRunningWait
+          .next(describeExportTasks),
+      )
+      .when(
+        sfn.Condition.stringEquals('$.Result.DescribeExportTasksStatus', 'PENDING'),
+        exportPendingWait
           .next(describeExportTasks),
       )
       .otherwise(succeed);
