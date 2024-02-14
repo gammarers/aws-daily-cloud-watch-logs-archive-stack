@@ -25,9 +25,9 @@ This construct creating resource list.
 - EventBridge Scheduler execution role
 - EventBridge Scheduler
 
-## State Machine Graph
+## Architecture
 
-![StepFunctions](stepfunctions-graph.svg)
+![architecture](/architecture.drawio.svg)
 
 ## Install
 
