@@ -8,6 +8,8 @@
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/gammarer/aws-daily-cloud-watch-logs-archiver/release.yml?branch=main&label=release&style=flat-square)](https://github.com/gammarer/aws-daily-cloud-watch-logs-archiver/actions/workflows/release.yml)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/gammarer/aws-daily-cloud-watch-logs-archiver?sort=semver&style=flat-square)](https://github.com/gammarer/aws-daily-cloud-watch-logs-archiver/releases)
 
+[![View on Construct Hub](https://constructs.dev/badge?package=@gammarer/aws-daily-cloud-watch-logs-archiver)](https://constructs.dev/packages/@gammarer/aws-daily-cloud-watch-logs-archiver)
+
 AWS CloudWatch Logs daily(13:00Z) archive to s3 bucket.
 
 ## Resources
@@ -22,6 +24,10 @@ This construct creating resource list.
 - StepFunctions state machine
 - EventBridge Scheduler execution role
 - EventBridge Scheduler
+
+## State Machine Graph
+
+![StepFunctions](stepfunctions-graph.svg)
 
 ## Install
 
