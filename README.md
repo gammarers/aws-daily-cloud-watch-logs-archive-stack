@@ -80,6 +80,12 @@ new DailyCloudWatchLogsArchiver(stack, 'DailyCloudWatchLogsArchiver', {
 
 ```
 
+## Otherwise
+
+If you want to export old log files, please refer to the following repository. The log file will be exported in the same output format.
+
+[AWS CloudWatch Logs Exporter](https://github.com/gammarer/aws-cloud-watch-logs-exporter)
+
 ## License
 
 This project is licensed under the Apache-2.0 License.
