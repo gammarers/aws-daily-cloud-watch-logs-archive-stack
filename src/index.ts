@@ -123,7 +123,7 @@ export class DailyCloudWatchLogsArchiver extends Construct {
 
     const succeed = new sfn.Succeed(this, 'Succeed');
 
-    // 👇 Get CloudWatch Logs Resouece
+    // 👇 Get CloudWatch Logs Resources
     const getLogGroupResources = new tasks.CallAwsService(this, 'GetResources', {
       iamResources: ['*'],
       iamAction: 'tag:GetResources',
@@ -162,14 +162,14 @@ export class DailyCloudWatchLogsArchiver extends Construct {
     logGroupExportMap.iterator(getLogGroupName);
 
     // 👇 Invoke Lambda Function
-    const invokeLmabdaFunction = new tasks.LambdaInvoke(this, 'InvokeLambdaFunction', {
+    const invokeLambdaFunction = new tasks.LambdaInvoke(this, 'InvokeLambdaFunction', {
       lambdaFunction: lambdaFunction,
       outputPath: '$.Payload',
       payload: sfn.TaskInput.fromJsonPathAt('$'),
       retryOnServiceExceptions: true,
     });
 
-    getLogGroupName.next(invokeLmabdaFunction);
+    getLogGroupName.next(invokeLambdaFunction);
 
     // 👇 Describe Export Tasks
     const describeExportTasks = new tasks.CallAwsService(this, 'DescribeExportTasks', {
@@ -186,7 +186,7 @@ export class DailyCloudWatchLogsArchiver extends Construct {
       },
     });
 
-    invokeLmabdaFunction.next(describeExportTasks);
+    invokeLambdaFunction.next(describeExportTasks);
 
     const exportRunningWait = new sfn.Wait(this, 'ExportRunningWait', {
       time: sfn.WaitTime.duration(Duration.seconds(10)),
@@ -219,11 +219,11 @@ export class DailyCloudWatchLogsArchiver extends Construct {
     getLogGroupResources.next(logGroupExportMap);
 
     //
-    const machine = new sfn.StateMachine(this, 'MyStateMachine', {
+    const machine = new sfn.StateMachine(this, 'StateMachine', {
       stateMachineName: `daily-cw-logs-archive-${randomNameKey}-machine`,
       definition: getLogGroupResources,
     });
-    // 👇 auto generated role name & desctiption renaming.
+    // 👇 auto generated role name & description renaming.
     const role = machine.node.findChild('Role') as iam.Role;
     const cfnRole = role.node.defaultChild as iam.CfnRole;
     cfnRole.addPropertyOverride('RoleName', `daily-cw-logs-archive-machine-${randomNameKey}-role`);

@@ -111,7 +111,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
         PolicyName: Match.stringLikeRegexp('daily-cw-logs-archive-machine-.*-default-policy'),
         Roles: Match.arrayEquals([
           {
-            Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverMyStateMachineRole.*'),
+            Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverStateMachineRole.*'),
           },
         ]),
         PolicyDocument: Match.objectEquals({
@@ -163,7 +163,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
         DefinitionString: Match.anyValue(),
         RoleArn: Match.objectEquals({
           'Fn::GetAtt': Match.arrayEquals([
-            Match.stringLikeRegexp('DailyCloudWatchLogsArchiverMyStateMachineRole.*'),
+            Match.stringLikeRegexp('DailyCloudWatchLogsArchiverStateMachineRole.*'),
             'Arn',
           ]),
         }),
@@ -297,7 +297,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
                   Action: 'states:StartExecution',
                   Effect: 'Allow',
                   Resource: {
-                    Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverMyStateMachine.*'),
+                    Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverStateMachine.*'),
                   },
                 },
               ]),
@@ -319,7 +319,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
         ScheduleExpression: Match.stringLikeRegexp('cron(.* 13 * * ? *)'),
         Target: Match.objectEquals({
           Arn: {
-            Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverMyStateMachine.*'),
+            Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverStateMachine.*'),
           },
           RoleArn: {
             'Fn::GetAtt': [

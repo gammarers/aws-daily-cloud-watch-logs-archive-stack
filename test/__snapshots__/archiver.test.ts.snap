@@ -274,11 +274,76 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
       },
       "Type": "AWS::Lambda::Function",
     },
-    "DailyCloudWatchLogsArchiverMyStateMachine5CE74E36": {
+    "DailyCloudWatchLogsArchiverSchedule14E0595F": {
+      "Properties": {
+        "Description": "daily CloudWatch Logs archive schedule",
+        "FlexibleTimeWindow": {
+          "Mode": "OFF",
+        },
+        "Name": "daily-cw-logs-archive-a5ac343a-schedule",
+        "ScheduleExpression": "cron(1 13 * * ? *)",
+        "ScheduleExpressionTimezone": "UTC",
+        "State": "ENABLED",
+        "Target": {
+          "Arn": {
+            "Ref": "DailyCloudWatchLogsArchiverStateMachine6BFE0DEF",
+          },
+          "Input": "{"tagKey":"DailyLogExport","tagValues":["Yes"]}",
+          "RetryPolicy": {
+            "MaximumEventAgeInSeconds": 60,
+            "MaximumRetryAttempts": 0,
+          },
+          "RoleArn": {
+            "Fn::GetAtt": [
+              "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543",
+              "Arn",
+            ],
+          },
+        },
+      },
+      "Type": "AWS::Scheduler::Schedule",
+    },
+    "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "scheduler.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "Description": "daily CloudWatch Log archive schedule",
+        "Policies": [
+          {
+            "PolicyDocument": {
+              "Statement": [
+                {
+                  "Action": "states:StartExecution",
+                  "Effect": "Allow",
+                  "Resource": {
+                    "Ref": "DailyCloudWatchLogsArchiverStateMachine6BFE0DEF",
+                  },
+                },
+              ],
+              "Version": "2012-10-17",
+            },
+            "PolicyName": "state-machine-exec-policy",
+          },
+        ],
+        "RoleName": "daily-cw-logs-archive-a5ac343a-schedule-role",
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "DailyCloudWatchLogsArchiverStateMachine6BFE0DEF": {
       "DeletionPolicy": "Delete",
       "DependsOn": [
-        "DailyCloudWatchLogsArchiverMyStateMachineRoleDefaultPolicy6CB5F646",
-        "DailyCloudWatchLogsArchiverMyStateMachineRoleAEF880EB",
+        "DailyCloudWatchLogsArchiverStateMachineRoleDefaultPolicyCCE5DE35",
+        "DailyCloudWatchLogsArchiverStateMachineRole0DB511A0",
       ],
       "Properties": {
         "DefinitionString": {
@@ -310,7 +375,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
         },
         "RoleArn": {
           "Fn::GetAtt": [
-            "DailyCloudWatchLogsArchiverMyStateMachineRoleAEF880EB",
+            "DailyCloudWatchLogsArchiverStateMachineRole0DB511A0",
             "Arn",
           ],
         },
@@ -319,7 +384,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
       "Type": "AWS::StepFunctions::StateMachine",
       "UpdateReplacePolicy": "Delete",
     },
-    "DailyCloudWatchLogsArchiverMyStateMachineRoleAEF880EB": {
+    "DailyCloudWatchLogsArchiverStateMachineRole0DB511A0": {
       "Properties": {
         "AssumeRolePolicyDocument": {
           "Statement": [
@@ -338,7 +403,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
       },
       "Type": "AWS::IAM::Role",
     },
-    "DailyCloudWatchLogsArchiverMyStateMachineRoleDefaultPolicy6CB5F646": {
+    "DailyCloudWatchLogsArchiverStateMachineRoleDefaultPolicyCCE5DE35": {
       "Properties": {
         "PolicyDocument": {
           "Statement": [
@@ -384,76 +449,11 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
         "PolicyName": "daily-cw-logs-archive-machine-a5ac343a-default-policy",
         "Roles": [
           {
-            "Ref": "DailyCloudWatchLogsArchiverMyStateMachineRoleAEF880EB",
+            "Ref": "DailyCloudWatchLogsArchiverStateMachineRole0DB511A0",
           },
         ],
       },
       "Type": "AWS::IAM::Policy",
-    },
-    "DailyCloudWatchLogsArchiverSchedule14E0595F": {
-      "Properties": {
-        "Description": "daily CloudWatch Logs archive schedule",
-        "FlexibleTimeWindow": {
-          "Mode": "OFF",
-        },
-        "Name": "daily-cw-logs-archive-a5ac343a-schedule",
-        "ScheduleExpression": "cron(1 13 * * ? *)",
-        "ScheduleExpressionTimezone": "UTC",
-        "State": "ENABLED",
-        "Target": {
-          "Arn": {
-            "Ref": "DailyCloudWatchLogsArchiverMyStateMachine5CE74E36",
-          },
-          "Input": "{"tagKey":"DailyLogExport","tagValues":["Yes"]}",
-          "RetryPolicy": {
-            "MaximumEventAgeInSeconds": 60,
-            "MaximumRetryAttempts": 0,
-          },
-          "RoleArn": {
-            "Fn::GetAtt": [
-              "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543",
-              "Arn",
-            ],
-          },
-        },
-      },
-      "Type": "AWS::Scheduler::Schedule",
-    },
-    "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543": {
-      "Properties": {
-        "AssumeRolePolicyDocument": {
-          "Statement": [
-            {
-              "Action": "sts:AssumeRole",
-              "Effect": "Allow",
-              "Principal": {
-                "Service": "scheduler.amazonaws.com",
-              },
-            },
-          ],
-          "Version": "2012-10-17",
-        },
-        "Description": "daily CloudWatch Log archive schedule",
-        "Policies": [
-          {
-            "PolicyDocument": {
-              "Statement": [
-                {
-                  "Action": "states:StartExecution",
-                  "Effect": "Allow",
-                  "Resource": {
-                    "Ref": "DailyCloudWatchLogsArchiverMyStateMachine5CE74E36",
-                  },
-                },
-              ],
-              "Version": "2012-10-17",
-            },
-            "PolicyName": "state-machine-exec-policy",
-          },
-        ],
-        "RoleName": "daily-cw-logs-archive-a5ac343a-schedule-role",
-      },
-      "Type": "AWS::IAM::Role",
     },
   },
   "Rules": {
