@@ -22,12 +22,13 @@ export interface TargetResourceTagProperty {
 
 export class DailyCloudWatchLogsArchiveStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: DailyCloudWatchLogsArchiveStackProps) {
-    super(scope, id);
+    super(scope, id, props);
 
     // 👇 Get current account & region
     //const account = cdk.Stack.of(this).account;
     //const stackName: string = cdk.Stack.of(this).stackName;
-    const region = cdk.Stack.of(this).region;
+    //const region = cdk.Stack.of(this).region;
+    const region = this.region;
 
     const randomNameKey = crypto.createHash('shake256', { outputLength: 4 })
       .update(`${cdk.Names.uniqueId(scope)}-${cdk.Names.uniqueId(this)}`)
