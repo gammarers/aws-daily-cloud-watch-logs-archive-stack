@@ -43,18 +43,7 @@ describe('DailyCloudWatchLogsArchiveStack Testing', () => {
               Effect: 'Allow',
               Action: 's3:GetBucketAcl',
               Principal: {
-                Service: {
-                  'Fn::Join': [
-                    '',
-                    [
-                      'logs.',
-                      {
-                        Ref: 'AWS::Region',
-                      },
-                      '.amazonaws.com',
-                    ],
-                  ],
-                },
+                Service: 'logs.us-east-1.amazonaws.com',
               },
               Resource: {
                 'Fn::GetAtt': [
@@ -67,18 +56,7 @@ describe('DailyCloudWatchLogsArchiveStack Testing', () => {
               Effect: 'Allow',
               Action: 's3:PutObject',
               Principal: {
-                Service: {
-                  'Fn::Join': [
-                    '',
-                    [
-                      'logs.',
-                      {
-                        Ref: 'AWS::Region',
-                      },
-                      '.amazonaws.com',
-                    ],
-                  ],
-                },
+                Service: 'logs.us-east-1.amazonaws.com',
               },
               Resource: {
                 'Fn::Join': [
@@ -118,15 +96,7 @@ describe('DailyCloudWatchLogsArchiveStack Testing', () => {
             Match.objectEquals({
               Effect: 'Allow',
               Principal: {
-                Service: {
-                  'Fn::FindInMap': Match.arrayEquals([
-                    'ServiceprincipalMap',
-                    {
-                      Ref: 'AWS::Region',
-                    },
-                    'states',
-                  ]),
-                },
+                Service: 'states.us-east-1.amazonaws.com',
               },
               Action: 'sts:AssumeRole',
             }),
