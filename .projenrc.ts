@@ -63,11 +63,11 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   publishToPypi: {
     distName: 'gammarer.aws-daily-cloud-watch-logs-archive-stack',
-    module: 'gammarer.aws_daily_cloud_watch_logs_archive-stack',
+    module: 'gammarer.aws_daily_cloud_watch_logs_archive_stack',
   },
   publishToMaven: {
     mavenGroupId: 'com.gammarer',
-    javaPackage: 'com.gammarer.cdk.aws.daily_cloud_watch_logs_archive-stack',
+    javaPackage: 'com.gammarer.cdk.aws.daily_cloud_watch_logs_archive_stack',
     mavenArtifactId: 'aws-daily-cloud-watch-logs-archive-stack',
     mavenEndpoint: 'https://s01.oss.sonatype.org',
   },
