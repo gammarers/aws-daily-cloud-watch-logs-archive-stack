@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snapshot: archiver 1`] = `
+exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match snapshot: archiver 1`] = `
 {
   "Parameters": {
     "BootstrapVersion": {
@@ -10,7 +10,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
     },
   },
   "Resources": {
-    "DailyCloudWatchLogsArchiverLambdaExecutionRoleB287F490": {
+    "LambdaExecutionRoleD5C26073": {
       "Properties": {
         "AssumeRolePolicyDocument": {
           "Statement": [
@@ -24,7 +24,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
           ],
           "Version": "2012-10-17",
         },
-        "Description": "daily CloudWatch Logs archiver machine exec role.",
+        "Description": "daily CloudWatch Logs archive machine exec role.",
         "ManagedPolicyArns": [
           {
             "Fn::Join": [
@@ -64,7 +64,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
                   "Effect": "Allow",
                   "Resource": {
                     "Fn::GetAtt": [
-                      "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
+                      "LogArchiveBucketC3E3979A",
                       "Arn",
                     ],
                   },
@@ -75,11 +75,11 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
             "PolicyName": "put-bucket-policy",
           },
         ],
-        "RoleName": "daily-cw-logs-archiver-lambda-exec-a5ac343a-role",
+        "RoleName": "daily-cw-logs-archive-lambda-exec-039ba061-role",
       },
       "Type": "AWS::IAM::Role",
     },
-    "DailyCloudWatchLogsArchiverLambdaFunctionLogGroupF3ACBF01": {
+    "LambdaFunctionLogGroupD722B4F5": {
       "DeletionPolicy": "Delete",
       "Properties": {
         "LogGroupName": {
@@ -88,7 +88,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
             [
               "/aws/lambda/",
               {
-                "Ref": "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
+                "Ref": "LogArchiveFunctionA8152A28",
               },
             ],
           ],
@@ -98,7 +98,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
       "Type": "AWS::Logs::LogGroup",
       "UpdateReplacePolicy": "Delete",
     },
-    "DailyCloudWatchLogsArchiverLogArchiveBucket88461686": {
+    "LogArchiveBucketC3E3979A": {
       "DeletionPolicy": "Retain",
       "Properties": {
         "AccessControl": "Private",
@@ -106,12 +106,12 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
           "ServerSideEncryptionConfiguration": [
             {
               "ServerSideEncryptionByDefault": {
-                "SSEAlgorithm": "aws:kms",
+                "SSEAlgorithm": "AES256",
               },
             },
           ],
         },
-        "BucketName": "log-archive-a5ac343a",
+        "BucketName": "log-archive-039ba061",
         "LifecycleConfiguration": {
           "Rules": [
             {
@@ -158,10 +158,10 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
       "Type": "AWS::S3::Bucket",
       "UpdateReplacePolicy": "Retain",
     },
-    "DailyCloudWatchLogsArchiverLogArchiveBucketPolicy098686E8": {
+    "LogArchiveBucketPolicyD4CDCD89": {
       "Properties": {
         "Bucket": {
-          "Ref": "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
+          "Ref": "LogArchiveBucketC3E3979A",
         },
         "PolicyDocument": {
           "Statement": [
@@ -179,7 +179,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
               "Resource": [
                 {
                   "Fn::GetAtt": [
-                    "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
+                    "LogArchiveBucketC3E3979A",
                     "Arn",
                   ],
                 },
@@ -189,7 +189,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
                     [
                       {
                         "Fn::GetAtt": [
-                          "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
+                          "LogArchiveBucketC3E3979A",
                           "Arn",
                         ],
                       },
@@ -207,7 +207,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
               },
               "Resource": {
                 "Fn::GetAtt": [
-                  "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
+                  "LogArchiveBucketC3E3979A",
                   "Arn",
                 ],
               },
@@ -229,7 +229,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
                   [
                     {
                       "Fn::GetAtt": [
-                        "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
+                        "LogArchiveBucketC3E3979A",
                         "Arn",
                       ],
                     },
@@ -244,9 +244,9 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
       },
       "Type": "AWS::S3::BucketPolicy",
     },
-    "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4": {
+    "LogArchiveFunctionA8152A28": {
       "DependsOn": [
-        "DailyCloudWatchLogsArchiverLambdaExecutionRoleB287F490",
+        "LambdaExecutionRoleD5C26073",
       ],
       "Properties": {
         "Code": {
@@ -258,15 +258,15 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
             "BUCKET_NAME": {
-              "Ref": "DailyCloudWatchLogsArchiverLogArchiveBucket88461686",
+              "Ref": "LogArchiveBucketC3E3979A",
             },
           },
         },
-        "FunctionName": "daily-cw-logs-archiver-a5ac343a-func",
+        "FunctionName": "daily-cw-logs-archive-039ba061-func",
         "Handler": "index.handler",
         "Role": {
           "Fn::GetAtt": [
-            "DailyCloudWatchLogsArchiverLambdaExecutionRoleB287F490",
+            "LambdaExecutionRoleD5C26073",
             "Arn",
           ],
         },
@@ -274,19 +274,19 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
       },
       "Type": "AWS::Lambda::Function",
     },
-    "DailyCloudWatchLogsArchiverSchedule14E0595F": {
+    "Schedule": {
       "Properties": {
         "Description": "daily CloudWatch Logs archive schedule",
         "FlexibleTimeWindow": {
           "Mode": "OFF",
         },
-        "Name": "daily-cw-logs-archive-a5ac343a-schedule",
+        "Name": "daily-cw-logs-archive-039ba061-schedule",
         "ScheduleExpression": "cron(1 13 * * ? *)",
         "ScheduleExpressionTimezone": "UTC",
         "State": "ENABLED",
         "Target": {
           "Arn": {
-            "Ref": "DailyCloudWatchLogsArchiverStateMachine6BFE0DEF",
+            "Ref": "StateMachine2E01A3A5",
           },
           "Input": "{"tagKey":"DailyLogExport","tagValues":["Yes"]}",
           "RetryPolicy": {
@@ -295,7 +295,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
           },
           "RoleArn": {
             "Fn::GetAtt": [
-              "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543",
+              "SchedulerExecutionRole0AF092B7",
               "Arn",
             ],
           },
@@ -303,7 +303,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
       },
       "Type": "AWS::Scheduler::Schedule",
     },
-    "DailyCloudWatchLogsArchiverSchedulerExecutionRoleB476F543": {
+    "SchedulerExecutionRole0AF092B7": {
       "Properties": {
         "AssumeRolePolicyDocument": {
           "Statement": [
@@ -326,7 +326,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
                   "Action": "states:StartExecution",
                   "Effect": "Allow",
                   "Resource": {
-                    "Ref": "DailyCloudWatchLogsArchiverStateMachine6BFE0DEF",
+                    "Ref": "StateMachine2E01A3A5",
                   },
                 },
               ],
@@ -335,15 +335,15 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
             "PolicyName": "state-machine-exec-policy",
           },
         ],
-        "RoleName": "daily-cw-logs-archive-a5ac343a-schedule-role",
+        "RoleName": "daily-cw-logs-archive-039ba061-schedule-role",
       },
       "Type": "AWS::IAM::Role",
     },
-    "DailyCloudWatchLogsArchiverStateMachine6BFE0DEF": {
+    "StateMachine2E01A3A5": {
       "DeletionPolicy": "Delete",
       "DependsOn": [
-        "DailyCloudWatchLogsArchiverStateMachineRoleDefaultPolicyCCE5DE35",
-        "DailyCloudWatchLogsArchiverStateMachineRole0DB511A0",
+        "StateMachineRoleDefaultPolicyDF1E6607",
+        "StateMachineRoleB840431D",
       ],
       "Properties": {
         "DefinitionString": {
@@ -361,7 +361,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
               ":states:::lambda:invoke","Parameters":{"FunctionName":"",
               {
                 "Fn::GetAtt": [
-                  "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
+                  "LogArchiveFunctionA8152A28",
                   "Arn",
                 ],
               },
@@ -375,16 +375,16 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
         },
         "RoleArn": {
           "Fn::GetAtt": [
-            "DailyCloudWatchLogsArchiverStateMachineRole0DB511A0",
+            "StateMachineRoleB840431D",
             "Arn",
           ],
         },
-        "StateMachineName": "daily-cw-logs-archive-a5ac343a-machine",
+        "StateMachineName": "daily-cw-logs-archive-039ba061-machine",
       },
       "Type": "AWS::StepFunctions::StateMachine",
       "UpdateReplacePolicy": "Delete",
     },
-    "DailyCloudWatchLogsArchiverStateMachineRole0DB511A0": {
+    "StateMachineRoleB840431D": {
       "Properties": {
         "AssumeRolePolicyDocument": {
           "Statement": [
@@ -399,11 +399,11 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
           "Version": "2012-10-17",
         },
         "Description": "daily CloudWatch Logs archive machine role.",
-        "RoleName": "daily-cw-logs-archive-machine-a5ac343a-role",
+        "RoleName": "daily-cw-logs-archive-machine-039ba061-role",
       },
       "Type": "AWS::IAM::Role",
     },
-    "DailyCloudWatchLogsArchiverStateMachineRoleDefaultPolicyCCE5DE35": {
+    "StateMachineRoleDefaultPolicyDF1E6607": {
       "Properties": {
         "PolicyDocument": {
           "Statement": [
@@ -418,7 +418,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
               "Resource": [
                 {
                   "Fn::GetAtt": [
-                    "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
+                    "LogArchiveFunctionA8152A28",
                     "Arn",
                   ],
                 },
@@ -428,7 +428,7 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
                     [
                       {
                         "Fn::GetAtt": [
-                          "DailyCloudWatchLogsArchiverLogArchiveFunction1589C8E4",
+                          "LogArchiveFunctionA8152A28",
                           "Arn",
                         ],
                       },
@@ -446,10 +446,10 @@ exports[`DailyCloudWatchLogsArchiver Testing Snapshot Testing Should match snaps
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "daily-cw-logs-archive-machine-a5ac343a-default-policy",
+        "PolicyName": "daily-cw-logs-archive-machine-039ba061-default-policy",
         "Roles": [
           {
-            "Ref": "DailyCloudWatchLogsArchiverStateMachineRole0DB511A0",
+            "Ref": "StateMachineRoleB840431D",
           },
         ],
       },

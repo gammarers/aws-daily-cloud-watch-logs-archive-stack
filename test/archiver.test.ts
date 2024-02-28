@@ -1,18 +1,16 @@
-import { App, Stack } from 'aws-cdk-lib';
+import { App } from 'aws-cdk-lib';
 import { Match, Template } from 'aws-cdk-lib/assertions';
-import { DailyCloudWatchLogsArchiver } from '../src';
+import { DailyCloudWatchLogsArchiveStack } from '../src';
 
-describe('DailyCloudWatchLogsArchiver Testing', () => {
+describe('DailyCloudWatchLogsArchiveStack Testing', () => {
   const app = new App();
-  const stack = new Stack(app, 'TestingStack', {
+
+  const stack = new DailyCloudWatchLogsArchiveStack(app, 'DailyCloudWatchLogsArchiveStack', {
     env: {
       account: '123456789012',
       region: 'us-east-1',
     },
-  });
-
-  new DailyCloudWatchLogsArchiver(stack, 'DailyCloudWatchLogsArchiver', {
-    resource: {
+    targetResourceTag: {
       key: 'DailyLogExport',
       values: ['Yes'],
     },
@@ -28,7 +26,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
           ServerSideEncryptionConfiguration: [
             {
               ServerSideEncryptionByDefault: {
-                SSEAlgorithm: 'aws:kms',
+                SSEAlgorithm: 'AES256',
               },
             },
           ],
@@ -49,7 +47,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
               },
               Resource: {
                 'Fn::GetAtt': [
-                  Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveBucket'),
+                  Match.stringLikeRegexp('LogArchiveBucket.*'),
                   'Arn',
                 ],
               },
@@ -66,7 +64,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
                   [
                     {
                       'Fn::GetAtt': [
-                        Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveBucket'),
+                        Match.stringLikeRegexp('LogArchiveBucket.*'),
                         'Arn',
                       ],
                     },
@@ -111,7 +109,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
         PolicyName: Match.stringLikeRegexp('daily-cw-logs-archive-machine-.*-default-policy'),
         Roles: Match.arrayEquals([
           {
-            Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverStateMachineRole.*'),
+            Ref: Match.stringLikeRegexp('StateMachineRole.*'),
           },
         ]),
         PolicyDocument: Match.objectEquals({
@@ -127,7 +125,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
               Resource: Match.arrayEquals([
                 {
                   'Fn::GetAtt': Match.arrayEquals([
-                    Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveFunction.*'),
+                    Match.stringLikeRegexp('LogArchiveFunction.*'),
                     'Arn',
                   ]),
                 },
@@ -137,7 +135,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
                     [
                       {
                         'Fn::GetAtt': Match.arrayEquals([
-                          Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveFunction.*'),
+                          Match.stringLikeRegexp('LogArchiveFunction.*'),
                           'Arn',
                         ]),
                       },
@@ -157,13 +155,13 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
         }),
       }));
     });
-    it('Shoud have StateMachine', () => {
+    it('Should have StateMachine', () => {
       template.hasResourceProperties('AWS::StepFunctions::StateMachine', Match.objectEquals({
         StateMachineName: Match.stringLikeRegexp('daily-cw-logs-archive-.*-machine'),
         DefinitionString: Match.anyValue(),
         RoleArn: Match.objectEquals({
           'Fn::GetAtt': Match.arrayEquals([
-            Match.stringLikeRegexp('DailyCloudWatchLogsArchiverStateMachineRole.*'),
+            Match.stringLikeRegexp('StateMachineRole.*'),
             'Arn',
           ]),
         }),
@@ -175,7 +173,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
 
     it('Should have lambda execution role', () => {
       template.hasResourceProperties('AWS::IAM::Role', Match.objectEquals({
-        RoleName: Match.stringLikeRegexp('daily-cw-logs-archiver-lambda-exec-.*-role'),
+        RoleName: Match.stringLikeRegexp('daily-cw-logs-archive-lambda-exec-.*-role'),
         Description: Match.anyValue(),
         AssumeRolePolicyDocument: Match.objectEquals({
           Version: '2012-10-17',
@@ -230,7 +228,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
                   ]),
                   Resource: {
                     'Fn::GetAtt': Match.arrayEquals([
-                      Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveBucket.*'),
+                      Match.stringLikeRegexp('LogArchiveBucket.*'),
                       'Arn',
                     ]),
                   },
@@ -244,7 +242,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
 
     it('Should have lambda function', () => {
       template.hasResourceProperties('AWS::Lambda::Function', Match.objectEquals({
-        FunctionName: Match.stringLikeRegexp('daily-cw-logs-archiver-.*-func'),
+        FunctionName: Match.stringLikeRegexp('daily-cw-logs-archive-.*-func'),
         Handler: 'index.handler',
         Runtime: 'nodejs18.x',
         Code: {
@@ -256,13 +254,13 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
           Variables: {
             AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
             BUCKET_NAME: {
-              Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLogArchiveBucket.*'),
+              Ref: Match.stringLikeRegexp('LogArchiveBucket.*'),
             },
           },
         },
         Role: {
           'Fn::GetAtt': [
-            Match.stringLikeRegexp('DailyCloudWatchLogsArchiverLambdaExecutionRole.*'),
+            Match.stringLikeRegexp('LambdaExecutionRole.*'),
             'Arn',
           ],
         },
@@ -297,7 +295,7 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
                   Action: 'states:StartExecution',
                   Effect: 'Allow',
                   Resource: {
-                    Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverStateMachine.*'),
+                    Ref: Match.stringLikeRegexp('StateMachine.*'),
                   },
                 },
               ]),
@@ -319,11 +317,11 @@ describe('DailyCloudWatchLogsArchiver Testing', () => {
         ScheduleExpression: Match.stringLikeRegexp('cron(.* 13 * * ? *)'),
         Target: Match.objectEquals({
           Arn: {
-            Ref: Match.stringLikeRegexp('DailyCloudWatchLogsArchiverStateMachine.*'),
+            Ref: Match.stringLikeRegexp('StateMachine.*'),
           },
           RoleArn: {
             'Fn::GetAtt': [
-              Match.stringLikeRegexp('DailyCloudWatchLogsArchiverSchedulerExecutionRole.*'),
+              Match.stringLikeRegexp('SchedulerExecutionRole.*'),
               'Arn',
             ],
           },
