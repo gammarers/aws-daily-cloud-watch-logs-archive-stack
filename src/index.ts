@@ -1,4 +1,5 @@
 import * as crypto from 'crypto';
+import { SecureBucketEncryption } from '@gammarer/aws-secure-bucket';
 import { SecureLogBucket } from '@gammarer/aws-secure-log-bucket';
 import * as cdk from 'aws-cdk-lib';
 import { Duration } from 'aws-cdk-lib';
@@ -10,17 +11,17 @@ import * as tasks from 'aws-cdk-lib/aws-stepfunctions-tasks';
 import { Construct } from 'constructs';
 import { LogArchiverFunction } from './funcs/log-archiver-function';
 
-export interface DailyCloudWatchLogsArchiverProps {
-  readonly resource: ResourceTagProperty;
+export interface DailyCloudWatchLogsArchiveStackProps extends cdk.StackProps {
+  readonly targetResourceTag: TargetResourceTagProperty;
 }
 
-export interface ResourceTagProperty {
+export interface TargetResourceTagProperty {
   readonly key: string;
   readonly values: string[];
 }
 
-export class DailyCloudWatchLogsArchiver extends Construct {
-  constructor(scope: Construct, id: string, props: DailyCloudWatchLogsArchiverProps) {
+export class DailyCloudWatchLogsArchiveStack extends cdk.Stack {
+  constructor(scope: Construct, id: string, props: DailyCloudWatchLogsArchiveStackProps) {
     super(scope, id);
 
     // 👇 Get current account & region
@@ -35,6 +36,7 @@ export class DailyCloudWatchLogsArchiver extends Construct {
     // 👇 Create Backup S3 Bucket
     const logArchiveBucket = new SecureLogBucket(this, 'LogArchiveBucket', {
       bucketName: `log-archive-${randomNameKey}`,
+      encryption: SecureBucketEncryption.S3_MANAGED,
     });
     logArchiveBucket.addToResourcePolicy(new iam.PolicyStatement({
       effect: iam.Effect.ALLOW,
@@ -68,8 +70,8 @@ export class DailyCloudWatchLogsArchiver extends Construct {
 
     // 👇 Create Lambda Execution role.
     const lambdaExecutionRole = new iam.Role(this, 'LambdaExecutionRole', {
-      roleName: `daily-cw-logs-archiver-lambda-exec-${randomNameKey}-role`,
-      description: 'daily CloudWatch Logs archiver machine exec role.',
+      roleName: `daily-cw-logs-archive-lambda-exec-${randomNameKey}-role`,
+      description: 'daily CloudWatch Logs archive machine exec role.',
       assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
       managedPolicies: [
         iam.ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole'),
@@ -105,7 +107,7 @@ export class DailyCloudWatchLogsArchiver extends Construct {
 
     // 👇 Create Lambda Function
     const lambdaFunction = new LogArchiverFunction(this, 'LogArchiveFunction', {
-      functionName: `daily-cw-logs-archiver-${randomNameKey}-func`,
+      functionName: `daily-cw-logs-archive-${randomNameKey}-func`,
       description: 'A function to archive logs s3 bucket from CloudWatch Logs.',
       environment: {
         BUCKET_NAME: logArchiveBucket.bucketName,
@@ -268,8 +270,8 @@ export class DailyCloudWatchLogsArchiver extends Construct {
         arn: machine.stateMachineArn,
         roleArn: schedulerExecutionRole.roleArn,
         input: JSON.stringify({
-          tagKey: props.resource.key,
-          tagValues: props.resource.values,
+          tagKey: props.targetResourceTag.key,
+          tagValues: props.targetResourceTag.values,
         }),
         retryPolicy: {
           maximumEventAgeInSeconds: 60,
