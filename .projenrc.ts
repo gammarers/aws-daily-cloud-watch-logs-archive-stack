@@ -7,9 +7,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   typescriptVersion: '5.1.x',
   jsiiVersion: '5.1.x',
   defaultReleaseBranch: 'main',
-  name: '@gammarer/aws-daily-cloud-watch-logs-archiver',
+  name: '@gammarer/aws-daily-cloud-watch-logs-archive-stack',
   projenrcTs: true,
-  repositoryUrl: 'https://github.com/gammarer/aws-daily-cloud-watch-logs-archiver.git',
+  repositoryUrl: 'https://github.com/gammarer/aws-daily-cloud-watch-logs-archive-stack.git',
   description: 'AWS CloudWatch Logs daily archive to s3 bucket',
   keywords: ['aws', 'cdk', 'aws-cdk', 'scheduler', 's3', 'bucket', 'archive', 'lambda'],
   majorVersion: 2,
@@ -62,18 +62,18 @@ const project = new awscdk.AwsCdkConstructLibrary({
     allowedUsernames: ['yicr'],
   },
   publishToPypi: {
-    distName: 'gammarer.aws-daily-cloud-watch-logs-archiver',
-    module: 'gammarer.aws_daily_cloud_watch_logs_archiver',
+    distName: 'gammarer.aws-daily-cloud-watch-logs-archive-stack',
+    module: 'gammarer.aws_daily_cloud_watch_logs_archive-stack',
   },
   publishToMaven: {
     mavenGroupId: 'com.gammarer',
-    javaPackage: 'com.gammarer.cdk.aws.daily_cloud_watch_logs_archiver',
-    mavenArtifactId: 'aws-daily-cloud-watch-logs-archiver',
+    javaPackage: 'com.gammarer.cdk.aws.daily_cloud_watch_logs_archive-stack',
+    mavenArtifactId: 'aws-daily-cloud-watch-logs-archive-stack',
     mavenEndpoint: 'https://s01.oss.sonatype.org',
   },
   publishToNuget: {
     dotNetNamespace: 'Gammarer.CDK.AWS',
-    packageId: 'Gammarer.CDK.AWS.DailyCloudWatchLogsArchiver',
+    packageId: 'Gammarer.CDK.AWS.DailyCloudWatchLogsArchiveStack',
   },
 });
 project.synth();

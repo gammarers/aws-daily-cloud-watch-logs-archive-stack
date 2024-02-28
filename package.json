@@ -1,9 +1,9 @@
 {
-  "name": "@gammarer/aws-daily-cloud-watch-logs-archiver",
+  "name": "@gammarer/aws-daily-cloud-watch-logs-archive-stack",
   "description": "AWS CloudWatch Logs daily archive to s3 bucket",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gammarer/aws-daily-cloud-watch-logs-archiver.git"
+    "url": "https://github.com/gammarer/aws-daily-cloud-watch-logs-archive-stack.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -147,19 +147,19 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "com.gammarer.cdk.aws.daily_cloud_watch_logs_archiver",
+        "package": "com.gammarer.cdk.aws.daily_cloud_watch_logs_archive-stack",
         "maven": {
           "groupId": "com.gammarer",
-          "artifactId": "aws-daily-cloud-watch-logs-archiver"
+          "artifactId": "aws-daily-cloud-watch-logs-archive-stack"
         }
       },
       "python": {
-        "distName": "gammarer.aws-daily-cloud-watch-logs-archiver",
-        "module": "gammarer.aws_daily_cloud_watch_logs_archiver"
+        "distName": "gammarer.aws-daily-cloud-watch-logs-archive-stack",
+        "module": "gammarer.aws_daily_cloud_watch_logs_archive-stack"
       },
       "dotnet": {
         "namespace": "Gammarer.CDK.AWS",
-        "packageId": "Gammarer.CDK.AWS.DailyCloudWatchLogsArchiver"
+        "packageId": "Gammarer.CDK.AWS.DailyCloudWatchLogsArchiveStack"
       }
     },
     "tsc": {
