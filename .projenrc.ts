@@ -13,17 +13,19 @@ const project = new awscdk.AwsCdkConstructLibrary({
   description: 'AWS CloudWatch Logs daily archive to s3 bucket',
   keywords: ['aws', 'cdk', 'aws-cdk', 'scheduler', 's3', 'bucket', 'archive', 'lambda'],
   majorVersion: 2,
+  deps: [
+    '@gammarer/aws-secure-log-bucket@~1.4.0',
+    '@gammarer/aws-secure-bucket@~1.1.0',
+  ],
   devDeps: [
     'aws-sdk-client-mock@^3',
     'aws-sdk-client-mock-jest@^3',
     '@aws-sdk/client-cloudwatch-logs',
     '@types/aws-lambda',
-    '@gammarer/aws-secure-log-bucket@~1.3.0',
-    '@gammarer/aws-secure-bucket@~1.1.0',
     '@gammarer/jest-serializer-aws-cdk-asset-filename-replacer',
   ],
   peerDeps: [
-    '@gammarer/aws-secure-log-bucket@~1.3.0',
+    '@gammarer/aws-secure-log-bucket@~1.4.0',
     '@gammarer/aws-secure-bucket@~1.1.0',
   ],
   compat: true,
