@@ -58,16 +58,16 @@
     "eslint-plugin-import": "^2.29.1",
     "jest": "^29.7.0",
     "jest-junit": "^15",
-    "jsii": "5.1.x",
+    "jsii": "5.2.x",
     "jsii-diff": "^1.95.0",
     "jsii-docgen": "^10.3.22",
     "jsii-pacmak": "^1.95.0",
-    "jsii-rosetta": "5.1.x",
+    "jsii-rosetta": "5.2.x",
     "projen": "^0.80.10",
     "standard-version": "^9",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
-    "typescript": "5.1.x"
+    "typescript": "5.2.x"
   },
   "peerDependencies": {
     "@gammarer/aws-secure-bucket": "~1.1.0",
