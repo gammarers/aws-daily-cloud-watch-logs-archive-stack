@@ -28,12 +28,13 @@ export class DailyCloudWatchLogsArchiveStack extends cdk.Stack {
     //const account = cdk.Stack.of(this).account;
     //const stackName: string = cdk.Stack.of(this).stackName;
     //const region = cdk.Stack.of(this).region;
-    const account = this.account;
+    //const account = this.account;
     const region = this.region;
 
     const randomNameKey = crypto.createHash('shake256', { outputLength: 4 })
-      .update(`${account}-${region}-${cdk.Names.uniqueId(scope)}-${cdk.Names.uniqueId(this)}`)
+      .update(cdk.Names.uniqueId(this))
       .digest('hex');
+
 
     // 👇 Create Backup S3 Bucket
     const logArchiveBucket = new SecureLogBucket(this, 'LogArchiveBucket', {
