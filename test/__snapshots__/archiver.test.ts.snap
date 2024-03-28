@@ -75,7 +75,7 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
             "PolicyName": "put-bucket-policy",
           },
         ],
-        "RoleName": "daily-cw-logs-archive-lambda-exec-59e850b7-role",
+        "RoleName": "daily-cw-logs-archive-lambda-exec-fb5caf47-role",
       },
       "Type": "AWS::IAM::Role",
     },
@@ -111,7 +111,7 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
             },
           ],
         },
-        "BucketName": "log-archive-59e850b7",
+        "BucketName": "log-archive-fb5caf47",
         "LifecycleConfiguration": {
           "Rules": [
             {
@@ -262,7 +262,7 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
             },
           },
         },
-        "FunctionName": "daily-cw-logs-archive-59e850b7-func",
+        "FunctionName": "daily-cw-logs-archive-fb5caf47-func",
         "Handler": "index.handler",
         "Role": {
           "Fn::GetAtt": [
@@ -280,7 +280,7 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
         "FlexibleTimeWindow": {
           "Mode": "OFF",
         },
-        "Name": "daily-cw-logs-archive-59e850b7-schedule",
+        "Name": "daily-cw-logs-archive-fb5caf47-schedule",
         "ScheduleExpression": "cron(1 13 * * ? *)",
         "ScheduleExpressionTimezone": "UTC",
         "State": "ENABLED",
@@ -335,7 +335,7 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
             "PolicyName": "state-machine-exec-policy",
           },
         ],
-        "RoleName": "daily-cw-logs-archive-59e850b7-schedule-role",
+        "RoleName": "daily-cw-logs-archive-fb5caf47-schedule-role",
       },
       "Type": "AWS::IAM::Role",
     },
@@ -379,7 +379,7 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
             "Arn",
           ],
         },
-        "StateMachineName": "daily-cw-logs-archive-59e850b7-machine",
+        "StateMachineName": "daily-cw-logs-archive-fb5caf47-machine",
       },
       "Type": "AWS::StepFunctions::StateMachine",
       "UpdateReplacePolicy": "Delete",
@@ -399,7 +399,7 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
           "Version": "2012-10-17",
         },
         "Description": "daily CloudWatch Logs archive machine role.",
-        "RoleName": "daily-cw-logs-archive-machine-59e850b7-role",
+        "RoleName": "daily-cw-logs-archive-machine-fb5caf47-role",
       },
       "Type": "AWS::IAM::Role",
     },
@@ -446,7 +446,7 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "daily-cw-logs-archive-machine-59e850b7-default-policy",
+        "PolicyName": "daily-cw-logs-archive-machine-fb5caf47-default-policy",
         "Roles": [
           {
             "Ref": "StateMachineRoleB840431D",
