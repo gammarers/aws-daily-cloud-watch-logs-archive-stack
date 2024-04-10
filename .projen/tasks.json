@@ -332,7 +332,7 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@aws-sdk/client-cloudwatch-logs,@gammarer/jest-serializer-aws-cdk-asset-filename-replacer,@types/aws-lambda,@types/jest,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-docgen,jsii-pacmak,jsii-rosetta,jsii,projen,ts-jest,ts-node,typescript,@gammarer/aws-secure-bucket,@gammarer/aws-secure-log-bucket"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@aws-sdk/client-cloudwatch-logs,@gammarer/jest-serializer-aws-cdk-asset-filename-replacer,@types/aws-lambda,@types/jest,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-docgen,jsii-pacmak,projen,ts-jest,ts-node"
         },
         {
           "exec": "yarn install --check-files"
