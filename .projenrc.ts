@@ -14,8 +14,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   keywords: ['aws', 'cdk', 'aws-cdk', 'scheduler', 's3', 'bucket', 'archive', 'lambda'],
   majorVersion: 2,
   deps: [
-    '@gammarer/aws-secure-log-bucket@~1.4.0',
-    '@gammarer/aws-secure-bucket@~1.1.0',
+    '@gammarers/aws-secure-log-bucket@~1.6.2',
+    '@gammarers/aws-secure-bucket@~1.3.3',
   ],
   devDeps: [
     'aws-sdk-client-mock@^3',
@@ -25,8 +25,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '@gammarer/jest-serializer-aws-cdk-asset-filename-replacer',
   ],
   peerDeps: [
-    '@gammarer/aws-secure-log-bucket@~1.4.0',
-    '@gammarer/aws-secure-bucket@~1.1.0',
+    '@gammarers/aws-secure-log-bucket@~1.6.2',
+    '@gammarers/aws-secure-bucket@~1.3.3',
   ],
   compat: true,
   jestOptions: {
