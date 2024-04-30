@@ -152,8 +152,8 @@
         "module": "gammarers.aws_daily_cloud_watch_logs_archive_stack"
       },
       "dotnet": {
-        "namespace": "Gammarer.CDK.AWS",
-        "packageId": "Gammarer.CDK.AWS.DailyCloudWatchLogsArchiveStack"
+        "namespace": "Gammarers.CDK.AWS",
+        "packageId": "Gammarers.CDK.AWS.DailyCloudWatchLogsArchiveStack"
       }
     },
     "tsc": {

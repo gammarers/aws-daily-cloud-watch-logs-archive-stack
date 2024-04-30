@@ -68,8 +68,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     module: 'gammarers.aws_daily_cloud_watch_logs_archive_stack',
   },
   publishToNuget: {
-    dotNetNamespace: 'Gammarer.CDK.AWS',
-    packageId: 'Gammarer.CDK.AWS.DailyCloudWatchLogsArchiveStack',
+    dotNetNamespace: 'Gammarers.CDK.AWS',
+    packageId: 'Gammarers.CDK.AWS.DailyCloudWatchLogsArchiveStack',
   },
 });
 project.synth();
