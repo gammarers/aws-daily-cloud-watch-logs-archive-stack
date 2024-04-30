@@ -55,7 +55,7 @@
       "description": "Create a JavaScript bundle from src/funcs/log-archiver.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/funcs/log-archiver.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/funcs/log-archiver.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/client-cloudwatch-logs --sourcemap"
+          "exec": "esbuild --bundle src/funcs/log-archiver.lambda.ts --target=\"node20\" --platform=\"node\" --outfile=\"assets/funcs/log-archiver.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/client-cloudwatch-logs --sourcemap"
         }
       ]
     },
@@ -64,7 +64,7 @@
       "description": "Continuously update the JavaScript bundle from src/funcs/log-archiver.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/funcs/log-archiver.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/funcs/log-archiver.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/client-cloudwatch-logs --sourcemap --watch"
+          "exec": "esbuild --bundle src/funcs/log-archiver.lambda.ts --target=\"node20\" --platform=\"node\" --outfile=\"assets/funcs/log-archiver.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/client-cloudwatch-logs --sourcemap --watch"
         }
       ]
     },
