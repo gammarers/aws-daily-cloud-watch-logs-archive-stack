@@ -244,7 +244,7 @@ describe('DailyCloudWatchLogsArchiveStack Testing', () => {
       template.hasResourceProperties('AWS::Lambda::Function', Match.objectEquals({
         FunctionName: Match.stringLikeRegexp('daily-cw-logs-archive-.*-func'),
         Handler: 'index.handler',
-        Runtime: 'nodejs18.x',
+        Runtime: 'nodejs20.x',
         Code: {
           S3Bucket: Match.anyValue(),
           S3Key: Match.stringLikeRegexp('.*.zip'),
