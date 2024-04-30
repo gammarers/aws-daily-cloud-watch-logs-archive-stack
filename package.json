@@ -21,7 +21,6 @@
     "package": "npx projen package",
     "package-all": "npx projen package-all",
     "package:dotnet": "npx projen package:dotnet",
-    "package:java": "npx projen package:java",
     "package:js": "npx projen package:js",
     "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
@@ -148,13 +147,6 @@
   "jsii": {
     "outdir": "dist",
     "targets": {
-      "java": {
-        "package": "com.gammarer.cdk.aws.daily_cloud_watch_logs_archive_stack",
-        "maven": {
-          "groupId": "com.gammarer",
-          "artifactId": "aws-daily-cloud-watch-logs-archive-stack"
-        }
-      },
       "python": {
         "distName": "gammarers.aws-daily-cloud-watch-logs-archive-stack",
         "module": "gammarers.aws_daily_cloud_watch_logs_archive_stack"

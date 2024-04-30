@@ -67,12 +67,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     distName: 'gammarers.aws-daily-cloud-watch-logs-archive-stack',
     module: 'gammarers.aws_daily_cloud_watch_logs_archive_stack',
   },
-  publishToMaven: {
-    mavenGroupId: 'com.gammarer',
-    javaPackage: 'com.gammarer.cdk.aws.daily_cloud_watch_logs_archive_stack',
-    mavenArtifactId: 'aws-daily-cloud-watch-logs-archive-stack',
-    mavenEndpoint: 'https://s01.oss.sonatype.org',
-  },
   publishToNuget: {
     dotNetNamespace: 'Gammarer.CDK.AWS',
     packageId: 'Gammarer.CDK.AWS.DailyCloudWatchLogsArchiveStack',
