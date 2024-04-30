@@ -64,8 +64,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     allowedUsernames: ['yicr'],
   },
   publishToPypi: {
-    distName: 'gammarer.aws-daily-cloud-watch-logs-archive-stack',
-    module: 'gammarer.aws_daily_cloud_watch_logs_archive_stack',
+    distName: 'gammarers.aws-daily-cloud-watch-logs-archive-stack',
+    module: 'gammarers.aws_daily_cloud_watch_logs_archive_stack',
   },
   publishToMaven: {
     mavenGroupId: 'com.gammarer',
