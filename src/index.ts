@@ -1,6 +1,6 @@
 import * as crypto from 'crypto';
-import { SecureBucketEncryption } from '@gammarer/aws-secure-bucket';
-import { SecureLogBucket } from '@gammarer/aws-secure-log-bucket';
+import { SecureBucketEncryption } from '@gammarers/aws-secure-bucket';
+import { SecureLogBucket } from '@gammarers/aws-secure-log-bucket';
 import * as cdk from 'aws-cdk-lib';
 import { Duration } from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
