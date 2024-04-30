@@ -2,39 +2,39 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### DailyCloudWatchLogsArchiveStack <a name="DailyCloudWatchLogsArchiveStack" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack"></a>
+### DailyCloudWatchLogsArchiveStack <a name="DailyCloudWatchLogsArchiveStack" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack"></a>
 
-#### Initializers <a name="Initializers" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer"></a>
+#### Initializers <a name="Initializers" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer"></a>
 
 ```typescript
-import { DailyCloudWatchLogsArchiveStack } from '@gammarer/aws-daily-cloud-watch-logs-archive-stack'
+import { DailyCloudWatchLogsArchiveStack } from '@gammarers/aws-daily-cloud-watch-logs-archive-stack'
 
 new DailyCloudWatchLogsArchiveStack(scope: Construct, id: string, props: DailyCloudWatchLogsArchiveStackProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer.parameter.props">props</a></code> | <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps">DailyCloudWatchLogsArchiveStackProps</a></code> | *No description.* |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer.parameter.props">props</a></code> | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps">DailyCloudWatchLogsArchiveStackProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps">DailyCloudWatchLogsArchiveStackProps</a>
+- *Type:* <a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps">DailyCloudWatchLogsArchiveStackProps</a>
 
 ---
 
@@ -42,25 +42,25 @@ new DailyCloudWatchLogsArchiveStack(scope: Construct, id: string, props: DailyCl
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addDependency">addDependency</a></code> | Add a dependency between this stack and another stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addMetadata">addMetadata</a></code> | Adds an arbitary key-value pair, with information you want to record about the stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addTransform">addTransform</a></code> | Add a Transform to this stack. A Transform is a macro that AWS CloudFormation uses to process your template. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportStringListValue">exportStringListValue</a></code> | Create a CloudFormation Export for a string list value. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportValue">exportValue</a></code> | Create a CloudFormation Export for a string value. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.formatArn">formatArn</a></code> | Creates an ARN from components. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.getLogicalId">getLogicalId</a></code> | Allocates a stack-unique CloudFormation-compatible logical identity for a specific resource. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.regionalFact">regionalFact</a></code> | Look up a fact value for the given fact for the region of this stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.renameLogicalId">renameLogicalId</a></code> | Rename a generated logical identities. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.reportMissingContextKey">reportMissingContextKey</a></code> | Indicate that a context key was expected. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.resolve">resolve</a></code> | Resolve a tokenized value in the context of the current stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.splitArn">splitArn</a></code> | Splits the provided ARN into its components. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toJsonString">toJsonString</a></code> | Convert an object, potentially containing tokens, to a JSON string. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toYamlString">toYamlString</a></code> | Convert an object, potentially containing tokens, to a YAML string. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addDependency">addDependency</a></code> | Add a dependency between this stack and another stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addMetadata">addMetadata</a></code> | Adds an arbitary key-value pair, with information you want to record about the stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addTransform">addTransform</a></code> | Add a Transform to this stack. A Transform is a macro that AWS CloudFormation uses to process your template. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportStringListValue">exportStringListValue</a></code> | Create a CloudFormation Export for a string list value. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportValue">exportValue</a></code> | Create a CloudFormation Export for a string value. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.formatArn">formatArn</a></code> | Creates an ARN from components. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.getLogicalId">getLogicalId</a></code> | Allocates a stack-unique CloudFormation-compatible logical identity for a specific resource. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.regionalFact">regionalFact</a></code> | Look up a fact value for the given fact for the region of this stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.renameLogicalId">renameLogicalId</a></code> | Rename a generated logical identities. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.reportMissingContextKey">reportMissingContextKey</a></code> | Indicate that a context key was expected. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.resolve">resolve</a></code> | Resolve a tokenized value in the context of the current stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.splitArn">splitArn</a></code> | Splits the provided ARN into its components. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toJsonString">toJsonString</a></code> | Convert an object, potentially containing tokens, to a JSON string. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toYamlString">toYamlString</a></code> | Convert an object, potentially containing tokens, to a YAML string. |
 
 ---
 
-##### `toString` <a name="toString" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toString"></a>
+##### `toString` <a name="toString" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toString"></a>
 
 ```typescript
 public toString(): string
@@ -68,7 +68,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `addDependency` <a name="addDependency" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addDependency"></a>
+##### `addDependency` <a name="addDependency" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addDependency"></a>
 
 ```typescript
 public addDependency(target: Stack, reason?: string): void
@@ -79,19 +79,19 @@ Add a dependency between this stack and another stack.
 This can be used to define dependencies between any two stacks within an
 app, and also supports nested stacks.
 
-###### `target`<sup>Required</sup> <a name="target" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addDependency.parameter.target"></a>
+###### `target`<sup>Required</sup> <a name="target" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.Stack
 
 ---
 
-###### `reason`<sup>Optional</sup> <a name="reason" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addDependency.parameter.reason"></a>
+###### `reason`<sup>Optional</sup> <a name="reason" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addDependency.parameter.reason"></a>
 
 - *Type:* string
 
 ---
 
-##### `addMetadata` <a name="addMetadata" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addMetadata"></a>
+##### `addMetadata` <a name="addMetadata" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addMetadata"></a>
 
 ```typescript
 public addMetadata(key: string, value: any): void
@@ -103,19 +103,19 @@ These get translated to the Metadata section of the generated template.
 
 > [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html)
 
-###### `key`<sup>Required</sup> <a name="key" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addMetadata.parameter.key"></a>
+###### `key`<sup>Required</sup> <a name="key" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addMetadata.parameter.key"></a>
 
 - *Type:* string
 
 ---
 
-###### `value`<sup>Required</sup> <a name="value" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addMetadata.parameter.value"></a>
+###### `value`<sup>Required</sup> <a name="value" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addMetadata.parameter.value"></a>
 
 - *Type:* any
 
 ---
 
-##### `addTransform` <a name="addTransform" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addTransform"></a>
+##### `addTransform` <a name="addTransform" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addTransform"></a>
 
 ```typescript
 public addTransform(transform: string): void
@@ -136,7 +136,7 @@ stack.addTransform('AWS::Serverless-2016-10-31')
 ```
 
 
-###### `transform`<sup>Required</sup> <a name="transform" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addTransform.parameter.transform"></a>
+###### `transform`<sup>Required</sup> <a name="transform" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addTransform.parameter.transform"></a>
 
 - *Type:* string
 
@@ -144,7 +144,7 @@ The transform to add.
 
 ---
 
-##### `exportStringListValue` <a name="exportStringListValue" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportStringListValue"></a>
+##### `exportStringListValue` <a name="exportStringListValue" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportStringListValue"></a>
 
 ```typescript
 public exportStringListValue(exportedValue: any, options?: ExportValueOptions): string[]
@@ -170,19 +170,19 @@ the resource and the manual export.
 
 See `exportValue` for an example of this process.
 
-###### `exportedValue`<sup>Required</sup> <a name="exportedValue" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportStringListValue.parameter.exportedValue"></a>
+###### `exportedValue`<sup>Required</sup> <a name="exportedValue" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportStringListValue.parameter.exportedValue"></a>
 
 - *Type:* any
 
 ---
 
-###### `options`<sup>Optional</sup> <a name="options" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportStringListValue.parameter.options"></a>
+###### `options`<sup>Optional</sup> <a name="options" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportStringListValue.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.ExportValueOptions
 
 ---
 
-##### `exportValue` <a name="exportValue" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportValue"></a>
+##### `exportValue` <a name="exportValue" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportValue"></a>
 
 ```typescript
 public exportValue(exportedValue: any, options?: ExportValueOptions): string
@@ -233,19 +233,19 @@ Instead, the process takes two deployments:
 - Don't forget to remove the `exportValue()` call as well.
 - Deploy again (this time only the `producerStack` will be changed -- the bucket will be deleted).
 
-###### `exportedValue`<sup>Required</sup> <a name="exportedValue" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportValue.parameter.exportedValue"></a>
+###### `exportedValue`<sup>Required</sup> <a name="exportedValue" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportValue.parameter.exportedValue"></a>
 
 - *Type:* any
 
 ---
 
-###### `options`<sup>Optional</sup> <a name="options" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportValue.parameter.options"></a>
+###### `options`<sup>Optional</sup> <a name="options" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportValue.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.ExportValueOptions
 
 ---
 
-##### `formatArn` <a name="formatArn" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.formatArn"></a>
+##### `formatArn` <a name="formatArn" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.formatArn"></a>
 
 ```typescript
 public formatArn(components: ArnComponents): string
@@ -267,13 +267,13 @@ The required ARN pieces that are omitted will be taken from the stack that
 the 'scope' is attached to. If all ARN pieces are supplied, the supplied scope
 can be 'undefined'.
 
-###### `components`<sup>Required</sup> <a name="components" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.formatArn.parameter.components"></a>
+###### `components`<sup>Required</sup> <a name="components" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.formatArn.parameter.components"></a>
 
 - *Type:* aws-cdk-lib.ArnComponents
 
 ---
 
-##### `getLogicalId` <a name="getLogicalId" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.getLogicalId"></a>
+##### `getLogicalId` <a name="getLogicalId" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.getLogicalId"></a>
 
 ```typescript
 public getLogicalId(element: CfnElement): string
@@ -289,7 +289,7 @@ This method uses the protected method `allocateLogicalId` to render the
 logical ID for an element. To modify the naming scheme, extend the `Stack`
 class and override this method.
 
-###### `element`<sup>Required</sup> <a name="element" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.getLogicalId.parameter.element"></a>
+###### `element`<sup>Required</sup> <a name="element" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.getLogicalId.parameter.element"></a>
 
 - *Type:* aws-cdk-lib.CfnElement
 
@@ -297,7 +297,7 @@ The CloudFormation element for which a logical identity is needed.
 
 ---
 
-##### `regionalFact` <a name="regionalFact" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.regionalFact"></a>
+##### `regionalFact` <a name="regionalFact" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.regionalFact"></a>
 
 ```typescript
 public regionalFact(factName: string, defaultValue?: string): string
@@ -321,19 +321,19 @@ not have to worry about regional facts.
 If `defaultValue` is not given, it is an error if the fact is unknown for
 the given region.
 
-###### `factName`<sup>Required</sup> <a name="factName" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.regionalFact.parameter.factName"></a>
+###### `factName`<sup>Required</sup> <a name="factName" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.regionalFact.parameter.factName"></a>
 
 - *Type:* string
 
 ---
 
-###### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.regionalFact.parameter.defaultValue"></a>
+###### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.regionalFact.parameter.defaultValue"></a>
 
 - *Type:* string
 
 ---
 
-##### `renameLogicalId` <a name="renameLogicalId" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.renameLogicalId"></a>
+##### `renameLogicalId` <a name="renameLogicalId" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.renameLogicalId"></a>
 
 ```typescript
 public renameLogicalId(oldId: string, newId: string): void
@@ -344,19 +344,19 @@ Rename a generated logical identities.
 To modify the naming scheme strategy, extend the `Stack` class and
 override the `allocateLogicalId` method.
 
-###### `oldId`<sup>Required</sup> <a name="oldId" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.renameLogicalId.parameter.oldId"></a>
+###### `oldId`<sup>Required</sup> <a name="oldId" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.renameLogicalId.parameter.oldId"></a>
 
 - *Type:* string
 
 ---
 
-###### `newId`<sup>Required</sup> <a name="newId" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.renameLogicalId.parameter.newId"></a>
+###### `newId`<sup>Required</sup> <a name="newId" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.renameLogicalId.parameter.newId"></a>
 
 - *Type:* string
 
 ---
 
-##### `reportMissingContextKey` <a name="reportMissingContextKey" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.reportMissingContextKey"></a>
+##### `reportMissingContextKey` <a name="reportMissingContextKey" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.reportMissingContextKey"></a>
 
 ```typescript
 public reportMissingContextKey(report: MissingContext): void
@@ -367,7 +367,7 @@ Indicate that a context key was expected.
 Contains instructions which will be emitted into the cloud assembly on how
 the key should be supplied.
 
-###### `report`<sup>Required</sup> <a name="report" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.reportMissingContextKey.parameter.report"></a>
+###### `report`<sup>Required</sup> <a name="report" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.reportMissingContextKey.parameter.report"></a>
 
 - *Type:* aws-cdk-lib.cloud_assembly_schema.MissingContext
 
@@ -375,7 +375,7 @@ The set of parameters needed to obtain the context.
 
 ---
 
-##### `resolve` <a name="resolve" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.resolve"></a>
+##### `resolve` <a name="resolve" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.resolve"></a>
 
 ```typescript
 public resolve(obj: any): any
@@ -383,13 +383,13 @@ public resolve(obj: any): any
 
 Resolve a tokenized value in the context of the current stack.
 
-###### `obj`<sup>Required</sup> <a name="obj" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.resolve.parameter.obj"></a>
+###### `obj`<sup>Required</sup> <a name="obj" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.resolve.parameter.obj"></a>
 
 - *Type:* any
 
 ---
 
-##### `splitArn` <a name="splitArn" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.splitArn"></a>
+##### `splitArn` <a name="splitArn" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.splitArn"></a>
 
 ```typescript
 public splitArn(arn: string, arnFormat: ArnFormat): ArnComponents
@@ -402,7 +402,7 @@ and a Token representing a dynamic CloudFormation expression
 (in which case the returned components will also be dynamic CloudFormation expressions,
 encoded as Tokens).
 
-###### `arn`<sup>Required</sup> <a name="arn" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.splitArn.parameter.arn"></a>
+###### `arn`<sup>Required</sup> <a name="arn" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.splitArn.parameter.arn"></a>
 
 - *Type:* string
 
@@ -410,7 +410,7 @@ the ARN to split into its components.
 
 ---
 
-###### `arnFormat`<sup>Required</sup> <a name="arnFormat" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.splitArn.parameter.arnFormat"></a>
+###### `arnFormat`<sup>Required</sup> <a name="arnFormat" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.splitArn.parameter.arnFormat"></a>
 
 - *Type:* aws-cdk-lib.ArnFormat
 
@@ -418,7 +418,7 @@ the expected format of 'arn' - depends on what format the service 'arn' represen
 
 ---
 
-##### `toJsonString` <a name="toJsonString" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toJsonString"></a>
+##### `toJsonString` <a name="toJsonString" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toJsonString"></a>
 
 ```typescript
 public toJsonString(obj: any, space?: number): string
@@ -426,19 +426,19 @@ public toJsonString(obj: any, space?: number): string
 
 Convert an object, potentially containing tokens, to a JSON string.
 
-###### `obj`<sup>Required</sup> <a name="obj" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toJsonString.parameter.obj"></a>
+###### `obj`<sup>Required</sup> <a name="obj" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toJsonString.parameter.obj"></a>
 
 - *Type:* any
 
 ---
 
-###### `space`<sup>Optional</sup> <a name="space" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toJsonString.parameter.space"></a>
+###### `space`<sup>Optional</sup> <a name="space" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toJsonString.parameter.space"></a>
 
 - *Type:* number
 
 ---
 
-##### `toYamlString` <a name="toYamlString" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toYamlString"></a>
+##### `toYamlString` <a name="toYamlString" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toYamlString"></a>
 
 ```typescript
 public toYamlString(obj: any): string
@@ -446,7 +446,7 @@ public toYamlString(obj: any): string
 
 Convert an object, potentially containing tokens, to a YAML string.
 
-###### `obj`<sup>Required</sup> <a name="obj" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toYamlString.parameter.obj"></a>
+###### `obj`<sup>Required</sup> <a name="obj" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toYamlString.parameter.obj"></a>
 
 - *Type:* any
 
@@ -456,23 +456,23 @@ Convert an object, potentially containing tokens, to a YAML string.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.isStack">isStack</a></code> | Return whether the given object is a Stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.of">of</a></code> | Looks up the first stack scope in which `construct` is defined. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.isStack">isStack</a></code> | Return whether the given object is a Stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.of">of</a></code> | Looks up the first stack scope in which `construct` is defined. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.isConstruct"></a>
 
 ```typescript
-import { DailyCloudWatchLogsArchiveStack } from '@gammarer/aws-daily-cloud-watch-logs-archive-stack'
+import { DailyCloudWatchLogsArchiveStack } from '@gammarers/aws-daily-cloud-watch-logs-archive-stack'
 
 DailyCloudWatchLogsArchiveStack.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -480,10 +480,10 @@ Any object.
 
 ---
 
-##### `isStack` <a name="isStack" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.isStack"></a>
+##### `isStack` <a name="isStack" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.isStack"></a>
 
 ```typescript
-import { DailyCloudWatchLogsArchiveStack } from '@gammarer/aws-daily-cloud-watch-logs-archive-stack'
+import { DailyCloudWatchLogsArchiveStack } from '@gammarers/aws-daily-cloud-watch-logs-archive-stack'
 
 DailyCloudWatchLogsArchiveStack.isStack(x: any)
 ```
@@ -492,16 +492,16 @@ Return whether the given object is a Stack.
 
 We do attribute detection since we can't reliably use 'instanceof'.
 
-###### `x`<sup>Required</sup> <a name="x" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.isStack.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.isStack.parameter.x"></a>
 
 - *Type:* any
 
 ---
 
-##### `of` <a name="of" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.of"></a>
+##### `of` <a name="of" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.of"></a>
 
 ```typescript
-import { DailyCloudWatchLogsArchiveStack } from '@gammarer/aws-daily-cloud-watch-logs-archive-stack'
+import { DailyCloudWatchLogsArchiveStack } from '@gammarers/aws-daily-cloud-watch-logs-archive-stack'
 
 DailyCloudWatchLogsArchiveStack.of(construct: IConstruct)
 ```
@@ -510,7 +510,7 @@ Looks up the first stack scope in which `construct` is defined.
 
 Fails if there is no stack up the tree.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.of.parameter.construct"></a>
+###### `construct`<sup>Required</sup> <a name="construct" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.of.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
 
@@ -522,31 +522,31 @@ The construct to start the search from.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.account">account</a></code> | <code>string</code> | The AWS account into which this stack will be deployed. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.artifactId">artifactId</a></code> | <code>string</code> | The ID of the cloud assembly artifact for this stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.availabilityZones">availabilityZones</a></code> | <code>string[]</code> | Returns the list of AZs that are available in the AWS environment (account/region) associated with this stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.bundlingRequired">bundlingRequired</a></code> | <code>boolean</code> | Indicates whether the stack requires bundling or not. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.dependencies">dependencies</a></code> | <code>aws-cdk-lib.Stack[]</code> | Return the stacks this stack depends on. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.environment">environment</a></code> | <code>string</code> | The environment coordinates in which this stack is deployed. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.nested">nested</a></code> | <code>boolean</code> | Indicates if this is a nested stack, in which case `parentStack` will include a reference to it's parent. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.notificationArns">notificationArns</a></code> | <code>string[]</code> | Returns the list of notification Amazon Resource Names (ARNs) for the current stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.partition">partition</a></code> | <code>string</code> | The partition in which this stack is defined. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.region">region</a></code> | <code>string</code> | The AWS region into which this stack will be deployed (e.g. `us-west-2`). |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.stackId">stackId</a></code> | <code>string</code> | The ID of the stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.stackName">stackName</a></code> | <code>string</code> | The concrete CloudFormation physical stack name. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.synthesizer">synthesizer</a></code> | <code>aws-cdk-lib.IStackSynthesizer</code> | Synthesis method for this stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.tags">tags</a></code> | <code>aws-cdk-lib.TagManager</code> | Tags to be applied to the stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.templateFile">templateFile</a></code> | <code>string</code> | The name of the CloudFormation template file emitted to the output directory during synthesis. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.templateOptions">templateOptions</a></code> | <code>aws-cdk-lib.ITemplateOptions</code> | Options for CloudFormation template (like version, transform, description). |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.urlSuffix">urlSuffix</a></code> | <code>string</code> | The Amazon domain suffix for the region in which this stack is defined. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.nestedStackParent">nestedStackParent</a></code> | <code>aws-cdk-lib.Stack</code> | If this is a nested stack, returns it's parent stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.nestedStackResource">nestedStackResource</a></code> | <code>aws-cdk-lib.CfnResource</code> | If this is a nested stack, this represents its `AWS::CloudFormation::Stack` resource. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.terminationProtection">terminationProtection</a></code> | <code>boolean</code> | Whether termination protection is enabled for this stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.account">account</a></code> | <code>string</code> | The AWS account into which this stack will be deployed. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.artifactId">artifactId</a></code> | <code>string</code> | The ID of the cloud assembly artifact for this stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.availabilityZones">availabilityZones</a></code> | <code>string[]</code> | Returns the list of AZs that are available in the AWS environment (account/region) associated with this stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.bundlingRequired">bundlingRequired</a></code> | <code>boolean</code> | Indicates whether the stack requires bundling or not. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.dependencies">dependencies</a></code> | <code>aws-cdk-lib.Stack[]</code> | Return the stacks this stack depends on. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.environment">environment</a></code> | <code>string</code> | The environment coordinates in which this stack is deployed. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.nested">nested</a></code> | <code>boolean</code> | Indicates if this is a nested stack, in which case `parentStack` will include a reference to it's parent. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.notificationArns">notificationArns</a></code> | <code>string[]</code> | Returns the list of notification Amazon Resource Names (ARNs) for the current stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.partition">partition</a></code> | <code>string</code> | The partition in which this stack is defined. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.region">region</a></code> | <code>string</code> | The AWS region into which this stack will be deployed (e.g. `us-west-2`). |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.stackId">stackId</a></code> | <code>string</code> | The ID of the stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.stackName">stackName</a></code> | <code>string</code> | The concrete CloudFormation physical stack name. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.synthesizer">synthesizer</a></code> | <code>aws-cdk-lib.IStackSynthesizer</code> | Synthesis method for this stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.tags">tags</a></code> | <code>aws-cdk-lib.TagManager</code> | Tags to be applied to the stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.templateFile">templateFile</a></code> | <code>string</code> | The name of the CloudFormation template file emitted to the output directory during synthesis. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.templateOptions">templateOptions</a></code> | <code>aws-cdk-lib.ITemplateOptions</code> | Options for CloudFormation template (like version, transform, description). |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.urlSuffix">urlSuffix</a></code> | <code>string</code> | The Amazon domain suffix for the region in which this stack is defined. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.nestedStackParent">nestedStackParent</a></code> | <code>aws-cdk-lib.Stack</code> | If this is a nested stack, returns it's parent stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.nestedStackResource">nestedStackResource</a></code> | <code>aws-cdk-lib.CfnResource</code> | If this is a nested stack, this represents its `AWS::CloudFormation::Stack` resource. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.terminationProtection">terminationProtection</a></code> | <code>boolean</code> | Whether termination protection is enabled for this stack. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -558,7 +558,7 @@ The tree node.
 
 ---
 
-##### `account`<sup>Required</sup> <a name="account" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.account"></a>
+##### `account`<sup>Required</sup> <a name="account" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.account"></a>
 
 ```typescript
 public readonly account: string;
@@ -587,7 +587,7 @@ implement some other region-agnostic behavior.
 
 ---
 
-##### `artifactId`<sup>Required</sup> <a name="artifactId" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.artifactId"></a>
+##### `artifactId`<sup>Required</sup> <a name="artifactId" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.artifactId"></a>
 
 ```typescript
 public readonly artifactId: string;
@@ -599,7 +599,7 @@ The ID of the cloud assembly artifact for this stack.
 
 ---
 
-##### `availabilityZones`<sup>Required</sup> <a name="availabilityZones" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.availabilityZones"></a>
+##### `availabilityZones`<sup>Required</sup> <a name="availabilityZones" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.availabilityZones"></a>
 
 ```typescript
 public readonly availabilityZones: string[];
@@ -622,7 +622,7 @@ To specify a different strategy for selecting availability zones override this m
 
 ---
 
-##### `bundlingRequired`<sup>Required</sup> <a name="bundlingRequired" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.bundlingRequired"></a>
+##### `bundlingRequired`<sup>Required</sup> <a name="bundlingRequired" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.bundlingRequired"></a>
 
 ```typescript
 public readonly bundlingRequired: boolean;
@@ -634,7 +634,7 @@ Indicates whether the stack requires bundling or not.
 
 ---
 
-##### `dependencies`<sup>Required</sup> <a name="dependencies" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.dependencies"></a>
+##### `dependencies`<sup>Required</sup> <a name="dependencies" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.dependencies"></a>
 
 ```typescript
 public readonly dependencies: Stack[];
@@ -646,7 +646,7 @@ Return the stacks this stack depends on.
 
 ---
 
-##### `environment`<sup>Required</sup> <a name="environment" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.environment"></a>
+##### `environment`<sup>Required</sup> <a name="environment" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.environment"></a>
 
 ```typescript
 public readonly environment: string;
@@ -670,7 +670,7 @@ region/account-agnostic.
 
 ---
 
-##### `nested`<sup>Required</sup> <a name="nested" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.nested"></a>
+##### `nested`<sup>Required</sup> <a name="nested" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.nested"></a>
 
 ```typescript
 public readonly nested: boolean;
@@ -682,7 +682,7 @@ Indicates if this is a nested stack, in which case `parentStack` will include a 
 
 ---
 
-##### `notificationArns`<sup>Required</sup> <a name="notificationArns" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.notificationArns"></a>
+##### `notificationArns`<sup>Required</sup> <a name="notificationArns" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.notificationArns"></a>
 
 ```typescript
 public readonly notificationArns: string[];
@@ -694,7 +694,7 @@ Returns the list of notification Amazon Resource Names (ARNs) for the current st
 
 ---
 
-##### `partition`<sup>Required</sup> <a name="partition" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.partition"></a>
+##### `partition`<sup>Required</sup> <a name="partition" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.partition"></a>
 
 ```typescript
 public readonly partition: string;
@@ -706,7 +706,7 @@ The partition in which this stack is defined.
 
 ---
 
-##### `region`<sup>Required</sup> <a name="region" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.region"></a>
+##### `region`<sup>Required</sup> <a name="region" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.region"></a>
 
 ```typescript
 public readonly region: string;
@@ -735,7 +735,7 @@ implement some other region-agnostic behavior.
 
 ---
 
-##### `stackId`<sup>Required</sup> <a name="stackId" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.stackId"></a>
+##### `stackId`<sup>Required</sup> <a name="stackId" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.stackId"></a>
 
 ```typescript
 public readonly stackId: string;
@@ -755,7 +755,7 @@ The ID of the stack.
 ```
 
 
-##### `stackName`<sup>Required</sup> <a name="stackName" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.stackName"></a>
+##### `stackName`<sup>Required</sup> <a name="stackName" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.stackName"></a>
 
 ```typescript
 public readonly stackName: string;
@@ -776,7 +776,7 @@ you can use `Aws.STACK_NAME` directly.
 
 ---
 
-##### `synthesizer`<sup>Required</sup> <a name="synthesizer" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.synthesizer"></a>
+##### `synthesizer`<sup>Required</sup> <a name="synthesizer" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.synthesizer"></a>
 
 ```typescript
 public readonly synthesizer: IStackSynthesizer;
@@ -788,7 +788,7 @@ Synthesis method for this stack.
 
 ---
 
-##### `tags`<sup>Required</sup> <a name="tags" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.tags"></a>
+##### `tags`<sup>Required</sup> <a name="tags" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.tags"></a>
 
 ```typescript
 public readonly tags: TagManager;
@@ -800,7 +800,7 @@ Tags to be applied to the stack.
 
 ---
 
-##### `templateFile`<sup>Required</sup> <a name="templateFile" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.templateFile"></a>
+##### `templateFile`<sup>Required</sup> <a name="templateFile" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.templateFile"></a>
 
 ```typescript
 public readonly templateFile: string;
@@ -814,7 +814,7 @@ Example value: `MyStack.template.json`
 
 ---
 
-##### `templateOptions`<sup>Required</sup> <a name="templateOptions" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.templateOptions"></a>
+##### `templateOptions`<sup>Required</sup> <a name="templateOptions" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.templateOptions"></a>
 
 ```typescript
 public readonly templateOptions: ITemplateOptions;
@@ -826,7 +826,7 @@ Options for CloudFormation template (like version, transform, description).
 
 ---
 
-##### `urlSuffix`<sup>Required</sup> <a name="urlSuffix" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.urlSuffix"></a>
+##### `urlSuffix`<sup>Required</sup> <a name="urlSuffix" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.urlSuffix"></a>
 
 ```typescript
 public readonly urlSuffix: string;
@@ -838,7 +838,7 @@ The Amazon domain suffix for the region in which this stack is defined.
 
 ---
 
-##### `nestedStackParent`<sup>Optional</sup> <a name="nestedStackParent" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.nestedStackParent"></a>
+##### `nestedStackParent`<sup>Optional</sup> <a name="nestedStackParent" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.nestedStackParent"></a>
 
 ```typescript
 public readonly nestedStackParent: Stack;
@@ -850,7 +850,7 @@ If this is a nested stack, returns it's parent stack.
 
 ---
 
-##### `nestedStackResource`<sup>Optional</sup> <a name="nestedStackResource" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.nestedStackResource"></a>
+##### `nestedStackResource`<sup>Optional</sup> <a name="nestedStackResource" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.nestedStackResource"></a>
 
 ```typescript
 public readonly nestedStackResource: CfnResource;
@@ -864,7 +864,7 @@ If this is a nested stack, this represents its `AWS::CloudFormation::Stack` reso
 
 ---
 
-##### `terminationProtection`<sup>Optional</sup> <a name="terminationProtection" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.terminationProtection"></a>
+##### `terminationProtection`<sup>Optional</sup> <a name="terminationProtection" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.terminationProtection"></a>
 
 ```typescript
 public readonly terminationProtection: boolean;
@@ -879,12 +879,12 @@ Whether termination protection is enabled for this stack.
 
 ## Structs <a name="Structs" id="Structs"></a>
 
-### DailyCloudWatchLogsArchiveStackProps <a name="DailyCloudWatchLogsArchiveStackProps" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps"></a>
+### DailyCloudWatchLogsArchiveStackProps <a name="DailyCloudWatchLogsArchiveStackProps" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps"></a>
 
-#### Initializer <a name="Initializer" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.Initializer"></a>
 
 ```typescript
-import { DailyCloudWatchLogsArchiveStackProps } from '@gammarer/aws-daily-cloud-watch-logs-archive-stack'
+import { DailyCloudWatchLogsArchiveStackProps } from '@gammarers/aws-daily-cloud-watch-logs-archive-stack'
 
 const dailyCloudWatchLogsArchiveStackProps: DailyCloudWatchLogsArchiveStackProps = { ... }
 ```
@@ -893,20 +893,20 @@ const dailyCloudWatchLogsArchiveStackProps: DailyCloudWatchLogsArchiveStackProps
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.analyticsReporting">analyticsReporting</a></code> | <code>boolean</code> | Include runtime versioning information in this Stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.crossRegionReferences">crossRegionReferences</a></code> | <code>boolean</code> | Enable this flag to allow native cross region stack references. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.description">description</a></code> | <code>string</code> | A description of the stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.env">env</a></code> | <code>aws-cdk-lib.Environment</code> | The AWS environment (account/region) where this stack will be deployed. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.permissionsBoundary">permissionsBoundary</a></code> | <code>aws-cdk-lib.PermissionsBoundary</code> | Options for applying a permissions boundary to all IAM Roles and Users created within this Stage. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.stackName">stackName</a></code> | <code>string</code> | Name to deploy the stack with. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.synthesizer">synthesizer</a></code> | <code>aws-cdk-lib.IStackSynthesizer</code> | Synthesis method to use while deploying this stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | Stack tags that will be applied to all the taggable resources and the stack itself. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.terminationProtection">terminationProtection</a></code> | <code>boolean</code> | Whether to enable termination protection for this stack. |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.targetResourceTag">targetResourceTag</a></code> | <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty">TargetResourceTagProperty</a></code> | *No description.* |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.analyticsReporting">analyticsReporting</a></code> | <code>boolean</code> | Include runtime versioning information in this Stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.crossRegionReferences">crossRegionReferences</a></code> | <code>boolean</code> | Enable this flag to allow native cross region stack references. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.description">description</a></code> | <code>string</code> | A description of the stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.env">env</a></code> | <code>aws-cdk-lib.Environment</code> | The AWS environment (account/region) where this stack will be deployed. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.permissionsBoundary">permissionsBoundary</a></code> | <code>aws-cdk-lib.PermissionsBoundary</code> | Options for applying a permissions boundary to all IAM Roles and Users created within this Stage. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.stackName">stackName</a></code> | <code>string</code> | Name to deploy the stack with. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.synthesizer">synthesizer</a></code> | <code>aws-cdk-lib.IStackSynthesizer</code> | Synthesis method to use while deploying this stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | Stack tags that will be applied to all the taggable resources and the stack itself. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.terminationProtection">terminationProtection</a></code> | <code>boolean</code> | Whether to enable termination protection for this stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.targetResourceTag">targetResourceTag</a></code> | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty">TargetResourceTagProperty</a></code> | *No description.* |
 
 ---
 
-##### `analyticsReporting`<sup>Optional</sup> <a name="analyticsReporting" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.analyticsReporting"></a>
+##### `analyticsReporting`<sup>Optional</sup> <a name="analyticsReporting" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.analyticsReporting"></a>
 
 ```typescript
 public readonly analyticsReporting: boolean;
@@ -919,7 +919,7 @@ Include runtime versioning information in this Stack.
 
 ---
 
-##### `crossRegionReferences`<sup>Optional</sup> <a name="crossRegionReferences" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.crossRegionReferences"></a>
+##### `crossRegionReferences`<sup>Optional</sup> <a name="crossRegionReferences" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.crossRegionReferences"></a>
 
 ```typescript
 public readonly crossRegionReferences: boolean;
@@ -937,7 +937,7 @@ This feature is currently experimental
 
 ---
 
-##### `description`<sup>Optional</sup> <a name="description" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -950,7 +950,7 @@ A description of the stack.
 
 ---
 
-##### `env`<sup>Optional</sup> <a name="env" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.env"></a>
+##### `env`<sup>Optional</sup> <a name="env" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.env"></a>
 
 ```typescript
 public readonly env: Environment;
@@ -1024,7 +1024,7 @@ new MyStack(app, 'Stack1');
 ```
 
 
-##### `permissionsBoundary`<sup>Optional</sup> <a name="permissionsBoundary" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.permissionsBoundary"></a>
+##### `permissionsBoundary`<sup>Optional</sup> <a name="permissionsBoundary" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.permissionsBoundary"></a>
 
 ```typescript
 public readonly permissionsBoundary: PermissionsBoundary;
@@ -1037,7 +1037,7 @@ Options for applying a permissions boundary to all IAM Roles and Users created w
 
 ---
 
-##### `stackName`<sup>Optional</sup> <a name="stackName" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.stackName"></a>
+##### `stackName`<sup>Optional</sup> <a name="stackName" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.stackName"></a>
 
 ```typescript
 public readonly stackName: string;
@@ -1050,7 +1050,7 @@ Name to deploy the stack with.
 
 ---
 
-##### `synthesizer`<sup>Optional</sup> <a name="synthesizer" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.synthesizer"></a>
+##### `synthesizer`<sup>Optional</sup> <a name="synthesizer" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.synthesizer"></a>
 
 ```typescript
 public readonly synthesizer: IStackSynthesizer;
@@ -1073,7 +1073,7 @@ other synthesizer is specified.
 
 ---
 
-##### `tags`<sup>Optional</sup> <a name="tags" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.tags"></a>
+##### `tags`<sup>Optional</sup> <a name="tags" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.tags"></a>
 
 ```typescript
 public readonly tags: {[ key: string ]: string};
@@ -1086,7 +1086,7 @@ Stack tags that will be applied to all the taggable resources and the stack itse
 
 ---
 
-##### `terminationProtection`<sup>Optional</sup> <a name="terminationProtection" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.terminationProtection"></a>
+##### `terminationProtection`<sup>Optional</sup> <a name="terminationProtection" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.terminationProtection"></a>
 
 ```typescript
 public readonly terminationProtection: boolean;
@@ -1099,22 +1099,22 @@ Whether to enable termination protection for this stack.
 
 ---
 
-##### `targetResourceTag`<sup>Required</sup> <a name="targetResourceTag" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.targetResourceTag"></a>
+##### `targetResourceTag`<sup>Required</sup> <a name="targetResourceTag" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.targetResourceTag"></a>
 
 ```typescript
 public readonly targetResourceTag: TargetResourceTagProperty;
 ```
 
-- *Type:* <a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty">TargetResourceTagProperty</a>
+- *Type:* <a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty">TargetResourceTagProperty</a>
 
 ---
 
-### TargetResourceTagProperty <a name="TargetResourceTagProperty" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty"></a>
+### TargetResourceTagProperty <a name="TargetResourceTagProperty" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty"></a>
 
-#### Initializer <a name="Initializer" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty.Initializer"></a>
+#### Initializer <a name="Initializer" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty.Initializer"></a>
 
 ```typescript
-import { TargetResourceTagProperty } from '@gammarer/aws-daily-cloud-watch-logs-archive-stack'
+import { TargetResourceTagProperty } from '@gammarers/aws-daily-cloud-watch-logs-archive-stack'
 
 const targetResourceTagProperty: TargetResourceTagProperty = { ... }
 ```
@@ -1123,12 +1123,12 @@ const targetResourceTagProperty: TargetResourceTagProperty = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty.property.key">key</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@gammarer/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty.property.values">values</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty.property.key">key</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty.property.values">values</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
-##### `key`<sup>Required</sup> <a name="key" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty.property.key"></a>
+##### `key`<sup>Required</sup> <a name="key" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty.property.key"></a>
 
 ```typescript
 public readonly key: string;
@@ -1138,7 +1138,7 @@ public readonly key: string;
 
 ---
 
-##### `values`<sup>Required</sup> <a name="values" id="@gammarer/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty.property.values"></a>
+##### `values`<sup>Required</sup> <a name="values" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.TargetResourceTagProperty.property.values"></a>
 
 ```typescript
 public readonly values: string[];

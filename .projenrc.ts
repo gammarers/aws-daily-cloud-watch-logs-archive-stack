@@ -7,15 +7,15 @@ const project = new awscdk.AwsCdkConstructLibrary({
   typescriptVersion: '5.2.x',
   jsiiVersion: '5.2.x',
   defaultReleaseBranch: 'main',
-  name: '@gammarer/aws-daily-cloud-watch-logs-archive-stack',
+  name: '@gammarers/aws-daily-cloud-watch-logs-archive-stack',
   projenrcTs: true,
-  repositoryUrl: 'https://github.com/gammarer/aws-daily-cloud-watch-logs-archive-stack.git',
+  repositoryUrl: 'https://github.com/gammarers/aws-daily-cloud-watch-logs-archive-stack.git',
   description: 'AWS CloudWatch Logs daily archive to s3 bucket',
   keywords: ['aws', 'cdk', 'aws-cdk', 'scheduler', 's3', 'bucket', 'archive', 'lambda'],
   majorVersion: 2,
   deps: [
-    '@gammarer/aws-secure-log-bucket@~1.4.0',
-    '@gammarer/aws-secure-bucket@~1.1.0',
+    '@gammarers/aws-secure-log-bucket@~1.6.2',
+    '@gammarers/aws-secure-bucket@~1.3.3',
   ],
   devDeps: [
     'aws-sdk-client-mock@^3',
@@ -25,8 +25,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '@gammarer/jest-serializer-aws-cdk-asset-filename-replacer',
   ],
   peerDeps: [
-    '@gammarer/aws-secure-log-bucket@~1.4.0',
-    '@gammarer/aws-secure-bucket@~1.1.0',
+    '@gammarers/aws-secure-log-bucket@~1.6.2',
+    '@gammarers/aws-secure-bucket@~1.3.3',
   ],
   compat: true,
   jestOptions: {
@@ -42,7 +42,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   lambdaOptions: {
     // target node.js runtime
-    runtime: awscdk.LambdaRuntime.NODEJS_18_X,
+    runtime: awscdk.LambdaRuntime.NODEJS_20_X,
     bundlingOptions: {
       // list of node modules to exclude from the bundle
       externals: ['@aws-sdk/client-cloudwatch-logs'],
@@ -64,18 +64,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
     allowedUsernames: ['yicr'],
   },
   publishToPypi: {
-    distName: 'gammarer.aws-daily-cloud-watch-logs-archive-stack',
-    module: 'gammarer.aws_daily_cloud_watch_logs_archive_stack',
-  },
-  publishToMaven: {
-    mavenGroupId: 'com.gammarer',
-    javaPackage: 'com.gammarer.cdk.aws.daily_cloud_watch_logs_archive_stack',
-    mavenArtifactId: 'aws-daily-cloud-watch-logs-archive-stack',
-    mavenEndpoint: 'https://s01.oss.sonatype.org',
+    distName: 'gammarers.aws-daily-cloud-watch-logs-archive-stack',
+    module: 'gammarers.aws_daily_cloud_watch_logs_archive_stack',
   },
   publishToNuget: {
-    dotNetNamespace: 'Gammarer.CDK.AWS',
-    packageId: 'Gammarer.CDK.AWS.DailyCloudWatchLogsArchiveStack',
+    dotNetNamespace: 'Gammarers.CDK.AWS',
+    packageId: 'Gammarers.CDK.AWS.DailyCloudWatchLogsArchiveStack',
   },
 });
 project.synth();

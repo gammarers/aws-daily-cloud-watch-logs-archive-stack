@@ -270,7 +270,7 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
             "Arn",
           ],
         },
-        "Runtime": "nodejs18.x",
+        "Runtime": "nodejs20.x",
       },
       "Type": "AWS::Lambda::Function",
     },
