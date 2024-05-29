@@ -279,7 +279,7 @@
       "description": "Run tests",
       "steps": [
         {
-          "exec": "jest --passWithNoTests --silent --coverageProvider=v8 --updateSnapshot",
+          "exec": "jest --passWithNoTests --silent --updateSnapshot",
           "receiveArgs": true
         },
         {
