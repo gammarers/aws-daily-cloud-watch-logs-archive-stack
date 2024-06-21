@@ -1,4 +1,4 @@
-# AWS Daily CloudWatch Logs Archive　Stack
+# AWS Daily CloudWatch Logs Archive Stack
 
 [![GitHub](https://img.shields.io/github/license/gammarers/aws-daily-cloud-watch-logs-archive-stack?style=flat-square)](https://github.com/gammarers/aws-daily-cloud-watch-logs-archive-stack/blob/main/LICENSE)
 [![npm (scoped)](https://img.shields.io/npm/v/@gammarers/aws-daily-cloud-watch-logs-archive-stack?style=flat-square)](https://www.npmjs.com/package/@gammarers/aws-daily-cloud-watch-logs-archive-stack)
