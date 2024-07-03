@@ -150,7 +150,7 @@ jobs:
           node-version: 20.11.0
       - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 3.x
+          dotnet-version: 6.x
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
