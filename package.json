@@ -40,7 +40,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-sdk/client-cloudwatch-logs": "3.613.x",
+    "@aws-sdk/client-cloudwatch-logs": "3.614.x",
     "@gammarer/jest-serializer-aws-cdk-asset-filename-replacer": "^0.4.30",
     "@types/aws-lambda": "^8.10.141",
     "@types/jest": "^29.5.12",
@@ -59,10 +59,10 @@
     "jest-junit": "^15",
     "jsii": "5.2.x",
     "jsii-diff": "^1.101.0",
-    "jsii-docgen": "^10.4.17",
+    "jsii-docgen": "^10.4.19",
     "jsii-pacmak": "^1.101.0",
     "jsii-rosetta": "5.2.x",
-    "projen": "^0.84.3",
+    "projen": "^0.84.5",
     "standard-version": "^9",
     "ts-jest": "^29.2.2",
     "ts-node": "^10.9.2",
