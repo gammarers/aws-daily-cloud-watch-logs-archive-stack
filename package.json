@@ -40,7 +40,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-sdk/client-cloudwatch-logs": "3.624.x",
+    "@aws-sdk/client-cloudwatch-logs": "3.631.x",
     "@gammarer/jest-serializer-aws-cdk-asset-filename-replacer": "^0.4.30",
     "@types/aws-lambda": "^8.10.143",
     "@types/jest": "^29.5.12",
