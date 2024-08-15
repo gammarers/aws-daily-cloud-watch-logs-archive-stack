@@ -14,24 +14,24 @@ const project = new awscdk.AwsCdkConstructLibrary({
   keywords: ['aws', 'cdk', 'aws-cdk', 'scheduler', 's3', 'bucket', 'archive', 'lambda'],
   majorVersion: 2,
   deps: [
-    '@gammarers/aws-secure-log-bucket@~1.6.2',
-    '@gammarers/aws-secure-bucket@~1.3.3',
+    '@gammarers/aws-secure-log-bucket@~2.0.7',
+    '@gammarers/aws-secure-bucket@~2.0.8',
   ],
   devDeps: [
     'aws-sdk-client-mock@^3',
     'aws-sdk-client-mock-jest@^3',
     '@aws-sdk/client-cloudwatch-logs',
     '@types/aws-lambda',
-    '@gammarer/jest-serializer-aws-cdk-asset-filename-replacer',
+    '@gammarers/jest-aws-cdk-asset-filename-renamer@~0.5.8',
   ],
   peerDeps: [
-    '@gammarers/aws-secure-log-bucket@~1.6.2',
-    '@gammarers/aws-secure-bucket@~1.3.3',
+    '@gammarers/aws-secure-log-bucket@~2.0.7',
+    '@gammarers/aws-secure-bucket@~2.0.8',
   ],
   compat: true,
   jestOptions: {
     jestConfig: {
-      snapshotSerializers: ['<rootDir>/node_modules/@gammarer/jest-serializer-aws-cdk-asset-filename-replacer'],
+      snapshotSerializers: ['<rootDir>/node_modules/@gammarers/jest-aws-cdk-asset-filename-renamer'],
     },
     extraCliOptions: ['--silent'],
   },

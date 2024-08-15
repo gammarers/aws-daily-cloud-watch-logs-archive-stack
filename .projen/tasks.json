@@ -325,13 +325,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@aws-sdk/client-cloudwatch-logs,@gammarer/jest-serializer-aws-cdk-asset-filename-replacer,@types/aws-lambda,@types/jest,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-docgen,jsii-pacmak,projen,ts-jest,ts-node"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@aws-sdk/client-cloudwatch-logs,@types/aws-lambda,@types/jest,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-docgen,jsii-pacmak,projen,ts-jest,ts-node"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @aws-sdk/client-cloudwatch-logs @gammarer/jest-serializer-aws-cdk-asset-filename-replacer @types/aws-lambda @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-sdk-client-mock-jest aws-sdk-client-mock esbuild eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen standard-version ts-jest ts-node typescript @gammarers/aws-secure-bucket @gammarers/aws-secure-log-bucket aws-cdk-lib constructs"
+          "exec": "yarn upgrade @aws-sdk/client-cloudwatch-logs @gammarers/jest-aws-cdk-asset-filename-renamer @types/aws-lambda @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-sdk-client-mock-jest aws-sdk-client-mock esbuild eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen standard-version ts-jest ts-node typescript @gammarers/aws-secure-bucket @gammarers/aws-secure-log-bucket aws-cdk-lib constructs"
         },
         {
           "exec": "npx projen"

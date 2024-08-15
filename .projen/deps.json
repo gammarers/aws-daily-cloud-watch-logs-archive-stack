@@ -5,7 +5,8 @@
       "type": "build"
     },
     {
-      "name": "@gammarer/jest-serializer-aws-cdk-asset-filename-replacer",
+      "name": "@gammarers/jest-aws-cdk-asset-filename-renamer",
+      "version": "~0.5.8",
       "type": "build"
     },
     {
@@ -113,12 +114,12 @@
     },
     {
       "name": "@gammarers/aws-secure-bucket",
-      "version": "~1.3.3",
+      "version": "~2.0.8",
       "type": "peer"
     },
     {
       "name": "@gammarers/aws-secure-log-bucket",
-      "version": "~1.6.2",
+      "version": "~2.0.7",
       "type": "peer"
     },
     {
@@ -133,12 +134,12 @@
     },
     {
       "name": "@gammarers/aws-secure-bucket",
-      "version": "~1.3.3",
+      "version": "~2.0.8",
       "type": "runtime"
     },
     {
       "name": "@gammarers/aws-secure-log-bucket",
-      "version": "~1.6.2",
+      "version": "~2.0.7",
       "type": "runtime"
     }
   ],

@@ -1,10 +1,10 @@
 import * as crypto from 'crypto';
-import { SecureBucketEncryption } from '@gammarers/aws-secure-bucket';
 import { SecureLogBucket } from '@gammarers/aws-secure-log-bucket';
 import * as cdk from 'aws-cdk-lib';
 import { Duration } from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as logs from 'aws-cdk-lib/aws-logs';
+import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as scheduler from 'aws-cdk-lib/aws-scheduler';
 import * as sfn from 'aws-cdk-lib/aws-stepfunctions';
 import * as tasks from 'aws-cdk-lib/aws-stepfunctions-tasks';
@@ -39,7 +39,7 @@ export class DailyCloudWatchLogsArchiveStack extends cdk.Stack {
     // 👇 Create Backup S3 Bucket
     const logArchiveBucket = new SecureLogBucket(this, 'LogArchiveBucket', {
       bucketName: `log-archive-${randomNameKey}`,
-      encryption: SecureBucketEncryption.S3_MANAGED,
+      encryption: s3.BucketEncryption.S3_MANAGED,
     });
     logArchiveBucket.addToResourcePolicy(new iam.PolicyStatement({
       effect: iam.Effect.ALLOW,
