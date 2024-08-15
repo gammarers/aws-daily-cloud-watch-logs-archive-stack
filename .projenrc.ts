@@ -4,8 +4,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorAddress: 'yicr@users.noreply.github.com',
   cdkVersion: '2.80.0',
   constructsVersion: '10.0.5',
-  typescriptVersion: '5.2.x',
-  jsiiVersion: '5.2.x',
+  typescriptVersion: '5.4.x',
+  jsiiVersion: '5.4.x',
   defaultReleaseBranch: 'main',
   name: '@gammarers/aws-daily-cloud-watch-logs-archive-stack',
   projenrcTs: true,
@@ -14,24 +14,24 @@ const project = new awscdk.AwsCdkConstructLibrary({
   keywords: ['aws', 'cdk', 'aws-cdk', 'scheduler', 's3', 'bucket', 'archive', 'lambda'],
   majorVersion: 2,
   deps: [
-    '@gammarers/aws-secure-log-bucket@~1.6.2',
-    '@gammarers/aws-secure-bucket@~1.3.3',
+    '@gammarers/aws-secure-log-bucket@~2.0.7',
+    '@gammarers/aws-secure-bucket@~2.0.8',
   ],
   devDeps: [
     'aws-sdk-client-mock@^3',
     'aws-sdk-client-mock-jest@^3',
     '@aws-sdk/client-cloudwatch-logs',
     '@types/aws-lambda',
-    '@gammarer/jest-serializer-aws-cdk-asset-filename-replacer',
+    '@gammarers/jest-aws-cdk-asset-filename-renamer@~0.5.8',
   ],
   peerDeps: [
-    '@gammarers/aws-secure-log-bucket@~1.6.2',
-    '@gammarers/aws-secure-bucket@~1.3.3',
+    '@gammarers/aws-secure-log-bucket@~2.0.7',
+    '@gammarers/aws-secure-bucket@~2.0.8',
   ],
   compat: true,
   jestOptions: {
     jestConfig: {
-      snapshotSerializers: ['<rootDir>/node_modules/@gammarer/jest-serializer-aws-cdk-asset-filename-replacer'],
+      snapshotSerializers: ['<rootDir>/node_modules/@gammarers/jest-aws-cdk-asset-filename-renamer'],
     },
     extraCliOptions: ['--silent'],
   },
@@ -52,7 +52,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   releaseToNpm: true,
   npmAccess: javascript.NpmAccess.PUBLIC,
   minNodeVersion: '18.0.0',
-  workflowNodeVersion: '20.11.0',
+  workflowNodeVersion: '22.4.x',
   depsUpgradeOptions: {
     workflowOptions: {
       labels: ['auto-approve', 'auto-merge'],

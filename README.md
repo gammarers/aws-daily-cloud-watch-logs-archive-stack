@@ -32,10 +32,28 @@ This construct creating resource list.
 
 ### TypeScript
 
+#### install by npm
+
 ```shell
 npm install @gammarers/aws-daily-cloud-watch-logs-archive-stack
-# or
+```
+
+#### install by yarn
+
+```shell
 yarn add @gammarers/aws-daily-cloud-watch-logs-archive-stack
+```
+
+#### install by pnpm
+
+```shell
+pnpm add @gammarers/aws-daily-cloud-watch-logs-archive-stack
+```
+
+#### install by bun
+
+```shell
+bun add @gammarers/aws-daily-cloud-watch-logs-archive-stack
 ```
 
 ### Python
