@@ -120,19 +120,15 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
               "Transitions": [
                 {
                   "StorageClass": "STANDARD_IA",
-                  "TransitionInDays": 60,
-                },
-                {
-                  "StorageClass": "INTELLIGENT_TIERING",
-                  "TransitionInDays": 120,
+                  "TransitionInDays": 400,
                 },
                 {
                   "StorageClass": "GLACIER",
-                  "TransitionInDays": 180,
+                  "TransitionInDays": 720,
                 },
                 {
                   "StorageClass": "DEEP_ARCHIVE",
-                  "TransitionInDays": 360,
+                  "TransitionInDays": 980,
                 },
               ],
             },
