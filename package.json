@@ -40,10 +40,10 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-sdk/client-cloudwatch-logs": "3.716.x",
+    "@aws-sdk/client-cloudwatch-logs": "3.723.x",
     "@gammarers/jest-aws-cdk-asset-filename-renamer": "~0.5.8",
     "@stylistic/eslint-plugin": "^2",
-    "@types/aws-lambda": "^8.10.146",
+    "@types/aws-lambda": "^8.10.147",
     "@types/jest": "^29.5.14",
     "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^8",
