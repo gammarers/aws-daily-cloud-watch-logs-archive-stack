@@ -978,17 +978,22 @@
     "@eslint/core" "^0.13.0"
     levn "^0.4.1"
 
-"@gammarers/aws-secure-bucket@~2.0.1", "@gammarers/aws-secure-bucket@~2.0.8":
-  version "2.0.29"
-  resolved "https://registry.yarnpkg.com/@gammarers/aws-secure-bucket/-/aws-secure-bucket-2.0.29.tgz#25c03d01c265b0bf4d28b64e621252547a135db3"
-  integrity sha512-mgG+NLqyUOzYR4yu3p9p6eQEupshwoGRcSlbI/ctvj4tFOJWURTJMq76VlsqdGJyI+9Q4H+YO6s2/EkRogeNbw==
+"@gammarers/aws-secure-bucket@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@gammarers/aws-secure-bucket/-/aws-secure-bucket-2.1.0.tgz#ca7a3be7db0208f376b723f25a3d1ebd70c8fe9f"
+  integrity sha512-FZI0UEumrgbe0QjxUuF1TOk1sqTHhdGEfyAp5Y0zZoGdH+JukKUNattQRtXp5RROHW+sUOuAkl2uk+jfvPF18w==
 
-"@gammarers/aws-secure-log-bucket@~2.0.7":
-  version "2.0.28"
-  resolved "https://registry.yarnpkg.com/@gammarers/aws-secure-log-bucket/-/aws-secure-log-bucket-2.0.28.tgz#26b644e6bcb960889909eb02c88a11c997a20aa6"
-  integrity sha512-mkshlLdg6cjLnBzMkIDK17sYBYCyvpxPeetLwGTfRm9+KsX0KUuLxZHp+54EIVLB4cCcF4eFygjV9O58s2eHYw==
+"@gammarers/aws-secure-bucket@^2.1.0":
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/@gammarers/aws-secure-bucket/-/aws-secure-bucket-2.3.4.tgz#c2bbae3529cc8c196d1bc4f1cbd04231ad1b8548"
+  integrity sha512-Dau/rFiq1MkH/zj210qz+sLPm3D2IuqMOAU0yO7mHcRh10UcXK1EzlWX4Nb/Yt8GqtyKcCU26juoMchQZKBtiw==
+
+"@gammarers/aws-secure-log-bucket@^2.1.19":
+  version "2.1.19"
+  resolved "https://registry.yarnpkg.com/@gammarers/aws-secure-log-bucket/-/aws-secure-log-bucket-2.1.19.tgz#9fb40ca069eb9425f77db4bc47155b9d701ccc65"
+  integrity sha512-+OocnLFWTMCLmcSezqZn0SW1PcJoa81DV8tskRsorzO7ILrzphGL4sbGKzhStJtxHOZf42fHKUokyV+GRUPKaw==
   dependencies:
-    "@gammarers/aws-secure-bucket" "~2.0.1"
+    "@gammarers/aws-secure-bucket" "^2.1.0"
 
 "@gammarers/jest-aws-cdk-asset-filename-renamer@~0.5.8":
   version "0.5.43"

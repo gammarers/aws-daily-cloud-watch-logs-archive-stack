@@ -266,7 +266,7 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
             "Arn",
           ],
         },
-        "Runtime": "nodejs20.x",
+        "Runtime": "nodejs22.x",
       },
       "Type": "AWS::Lambda::Function",
     },
@@ -350,7 +350,7 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
               {
                 "Ref": "AWS::Partition",
               },
-              ":states:::aws-sdk:resourcegroupstaggingapi:getResources","Parameters":{"ResourceTypeFilters":["logs:log-group"],"TagFilters":[{"Key.$":"$.tagKey","Values.$":"$.tagValues"}]}},"LogGroupExportMap":{"Type":"Map","End":true,"Iterator":{"StartAt":"GetLogGroupName","States":{"GetLogGroupName":{"Type":"Pass","Parameters":{"TargetLogGroupName.$":"States.ArrayGetItem(States.StringSplit($, ':'), 6)"},"Next":"InvokeLambdaFunction"},"InvokeLambdaFunction":{"Next":"DescribeExportTasks","Retry":[{"ErrorEquals":["Lambda.ServiceException","Lambda.AWSLambdaException","Lambda.SdkClientException"],"IntervalSeconds":2,"MaxAttempts":6,"BackoffRate":2}],"Type":"Task","OutputPath":"$.Payload","Resource":"arn:",
+              ":states:::aws-sdk:resourcegroupstaggingapi:getResources","Parameters":{"ResourceTypeFilters":["logs:log-group"],"TagFilters":[{"Key.$":"$.tagKey","Values.$":"$.tagValues"}]}},"LogGroupExportMap":{"Type":"Map","End":true,"ItemsPath":"$.Result.TargetResources","MaxConcurrency":1,"Iterator":{"StartAt":"GetLogGroupName","States":{"GetLogGroupName":{"Type":"Pass","Parameters":{"TargetLogGroupName.$":"States.ArrayGetItem(States.StringSplit($, ':'), 6)"},"Next":"InvokeLambdaFunction"},"InvokeLambdaFunction":{"Next":"DescribeExportTasks","Retry":[{"ErrorEquals":["Lambda.ClientExecutionTimeoutException","Lambda.ServiceException","Lambda.AWSLambdaException","Lambda.SdkClientException"],"IntervalSeconds":2,"MaxAttempts":6,"BackoffRate":2}],"Type":"Task","OutputPath":"$.Payload","Resource":"arn:",
               {
                 "Ref": "AWS::Partition",
               },
@@ -365,7 +365,7 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
               {
                 "Ref": "AWS::Partition",
               },
-              ":states:::aws-sdk:cloudwatchlogs:describeExportTasks","Parameters":{"TaskId.$":"$.TaskId"}},"ExportTaskStatusCheck":{"Type":"Choice","Choices":[{"Variable":"$.Result.DescribeExportTasksStatus","StringEquals":"FAILED","Next":"GetLogGroupName"},{"Variable":"$.Result.DescribeExportTasksStatus","StringEquals":"RUNNING","Next":"ExportRunningWait"},{"Variable":"$.Result.DescribeExportTasksStatus","StringEquals":"PENDING","Next":"ExportPendingWait"}],"Default":"Succeed"},"Succeed":{"Type":"Succeed"},"ExportRunningWait":{"Type":"Wait","Seconds":10,"Next":"DescribeExportTasks"},"ExportPendingWait":{"Type":"Wait","Seconds":3,"Next":"DescribeExportTasks"}}},"ItemsPath":"$.Result.TargetResources","MaxConcurrency":1}}}",
+              ":states:::aws-sdk:cloudwatchlogs:describeExportTasks","Parameters":{"TaskId.$":"$.TaskId"}},"ExportTaskStatusCheck":{"Type":"Choice","Choices":[{"Variable":"$.Result.DescribeExportTasksStatus","StringEquals":"FAILED","Next":"GetLogGroupName"},{"Variable":"$.Result.DescribeExportTasksStatus","StringEquals":"RUNNING","Next":"ExportRunningWait"},{"Variable":"$.Result.DescribeExportTasksStatus","StringEquals":"PENDING","Next":"ExportPendingWait"}],"Default":"Succeed"},"Succeed":{"Type":"Succeed"},"ExportRunningWait":{"Type":"Wait","Seconds":10,"Next":"DescribeExportTasks"},"ExportPendingWait":{"Type":"Wait","Seconds":3,"Next":"DescribeExportTasks"}}}}}}",
             ],
           ],
         },
@@ -388,7 +388,7 @@ exports[`DailyCloudWatchLogsArchiveStack Testing Snapshot Testing Should match s
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
               "Principal": {
-                "Service": "states.us-east-1.amazonaws.com",
+                "Service": "states.amazonaws.com",
               },
             },
           ],
