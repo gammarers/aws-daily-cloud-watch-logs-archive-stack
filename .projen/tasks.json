@@ -56,7 +56,7 @@
       "description": "Create a JavaScript bundle from src/funcs/log-archiver.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/funcs/log-archiver.lambda.ts --target=\"node20\" --platform=\"node\" --outfile=\"assets/funcs/log-archiver.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/client-cloudwatch-logs --sourcemap"
+          "exec": "esbuild --bundle src/funcs/log-archiver.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/funcs/log-archiver.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/client-cloudwatch-logs --sourcemap"
         }
       ]
     },
@@ -65,7 +65,7 @@
       "description": "Continuously update the JavaScript bundle from src/funcs/log-archiver.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/funcs/log-archiver.lambda.ts --target=\"node20\" --platform=\"node\" --outfile=\"assets/funcs/log-archiver.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/client-cloudwatch-logs --sourcemap --watch"
+          "exec": "esbuild --bundle src/funcs/log-archiver.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/funcs/log-archiver.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/client-cloudwatch-logs --sourcemap --watch"
         }
       ]
     },
@@ -336,7 +336,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @aws-sdk/client-cloudwatch-logs @gammarers/jest-aws-cdk-asset-filename-renamer @stylistic/eslint-plugin @types/aws-lambda @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-sdk-client-mock-jest aws-sdk-client-mock commit-and-tag-version esbuild eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen ts-jest ts-node typescript @gammarers/aws-secure-bucket @gammarers/aws-secure-log-bucket aws-cdk-lib constructs"
+          "exec": "yarn upgrade @aws-sdk/client-cloudwatch-logs @gammarers/jest-aws-cdk-asset-filename-renamer @stylistic/eslint-plugin @types/aws-lambda @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-sdk-client-mock-jest aws-sdk-client-mock commit-and-tag-version esbuild eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen ts-jest ts-node typescript aws-cdk-lib constructs @gammarers/aws-secure-log-bucket"
         },
         {
           "exec": "npx projen"

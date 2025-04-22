@@ -93,12 +93,12 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": "5.4.x",
+      "version": "5.7.x",
       "type": "build"
     },
     {
       "name": "jsii",
-      "version": "5.4.x",
+      "version": "5.7.x",
       "type": "build"
     },
     {
@@ -115,22 +115,12 @@
     },
     {
       "name": "typescript",
-      "version": "5.4.x",
+      "version": "5.7.x",
       "type": "build"
     },
     {
-      "name": "@gammarers/aws-secure-bucket",
-      "version": "~2.0.8",
-      "type": "peer"
-    },
-    {
-      "name": "@gammarers/aws-secure-log-bucket",
-      "version": "~2.0.7",
-      "type": "peer"
-    },
-    {
       "name": "aws-cdk-lib",
-      "version": "^2.80.0",
+      "version": "^2.189.1",
       "type": "peer"
     },
     {
@@ -139,13 +129,8 @@
       "type": "peer"
     },
     {
-      "name": "@gammarers/aws-secure-bucket",
-      "version": "~2.0.8",
-      "type": "runtime"
-    },
-    {
       "name": "@gammarers/aws-secure-log-bucket",
-      "version": "~2.0.7",
+      "version": "^2.1.19",
       "type": "runtime"
     }
   ],

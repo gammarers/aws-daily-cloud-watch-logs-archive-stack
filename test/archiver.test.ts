@@ -96,7 +96,7 @@ describe('DailyCloudWatchLogsArchiveStack Testing', () => {
             Match.objectEquals({
               Effect: 'Allow',
               Principal: {
-                Service: 'states.us-east-1.amazonaws.com',
+                Service: 'states.amazonaws.com',
               },
               Action: 'sts:AssumeRole',
             }),
@@ -244,7 +244,7 @@ describe('DailyCloudWatchLogsArchiveStack Testing', () => {
       template.hasResourceProperties('AWS::Lambda::Function', Match.objectEquals({
         FunctionName: Match.stringLikeRegexp('daily-cw-logs-archive-.*-func'),
         Handler: 'index.handler',
-        Runtime: 'nodejs20.x',
+        Runtime: 'nodejs22.x',
         Code: {
           S3Bucket: Match.anyValue(),
           S3Key: Match.stringLikeRegexp('.*.zip'),
