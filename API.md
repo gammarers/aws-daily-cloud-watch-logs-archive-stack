@@ -44,7 +44,7 @@ new DailyCloudWatchLogsArchiveStack(scope: Construct, id: string, props: DailyCl
 | --- | --- |
 | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addDependency">addDependency</a></code> | Add a dependency between this stack and another stack. |
-| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addMetadata">addMetadata</a></code> | Adds an arbitary key-value pair, with information you want to record about the stack. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addMetadata">addMetadata</a></code> | Adds an arbitrary key-value pair, with information you want to record about the stack. |
 | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.addTransform">addTransform</a></code> | Add a Transform to this stack. A Transform is a macro that AWS CloudFormation uses to process your template. |
 | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportStringListValue">exportStringListValue</a></code> | Create a CloudFormation Export for a string list value. |
 | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.exportValue">exportValue</a></code> | Create a CloudFormation Export for a string value. |
@@ -97,7 +97,7 @@ app, and also supports nested stacks.
 public addMetadata(key: string, value: any): void
 ```
 
-Adds an arbitary key-value pair, with information you want to record about the stack.
+Adds an arbitrary key-value pair, with information you want to record about the stack.
 
 These get translated to the Metadata section of the generated template.
 
@@ -205,8 +205,6 @@ temporarily ensure that the CloudFormation Export still exists while you
 remove the reference from the consuming stack. After that, you can remove
 the resource and the manual export.
 
-## Example
-
 Here is how the process works. Let's say there are two stacks,
 `producerStack` and `consumerStack`, and `producerStack` has a bucket
 called `bucket`, which is referenced by `consumerStack` (perhaps because
@@ -217,7 +215,7 @@ deleted, `consumerStack` might still be using it.
 
 Instead, the process takes two deployments:
 
-### Deployment 1: break the relationship
+**Deployment 1: break the relationship**:
 
 - Make sure `consumerStack` no longer references `bucket.bucketName` (maybe the consumer
   stack now uses its own bucket, or it writes to an AWS DynamoDB table, or maybe you just
@@ -227,7 +225,7 @@ Instead, the process takes two deployments:
   between the two stacks is being broken.
 - Deploy (this will effectively only change the `consumerStack`, but it's safe to deploy both).
 
-### Deployment 2: remove the bucket resource
+**Deployment 2: remove the bucket resource**:
 
 - You are now free to remove the `bucket` resource from `producerStack`.
 - Don't forget to remove the `exportValue()` call as well.
@@ -581,9 +579,9 @@ attempt to parse it to implement your logic. If you do, you must first
 check that it is a concrete value an not an unresolved token. If this
 value is an unresolved token (`Token.isUnresolved(stack.account)` returns
 `true`), this implies that the user wishes that this stack will synthesize
-into a **account-agnostic template**. In this case, your code should either
+into an **account-agnostic template**. In this case, your code should either
 fail (throw an error, emit a synth error using `Annotations.of(construct).addError()`) or
-implement some other region-agnostic behavior.
+implement some other account-agnostic behavior.
 
 ---
 
@@ -864,7 +862,7 @@ If this is a nested stack, this represents its `AWS::CloudFormation::Stack` reso
 
 ---
 
-##### `terminationProtection`<sup>Optional</sup> <a name="terminationProtection" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.terminationProtection"></a>
+##### `terminationProtection`<sup>Required</sup> <a name="terminationProtection" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStack.property.terminationProtection"></a>
 
 ```typescript
 public readonly terminationProtection: boolean;
@@ -897,8 +895,10 @@ const dailyCloudWatchLogsArchiveStackProps: DailyCloudWatchLogsArchiveStackProps
 | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.crossRegionReferences">crossRegionReferences</a></code> | <code>boolean</code> | Enable this flag to allow native cross region stack references. |
 | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.description">description</a></code> | <code>string</code> | A description of the stack. |
 | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.env">env</a></code> | <code>aws-cdk-lib.Environment</code> | The AWS environment (account/region) where this stack will be deployed. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.notificationArns">notificationArns</a></code> | <code>string[]</code> | SNS Topic ARNs that will receive stack events. |
 | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.permissionsBoundary">permissionsBoundary</a></code> | <code>aws-cdk-lib.PermissionsBoundary</code> | Options for applying a permissions boundary to all IAM Roles and Users created within this Stage. |
 | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.stackName">stackName</a></code> | <code>string</code> | Name to deploy the stack with. |
+| <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.suppressTemplateIndentation">suppressTemplateIndentation</a></code> | <code>boolean</code> | Enable this flag to suppress indentation in generated CloudFormation templates. |
 | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.synthesizer">synthesizer</a></code> | <code>aws-cdk-lib.IStackSynthesizer</code> | Synthesis method to use while deploying this stack. |
 | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | Stack tags that will be applied to all the taggable resources and the stack itself. |
 | <code><a href="#@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.terminationProtection">terminationProtection</a></code> | <code>boolean</code> | Whether to enable termination protection for this stack. |
@@ -1024,6 +1024,19 @@ new MyStack(app, 'Stack1');
 ```
 
 
+##### `notificationArns`<sup>Optional</sup> <a name="notificationArns" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.notificationArns"></a>
+
+```typescript
+public readonly notificationArns: string[];
+```
+
+- *Type:* string[]
+- *Default:* no notfication arns.
+
+SNS Topic ARNs that will receive stack events.
+
+---
+
 ##### `permissionsBoundary`<sup>Optional</sup> <a name="permissionsBoundary" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.permissionsBoundary"></a>
 
 ```typescript
@@ -1047,6 +1060,23 @@ public readonly stackName: string;
 - *Default:* Derived from construct path.
 
 Name to deploy the stack with.
+
+---
+
+##### `suppressTemplateIndentation`<sup>Optional</sup> <a name="suppressTemplateIndentation" id="@gammarers/aws-daily-cloud-watch-logs-archive-stack.DailyCloudWatchLogsArchiveStackProps.property.suppressTemplateIndentation"></a>
+
+```typescript
+public readonly suppressTemplateIndentation: boolean;
+```
+
+- *Type:* boolean
+- *Default:* the value of `@aws-cdk/core:suppressTemplateIndentation`, or `false` if that is not set.
+
+Enable this flag to suppress indentation in generated CloudFormation templates.
+
+If not specified, the value of the `@aws-cdk/core:suppressTemplateIndentation`
+context key will be used. If that is not specified, then the
+default value `false` will be used.
 
 ---
 
