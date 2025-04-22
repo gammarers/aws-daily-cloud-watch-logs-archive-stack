@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "@aws-sdk/client-cloudwatch-logs": "3.787.x",
-    "@gammarers/aws-secure-bucket": "2.1.0",
     "@gammarers/jest-aws-cdk-asset-filename-renamer": "~0.5.8",
     "@stylistic/eslint-plugin": "^2",
     "@types/aws-lambda": "^8.10.149",
@@ -71,7 +70,6 @@
     "typescript": "5.7.x"
   },
   "peerDependencies": {
-    "@gammarers/aws-secure-bucket": "^2.1.0",
     "aws-cdk-lib": "^2.189.1",
     "constructs": "^10.0.5"
   },

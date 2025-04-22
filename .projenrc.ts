@@ -22,9 +22,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '@types/aws-lambda',
     '@gammarers/jest-aws-cdk-asset-filename-renamer@~0.5.8',
   ],
-  peerDeps: [
-    '@gammarers/aws-secure-bucket@^2.1.0',
-  ],
+  //  peerDeps: [
+  //  ],
   compat: true,
   jestOptions: {
     jestConfig: {
