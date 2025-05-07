@@ -19,7 +19,7 @@ export interface EventInput {
   readonly TargetLogGroupName?: string;
 }
 
-export const handler = async (event: EventInput, context: Context): Promise<{TaskId: string | undefined}> => {
+export const handler = async (event: EventInput, context: Context): Promise<{ TaskId: string | undefined }> => {
   console.log(`Event: ${JSON.stringify(event, null, 2)}`);
   console.log(`Context: ${JSON.stringify(context, null, 2)}`);
 
