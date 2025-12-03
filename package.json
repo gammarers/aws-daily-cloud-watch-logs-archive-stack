@@ -40,7 +40,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-sdk/client-cloudwatch-logs": "3.940.x",
+    "@aws-sdk/client-cloudwatch-logs": "3.943.x",
     "@gammarers/jest-aws-cdk-asset-filename-renamer": "~0.5.8",
     "@stylistic/eslint-plugin": "^2",
     "@types/aws-lambda": "^8.10.159",
@@ -64,8 +64,8 @@
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.120.0",
     "jsii-rosetta": "5.7.x",
-    "projen": "^0.98.26",
-    "ts-jest": "^29.4.5",
+    "projen": "^0.98.28",
+    "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
     "typescript": "5.7.x"
   },
